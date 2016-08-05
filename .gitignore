@@ -1,0 +1,12 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+umd
+npm-debug.log
+*.bak
+README.html
+*.yxi
+Supporting_Macros/*.html
+*.rds

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<AlteryxJavaScriptPlugin>
+  <EngineSettings EngineDLL="Macro" EngineDLLEntryPoint="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc" SDKVersion="10.1"/>
+  <GuiSettings Html="Logistic_RegressionGui.html" Icon="Logistic_RegressionIcon.png" SDKVersion="10.1" Help="AlteryxHelp:logistic">
+    <InputConnections>
+      <Connection Name="Input" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
+    </InputConnections>
+    <OutputConnections>
+      <Connection Name="Output" AllowMultiple="False" Optional="False" Type="Connection" Label="O"/>
+      <Connection Name="Reports" AllowMultiple="False" Optional="False" Type="Connection" Label="R"/>
+    </OutputConnections>
+  </GuiSettings>
+  <Properties>
+    <MetaInfo>
+      <NameIsFileName></NameIsFileName>
+      <Name>Logistic Regression</Name>
+      <Description>Relate a binary (yes/no) variable of interest (target variable) to one or more variables (predictor variables) that are expected to have an influence on the target variable.
+
+[Can be used with Oracle R In-DB workflows.]</Description>
+      <RootToolName>Logistic_Regression</RootToolName>
+      <ToolVersion>1.0</ToolVersion>
+      <ToolInDb></ToolInDb>
+      <CategoryName>Predictive</CategoryName>
+      <SearchTags>predictive, macro, R, logistic, model, variable, binary, regression, predictive category</SearchTags>
+      <Author>Dan Putler</Author>
+      <Company>Alteryx, Inc.</Company>
+      <Copyright>Alteryx, Inc.</Copyright>
+      <DescriptionLink></DescriptionLink>
+    </MetaInfo>
+  </Properties>
+</AlteryxJavaScriptPlugin>

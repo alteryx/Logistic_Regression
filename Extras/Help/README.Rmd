@@ -1,0 +1,38 @@
+---
+title: "About the Logistic_Regression Tool"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+<img src="../../Logistic_RegressionIcon.png" width=48 height=48 />
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+pluginDir <- file.path("..", "..", AlteryxRhelper:::dirNames()$macros)
+pluginName = file.path(pluginDir, "Logistic_Regression.yxmc")
+```
+
+<!-- Insert description of plugin -->
+
+_Note: This tool uses the R tool. Install R and the necessary packages by going to Options > Download Predictive Tools._
+
+### Inputs
+
+There are ___ inputs.
+
+```{r echo = F, comment = NA, results = 'asis', warning = F}
+AlteryxRhelper::extractInputOutput(pluginName)
+```
+
+### Configuration Properties
+
+```{r echo = F, comment = NA, results = 'asis', warning = F}
+AlteryxRhelper::extractConfig(pluginName)
+```
+
+### Output
+
+```{r echo = F, comment = NA, results = 'asis', warning = F}
+AlteryxRhelper::extractInputOutput(pluginName, type = 'output')
+```

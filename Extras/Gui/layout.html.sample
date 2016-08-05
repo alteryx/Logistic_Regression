@@ -1,0 +1,10 @@
+<fieldset>
+<legend>Configuration</legend>
+{{ `Model Name` }}
+{{ `Y Var` }}
+{{ `X Vars` }}
+{{ `Link` }}
+{{ `Use Weights` }}
+{{ `Weight Vec` }}
+{{ `graph.resolution` }}
+</fieldset>
