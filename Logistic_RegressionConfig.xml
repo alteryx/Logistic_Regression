@@ -20,7 +20,7 @@
       <RootToolName>Logistic_Regression</RootToolName>
       <ToolVersion>1.0</ToolVersion>
       <ToolInDb></ToolInDb>
-      <CategoryName>Predictive</CategoryName>
+      <CategoryName>Predictive Refresh</CategoryName>
       <SearchTags>predictive, macro, R, logistic, model, variable, binary, regression, predictive category</SearchTags>
       <Author>Dan Putler</Author>
       <Company>Alteryx, Inc.</Company>
