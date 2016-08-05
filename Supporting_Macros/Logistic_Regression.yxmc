@@ -6100,7 +6100,7 @@ Union</Text>
               <Description />
               <ToolId value="55" />
               <Expression>'  &lt;SelectFields&gt;
-    &lt;SelectField field="' + replace(EscapeXMLMetacharacters([X Vars]), " + ", '" selected="True" /&gt;
+    &lt;SelectField field="' + replace(EscapeXMLMetacharacters([X Vars]), ",", '" selected="True" /&gt;
     &lt;SelectField field="') + '" selected="True" /&gt;
     &lt;SelectField field="*Unknown" selected="False" /&gt;
   &lt;/SelectFields&gt;'</Expression>
@@ -6130,7 +6130,7 @@ Union</Text>
               <Description>Get Xs B</Description>
               <ToolId value="58" />
               <Expression>'  &lt;SelectFields&gt;
-    &lt;SelectField field="' + replace(EscapeXMLMetacharacters([X Vars]), " + ", '" selected="True" /&gt;
+    &lt;SelectField field="' + replace(EscapeXMLMetacharacters([X Vars]), ",", '" selected="True" /&gt;
     &lt;SelectField field="') + '" selected="True" /&gt;
     &lt;SelectField field="*Unknown" selected="False" /&gt;
   &lt;/SelectFields&gt;'</Expression>
