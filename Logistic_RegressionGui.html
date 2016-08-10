@@ -16,36 +16,50 @@ Logistic_Regression
 <body>
     
 <fieldset>
-  <legend>Configuration</legend>
-  <!--  Model Name  -->
-  <label for="Model Name">Model Name</label>
-  <alteryx-pluginwidget type="TextBox" password="false" id="Model Name" dataName="Model Name"></alteryx-pluginwidget>
-  <!--  Y Var  -->
-  <label for="Y Var">Select the target variable</label>
-  <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="Y Var" dataName="Y Var"></alteryx-pluginwidget>
-  <!--  X Vars  -->
-  <label for="X Vars">Select the predictor variables</label>
-  <alteryx-pluginwidget type="DropDown" dataType="FieldSelectorMulti" inputNumber="0" connectionNumber="0" fieldType="All" id="X Vars" dataName="X Vars"></alteryx-pluginwidget>
-  <!--  Link  -->
-  <label for="Link">Model type</label>
-  <alteryx-pluginwidget type="DropDown" id="Link" dataName="Link">
-    <alteryx-option uiobject="logit" default="true">logit</alteryx-option>
-    <alteryx-option uiobject="probit">probit</alteryx-option>
-    <alteryx-option uiobject="complementary log-log">complementary log-log</alteryx-option>
-  </alteryx-pluginwidget>
-  <!--  Use Weights  -->
-  <label for="Use Weights"></label>
-  <alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" default="false" id="Use Weights" dataName="Use Weights"></alteryx-pluginwidget>
-  <!--  Weight Vec  -->
-  <label for="Weight Vec">Select the sampling weight field</label>
-  <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
-  <!--  graph.resolution  -->
-  <label for="graph.resolution">Graph Resolution</label>
-  <alteryx-pluginwidget type="DropDown" id="graph.resolution" dataName="graph.resolution">
-    <alteryx-option uiobject="1x (96 dpi)" default="true">1x</alteryx-option>
-    <alteryx-option uiobject="2x (192 dpi)">2x</alteryx-option>
-    <alteryx-option uiobject="3x (288 dpi)">3x</alteryx-option>
-  </alteryx-pluginwidget>
+<legend>Configuration</legend>
+
+<!--  Model Name  -->
+<label for="Model Name">Model Name</label>
+<alteryx-pluginwidget type="TextBox" password="false" id="Model Name" dataName="Model Name"></alteryx-pluginwidget>
+
+
+<!--  Y Var  -->
+<label for="Y Var">Select the target variable</label>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="Y Var" dataName="Y Var"></alteryx-pluginwidget>
+
+
+<!--  X Vars  -->
+<label for="X Vars">Select the predictor variables</label>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelectorMulti" inputNumber="0" connectionNumber="0" fieldType="All" id="X Vars" dataName="X Vars"></alteryx-pluginwidget>
+
+
+<!--  Link  -->
+<label for="Link">Model type</label>
+<alteryx-pluginwidget type="DropDown" id="Link" dataName="Link">
+  <alteryx-option uiobject="logit" default="true">logit</alteryx-option>
+  <alteryx-option uiobject="probit">probit</alteryx-option>
+  <alteryx-option uiobject="complementary log-log">complementary log-log</alteryx-option>
+</alteryx-pluginwidget>
+
+
+<!--  Use Weights  -->
+<label for="Use Weights"></label>
+<alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" default="false" id="Use Weights" dataName="Use Weights"></alteryx-pluginwidget>
+
+<div id='weight-vec'>
+<!--  Weight Vec  -->
+<label for="Weight Vec">Select the sampling weight field</label>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
+</div>
+
+<!--  graph.resolution  -->
+<label for="graph.resolution">Graph Resolution</label>
+<alteryx-pluginwidget type="DropDown" id="graph.resolution" dataName="graph.resolution">
+  <alteryx-option uiobject="1x (96 dpi)" default="true">1x</alteryx-option>
+  <alteryx-option uiobject="2x (192 dpi)">2x</alteryx-option>
+  <alteryx-option uiobject="3x (288 dpi)">3x</alteryx-option>
+</alteryx-pluginwidget>
+
 </fieldset>
 
   <script src="app.min.js" type="text/javascript"></script>
