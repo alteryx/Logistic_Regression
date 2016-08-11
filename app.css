@@ -1,0 +1,18 @@
+/* Be consistent with TextBox */
+.Select-control{
+  border-radius: 0px !important;
+}
+.Select{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.alteryx-checkbox-wrapper{
+  margin-left: -5px;
+}
+
+
+div.alteryx-toggle-switch-outer {
+  position: absolute;
+  right: 3px;
+}
