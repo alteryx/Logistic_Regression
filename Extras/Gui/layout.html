@@ -1,24 +1,26 @@
 <fieldset>
-<legend>Configuration</legend>
-<div class="tabs" id='header'>
-  <div class="tab is-tab-selected" data-page='basic' id='basic'>Basic</div>
-  <div class="tab" data-page='advanced' id='advanced'>Advanced</div>
-  <div class="tab" data-page='graphics' id='graphics'>Graphics</div>
-</div>
+<legend>Setup</legend>
 <div id='intro-div'>
   <button class='default-button primary' id='intro'>Guide Me</button>
 </div>
-<div class='page' id='page-basic'>
+<div class='page0 has-hint' id='page-basic'>
   <div id='mname'>{{ `Model Name` }}</div>
   <div id='yvar'>{{ `Y Var` }}</div>
   <div id='xvars'>{{ `X Vars` }}</div>
 </div>
-<div class='page' id='page-advanced'>
-  {{ `Link` }}
+</fieldset>
+<fieldset>
+<legend>Customize</legend>
+<div class="tabs" id='header'>
+  <div class="tab" data-page='advanced' id='advanced'>Advanced</div>
+  <div class="tab" data-page='graphics' id='graphics'>Graphics</div>
+</div>
+<div class='page has-hint' id='page-advanced'>
+  <div id='div-link'>{{ `Link` }}</div>
   {{ `Use Weights` }}
   <div id='weight-vec'>{{ `Weight Vec` }}</div>
 </div>
-<div class='page' id='page-graphics'>
+<div class='page has-hint' id='page-graphics'>
   {{ `graph.resolution` }}
 </div>
 </fieldset>
@@ -41,7 +43,8 @@ $('.tab').click(function(){
   var map_  = {
     "Model Name": 1,
     "Y Var": 2,
-    "X Vars": 3
+    "X Vars": 3,
+    "Link": 4
   }         
   var intro = introJs();
          intro.setOptions({
@@ -60,52 +63,24 @@ $('.tab').click(function(){
               {
                 element: document.querySelector("#xvars"),
                 intro: 'Choose the fields from the data stream you believe "cause" changes in the value of the target variable.'
+              },
+              {
+                element: document.querySelector("#div-link"),
+                intro: 'The link function.'
               }
             ],
             showStepNumbers: false,
             showBullets: false,
-            disableInteraction: true
+            disableInteraction: false
           });
       function startIntro(){
           console.log('starting intro')
           intro.start();
       }
       $('#intro').click(startIntro)
-      $('.page label').click(function(){
+      $('.has-hint label').click(function(){
         console.log('clicked...')
         var step = map_[$(this).attr('for')]
         intro.goToStep(step).start()
       })
 </script>
-<style>
-  #header{
-    margin-bottom: 20px;
-  }
-  .tabs {
-  /**
-   * Setting display to flex makes this container lay
-   * out its children using flexbox, the exact same
-   * as in the above "Stepper input" example.
-   */
-  display: flex;
-
-  border-bottom: 1px solid #D7DBDD;
-}
-
-  .tab {
-    cursor: pointer;
-    padding: 5px 30px;
-    color: #16A2D7;
-    font-size: 12px;
-    border-bottom: 2px solid transparent;
-  }
-
-  .tab.is-tab-selected {
-    border-bottom-color: #4EBBE4;
-  }
-  #intro-div{
-    position: fixed;
-    bottom: 5px;
-    display: hidden;
-  }
-</style>
