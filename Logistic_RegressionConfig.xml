@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <AlteryxJavaScriptPlugin>
   <EngineSettings EngineDLL="Macro" EngineDLLEntryPoint="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc" SDKVersion="10.1"/>
-  <GuiSettings Html="Logistic_RegressionGui.html" Icon="Logistic_RegressionIcon.png" SDKVersion="10.1" Help="AlteryxHelp:logistic">
+  <GuiSettings Html="Logistic_RegressionGui.html" Icon="Logistic_RegressionIcon.png" SDKVersion="10.1" Help="logistic.htm">
     <InputConnections>
       <Connection Name="Input" AllowMultiple="False" Optional="False" Type="Connection" Label=""/>
     </InputConnections>

@@ -1,1 +1,3 @@
 # Override Configuration Properties
+"Use Weights":
+  showAsToggle: "True"
