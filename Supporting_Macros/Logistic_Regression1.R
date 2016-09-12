@@ -87,55 +87,7 @@ xdfLevels <- function(form, xdf) {
 	}
 	the.levels
 }
-prGetLevels <- function(x) {
-	x1 <- substr(x, 2, nchar(x) - 1)
-	x2 <- gsub(" ", "", unlist(strsplit(x1, ",")))
-	gsub("\"", "", x2)
-}
-AlteryxReportMadLib <- function (ml.obj, null.deviance = NULL) {
-    if (!(class(ml.obj) %in% c("logregr.madlib"))) 
-        stop("The object provided is not an appropriate MADlib class object")
-    the.call <- paste(capture.output(ml.obj$call), collapse = "")
-    the.call = gsub("\\s\\s", "", the.call)
-	# The coefficients and related estimates need to be done by class
-	if (class(ml.obj) == "logregr.madlib") {
-		param.names <- names(ml.obj$coef)
-		the.coefs <- format(ml.obj$coef, digits = 4)
-		the.se <- format(ml.obj$std_err, digits = 4)
-		the.t <- format(ml.obj$z_stats, digits = 4)
-		p.stars <- pStars(ml.obj$p_values)
-		p.stars$p_txt <- as.character(p.stars$p_txt)
-		p.stars$Stars <- as.character(p.stars$Stars)
-		p.stars$Stars[is.na(ml.obj$coef)] <- " "
-	} else {
-	}
-	coef.est <- paste(param.names, the.coefs, the.se, the.t, p.stars$p_txt, p.stars$Stars, sep = "|")
-    coef.lab <- "Coefficients:"
-	# Model summary
-	if (class(ml.obj) == "logregr.madlib") {
-		dispersion <- "(Dispersion parameter for binomial taken to be 1)"
-		#df.null <- rx.obj$nValidObs - 1
-		#df.mod <- rx.obj$nValidObs - length(param.names)
-		#null.dev <- paste("Null deviance:", format(null.deviance, digits = 5), "on", df.null, "degrees of freedom")
-		#mod.dev <- paste("Residual deviance:", format(rx.obj$deviance, digits = 5), "on", df.mod, "degrees of freedom")
-		#McF.R2 <- 1 - (rx.obj$deviance/null.deviance)
-		#mod.fit <- paste("McFadden R-Squared: ", format(McF.R2, digits = 4), ", AIC: ", format(rx.obj$aic, digits = 4), sep = "")
-		aic <- 2*length(the.coefs) - 2*ml.obj$log_likelihood
-		mod.fit <- paste("AIC: ", format(aic, digits = 4), "  Log Likelihood: ", format(ml.obj$log_likelihood, digits = 4), sep = "")
-		fisher.it <- paste("Number of IRLS iterations:", ml.obj$num_iterations)
-		sum.grps <- c("Call", "Coef_Label", rep("Coef_Est", length(coef.est)), "Dispersion", "Fit_Stats", "Fisher")
-		sum.out <- c(the.call, coef.lab, coef.est, dispersion, mod.fit, fisher.it)
-		summary.df <- data.frame(grp = sum.grps, out = sum.out)
-		summary.df$grp <- as.character(summary.df$grp)
-		summary.df$out <- as.character(summary.df$out)
-	} else {
-	}
-	json.str <- paste("\"", names(ml.obj$coef), "\":\"", ml.obj$coef, "\"", sep = "", collapse = ", ")
-	json.str <- paste("{", json.str, "}")
-	coef.str <- c("Coef_JSON", json.str)
-	summary.df <- rbind(summary.df, coef.str)
-	summary.df
-}
+
 #########
 # Determine if the "car" package is needed and, if it is, determine if it is
 # available.
@@ -152,7 +104,6 @@ library(rjson)
 # Determine if a compute context is being used (currently supports XDF files and
 # Pivotal/Postgresql databases
 is.XDF <- FALSE
-is.Pivotal <- FALSE
 meta.data <- read.AlteryxMetaInfo("#1")
 the.source <- as.character(meta.data$Source)
 if (all(substr(the.source, 3, 9) == "Context")) {
@@ -161,25 +112,11 @@ if (all(substr(the.source, 3, 9) == "Context")) {
 		is.XDF <- TRUE
 		xdf.path <- meta.list$File.Loc
 	} else {
-		if (meta.list$Context == "Pivotal") {
-			is.Pivotal <- TRUE
-			suppressWarnings(loadPackages(c("DBI", "RPostgreSQL", "PivotalR")))
-			# Setup the connection parameters
-			the.host <- meta.list$Host
-			the.port <- meta.list$Port
-			the.db <- meta.list$DB_Name
-			the.user <- meta.list$User
-			the.pwd <- meta.list$Password
-			table.name <- meta.list$Table
-			# Create the database connection
-			the.conn <- db.connect(dbname = the.db, host = the.host, port = the.port, user = the.user, password = the.pwd)
-		} else {
-			stop.Alteryx("At this time only XDF and Pivotal/Postgresql metadata streams are supported.")
-		}
+		stop.Alteryx("At this time only XDF metadata streams are supported.")
 	}
 }
 # Create an is.OSR field that indicates open source R is being used
-is.OSR <- !is.XDF && !is.Pivotal
+is.OSR <- !is.XDF 
 # Read the data / metadata stream into R
 the.data <- read.Alteryx("#1")
 # Get the field names
@@ -192,7 +129,7 @@ has.survey <- "survey" %in% row.names(installed.packages())
 used.weights <- '%Question.Use Weights%' == "True"
 # Adjust the set of field names to remove the weight field if weights are used
 if (used.weights) {
-	use.probs <- '%Question.samp.probs%' == "True"
+#	use.probs <- '%Question.samp.probs%' == "True"
 	the.weights <- names.x.vars[length(names.x.vars)]
 	names.x.vars <- names.x.vars[1:(length(names.x.vars) - 1)]
 	if (has.survey && is.OSR) {
@@ -203,7 +140,7 @@ if (used.weights) {
 			weight.arg <- paste(", pweights = '", the.weights, "'", sep = "")
 		} else {
 			if (is.Pivotal) {
-				AlteryxMessage("The use of sampling weights is not supported for a model estimated in a Pivotal/Postgresql database. A model without weights is estimated instead.", iType = 2, iPriority = 3)
+				AlteryxMessage("The use of sampling weights is not supported for a model estimated in a Postgresql database. A model without weights is estimated instead.", iType = 2, iPriority = 3)
 			} else {
 				AlteryxMessage("The survey package, needed to use sampling weights, is not installed. A model without weights is estimated instead.", iType = 2, iPriority = 3)
 			}
@@ -222,14 +159,7 @@ if (is.XDF) {
 	if(len.target != 2)
 		stop.Alteryx("The target variable must only have two unique values.")
 }
-if (is.Pivotal) {
-	the.table <- db.data.frame(table.name, conn.id = the.conn, verbose = FALSE)
-	ylevels1 <- eval(parse(text = paste('summary(the.table, target.cols = "', name.y.var, '")$most_frequent_values', sep = "")))
-	ylevels <- prGetLevels(ylevels1)
-	if (length(ylevels) != 2)
-		stop.Alteryx("The target variable must only have two unique values.")
-	ref.level <- ylevels[order(ylevels)][2]
-}
+
 # Create the base right-hand side of the formula
 x.vars <- paste(names.x.vars, collapse = " + ")
 # Obtain and prep other user inputs
@@ -237,21 +167,12 @@ model.name <- '%Question.Model Name%'
 model.name <- validName(model.name)
 # Create the elements of the model call
 no.constant <- '%Question.Omit Constant%'
-if (is.Pivotal) {
-	new.y.var <- paste(name.y.var, "boolean", sep = "_")
-	eval(parse(text = paste('the.table$', new.y.var, ' <- the.table$', name.y.var, ' == "', ref.level, '"', sep = '')))
-	if(no.constant == "True") {
-		the.formula <- paste(new.y.var, '~ -1 +', x.vars)
-	} else {
-		the.formula <- paste(new.y.var, '~', x.vars)
-	}
+if(no.constant == "True") {
+  the.formula <- paste(name.y.var, '~ -1 +', x.vars)
 } else {
-	if(no.constant == "True") {
-		the.formula <- paste(name.y.var, '~ -1 +', x.vars)
-	} else {
-		the.formula <- paste(name.y.var, '~', x.vars)
-	}
+  the.formula <- paste(name.y.var, '~', x.vars)
 }
+
 # The call elements when the input is a true data frame (not a schema stream)
 if (is.OSR) {
 	the.link <- '%Question.Link%'
@@ -276,11 +197,7 @@ if (is.XDF) {
 	if (!used.weights)
 		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', xdf.path, '")', sep = "")))
 }
-if (is.Pivotal) {
-	model.call <- paste(model.name, ' <- madlib.glm(', the.formula, ', data = the.table, family = "binomial", na.action = na.omit)', sep = "")
-	if ('%Question.Link%' != "logit")
-		AlteryxMessage("Only the logit link function is available for Pivotal/Postgresql in-database logistic regression models, and is being used.", iType = 2, iPriority = 3)
-}
+
 # Model estimation
 print(model.call)
 eval(parse(text = model.call))
@@ -311,10 +228,7 @@ if (is.XDF) {
 	singular <- FALSE
 	glm.out <- AlteryxReportRx(the.model, null.model$deviance)
 }
-if (is.Pivotal) {
-	singular <- FALSE
-	glm.out <- AlteryxReportMadLib(the.model)
-}
+
 # Put the name of the model as the first entry in the key entry in the
 # key-value table.
 glm.out <- rbind(c("Model_Name", model.name), glm.out)
@@ -371,16 +285,3 @@ names(the.obj) <- c("Name", "Object")
 #print(levels.json)
 #write.Alteryx(the.obj, source = "Hello World", nOutput = 3)
 write.Alteryx(the.obj, nOutput = 3)
-# Clean-up any database connections
-if (is.Pivotal) {
-	all.tables <- db.objects(conn.id = the.conn)
-	madlib.tables <- all.tables[substr(all.tables, 1, 18) == "public.madlib_temp"]
-	if (length(madlib.tables) > 0) {
-		madlib.tables <- substr(madlib.tables, 8, nchar(madlib.tables))
-		for (i in madlib.tables) {
-			this.table <- i
-			delete(x = this.table, conn.id = the.conn, is.temp = FALSE)
-		}
-	}
-	db.disconnect(conn.id = the.conn, verbose = FALSE)
-}
