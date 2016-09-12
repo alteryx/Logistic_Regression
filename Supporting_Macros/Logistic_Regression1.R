@@ -129,7 +129,6 @@ has.survey <- "survey" %in% row.names(installed.packages())
 used.weights <- '%Question.Use Weights%' == "True"
 # Adjust the set of field names to remove the weight field if weights are used
 if (used.weights) {
-#	use.probs <- '%Question.samp.probs%' == "True"
 	the.weights <- names.x.vars[length(names.x.vars)]
 	names.x.vars <- names.x.vars[1:(length(names.x.vars) - 1)]
 	if (has.survey && is.OSR) {
