@@ -16,3 +16,45 @@ div.alteryx-toggle-switch-outer {
   position: absolute;
   right: 3px;
 }
+
+#header{
+  margin-bottom: 20px;
+}
+.tabs {
+  /**
+   * Setting display to flex makes this container lay
+   * out its children using flexbox, the exact same
+   * as in the above "Stepper input" example.
+   */
+  display: flex;
+
+  border-bottom: 1px solid #D7DBDD;
+}
+
+.tab {
+  cursor: pointer;
+  padding-left: 10px; 
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 50px;
+  /* color: #16A2D7; */
+  color: #000000;
+  font-size: 12px;
+  /* border-bottom: 2px solid transparent; */
+  background: #DBDBDB;
+}
+.tab:hover {
+  background: #D8D8D8;
+}
+
+.tab.is-tab-selected {
+  /* border-bottom-color: #4EBBE4; */
+  background: #1691c6;
+  color: white;
+  font: "Segoe UI Semibold";
+}
+#intro-div{
+  position: fixed;
+  bottom: 5px;
+  display: hidden;
+}
