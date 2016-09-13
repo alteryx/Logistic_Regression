@@ -78,6 +78,8 @@ AlteryxReportRx <- function (rx.obj, null.deviance = NULL) {
 	summary.df <- rbind(summary.df, coef.str)
 	summary.df
 }
+
+
 xdfLevels <- function(form, xdf) {
 	factors <- rxSummary(form, data = xdf)$categorical
 	the.names <- sapply(factors, function(x) names(x)[1])
@@ -120,20 +122,31 @@ inputs <- list(
 
 
 library(rjson)
-# Determine if a compute context is being used (currently supports XDF files
-is.XDF <- FALSE
-the.source <- as.character(inputs$meta.data$Source)
-if (all(substr(the.source, 3, 9) == "Context")) {
-	meta.list <- fromJSON(the.source[1])
-	if (meta.list$Context == "XDF") {
-		is.XDF <- TRUE
-		xdf.path <- meta.list$File.Loc
-	} else {
-		stop.Alteryx("At this time only XDF metadata streams are supported.")
-	}
+#' @param metaData Meta data of input data stream from Alteryx.
+#' @return A list of flag and path, where: \cr
+#' "flag" indicates if the user uses Revolution R \cr
+#' "path" the path of XDF \cr
+checkXDF <- function(metaData) {
+  flag <- FALSE
+  path <- ""
+  the.source <- as.character(metaData$Source)
+  if (all(substr(the.source, 3, 9) == "Context")) {
+    meta.list <- fromJSON(the.source[1])
+    if (meta.list$Context == "XDF") {
+      flag <- TRUE
+      path <- meta.list$File.Loc
+    } else {
+      stop.Alteryx("At this time only XDF metadata streams are supported.")
+    }
+  }
+  return(list(flag = flag, path = path))
 }
+
+XDFInfo <- checkXDF(inputs$meta.data)
+
+
 # Create an is.OSR field that indicates open source R is being used
-is.OSR <- !is.XDF 
+is.OSR <- !XDFInfo$flag 
 
 # Get the field names
 name.y.var <- names(inputs$the.data)[1]
@@ -153,7 +166,7 @@ if (config$used.weights) {
 		library(survey)
 		the.design <- eval(parse(text = paste("svydesign(ids = ~1, weights = ~", the.weights, ", data = inputs$the.data)", sep = "")))
 	} else {
-		if (is.XDF) {
+		if (XDFInfo$flag) {
 			weight.arg <- paste(", pweights = '", the.weights, "'", sep = "")
 		} else {
 			if (is.Pivotal) {
@@ -171,8 +184,8 @@ if (name.y.var %in% names.x.vars)
 # Make sure the target is binary and get its levels if the context is Pivotal
 if (is.OSR && length(unique(inputs$the.data[,1])) != 2)
 	stop.Alteryx("The target variable must only have two unique values.")
-if (is.XDF) {
-	len.target <- eval(parse(text = paste("length(rxGetVarInfo(xdf.path)$", name.y.var, "$levels)", sep = "")))
+if (XDFInfo$flag) {
+	len.target <- eval(parse(text = paste("length(rxGetVarInfo(XDFInfo$path)$", name.y.var, "$levels)", sep = "")))
 	if(len.target != 2)
 		stop.Alteryx("The target variable must only have two unique values.")
 }
@@ -199,16 +212,16 @@ if (is.OSR) {
 	if (config$used.weights && has.survey)
 		model.call <- paste(config$model.name, ' <- svyglm(', the.formula, ', family = ', the.family, ', design = the.design)', sep="")
 }
-if (is.XDF) {
-	model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', xdf.path, '", dropFirst = TRUE)', sep = "")
+if (XDFInfo$flag) {
+	model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', XDFInfo$path, '", dropFirst = TRUE)', sep = "")
 	if ('%Question.Link%' != "logit")
 		AlteryxMessage("Only the logit link function is available for XDF files, and will be used.", iType = 2, iPriority = 3)
 	if (config$used.weights) {
-		model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', xdf.path, '", ', weight.arg, ', dropFirst = TRUE)', sep = "")
-		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', xdf.path, '", ', weight.arg, ')', sep = "")))
+		model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', XDFInfo$path, '", ', weight.arg, ', dropFirst = TRUE)', sep = "")
+		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', XDFInfo$path, '", ', weight.arg, ')', sep = "")))
 	}
 	if (!config$used.weights)
-		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', xdf.path, '")', sep = "")))
+		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', XDFInfo$path, '")', sep = "")))
 }
 
 # Model estimation
@@ -220,11 +233,11 @@ the.model <- eval(parse(text = config$model.name))
 if (is.OSR) {
 	ylevels <- levels(inputs$the.data[[1]])
 }
-if (is.XDF) {
-	target.info <- eval(parse(text = paste("rxSummary(~ ", name.y.var, ", data = xdf.path)$categorical", sep = "")))
+if (XDFInfo$flag) {
+	target.info <- eval(parse(text = paste("rxSummary(~ ", name.y.var, ", data = XDFInfo$path)$categorical", sep = "")))
 	the.model$yinfo <- list(levels = as.character(target.info[[1]][,1]), counts = target.info[[1]][,2])
 	ylevels <- the.model$yinfo$levels
-	the.model$xlevels <- eval(parse(text = paste("xdfLevels(~ ", x.vars, ", xdf.path)")))
+	the.model$xlevels <- eval(parse(text = paste("xdfLevels(~ ", x.vars, ", XDFInfo$path)")))
 }
 # When running the macro within Alteryx by itself, the line of code below
 # causes the model summary to be written to the ouput window. However, this
@@ -237,7 +250,7 @@ if (is.OSR) {
 	glm.out <- glm.out1$summary.df
 	singular <- glm.out1$singular
 }
-if (is.XDF) {
+if (XDFInfo$flag) {
 	singular <- FALSE
 	glm.out <- AlteryxReportRx(the.model, null.model$deviance)
 }
@@ -259,7 +272,7 @@ if (has.car && !singular && is.OSR) {
 	print(Anova(the.model, type="II")) # Write to the Output window
 	glm.out <- rbind(glm.out, Alteryx.ReportAnova(the.model))
 }
-if (singular && !is.XDF)
+if (singular && !XDFInfo$flag)
 	AlteryxMessage("Creation of the Analysis of Deviance table was surpressed due to singularities", iType = 2, iPriority = 3) 
 if (!is.OSR)
 	AlteryxMessage("Creation of the Analysis of Deviance tables was surpressed due to the use of an XDF file", iType = 2, iPriority = 3) 
