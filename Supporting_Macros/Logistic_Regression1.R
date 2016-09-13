@@ -1,3 +1,5 @@
+library(AlteryxPredictive)
+
 #########
 # Helper function
 AlteryxReportRx <- function (rx.obj, null.deviance = NULL) {
@@ -167,7 +169,7 @@ if (config$used.weights) {
 if (name.y.var %in% names.x.vars)
 	names.x.vars <- names.x.vars[names.x.vars != name.y.var]
 # Make sure the target is binary and get its levels if the context is Pivotal
-if (is.OSR && length(unique(the.data[,1])) != 2)
+if (is.OSR && length(unique(inputs$the.data[,1])) != 2)
 	stop.Alteryx("The target variable must only have two unique values.")
 if (is.XDF) {
 	len.target <- eval(parse(text = paste("length(rxGetVarInfo(xdf.path)$", name.y.var, "$levels)", sep = "")))
