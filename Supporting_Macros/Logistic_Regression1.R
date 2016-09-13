@@ -143,26 +143,19 @@ checkXDF <- function(metaData) {
 }
 
 XDFInfo <- checkXDF(inputs$meta.data)
-
-
 # Create an is.OSR field that indicates open source R is being used
 is.OSR <- !XDFInfo$flag 
 
 # Get the field names
 name.y.var <- names(inputs$the.data)[1]
 names.x.vars <- names(inputs$the.data)[-1]
-# Check to see if the survey package is available in cases where open source R
-# is being used with sampling/case weights
-has.survey <- "survey" %in% row.names(installed.packages())
-# Boolean if weights are used (NOTE: Need a weight type now)
-# used.weights <- '%Question.Use Weights%' == "True"
 
 # Adjust the set of field names to remove the weight field if weights are used
 if (config$used.weights) {
   # the weight is always the last column in the predictor dataframe
 	the.weights <- names.x.vars[length(names.x.vars)]
 	names.x.vars <- names.x.vars[1:(length(names.x.vars) - 1)]
-	if (has.survey && is.OSR) {
+	if (is.OSR) {
 		library(survey)
 		the.design <- eval(parse(text = paste("svydesign(ids = ~1, weights = ~", the.weights, ", data = inputs$the.data)", sep = "")))
 	} else {
@@ -209,7 +202,7 @@ if (is.OSR) {
 		the.family <- paste("quasibinomial(", config$the.link, ")", sep="")
 	model.call <- paste(config$model.name, ' <- glm(', the.formula, ', family = ', the.family, ', data = inputs$the.data)', sep="")
 	# The model call if a sampling weights are used in estimation
-	if (config$used.weights && has.survey)
+	if (config$used.weights)
 		model.call <- paste(config$model.name, ' <- svyglm(', the.formula, ', family = ', the.family, ', design = the.design)', sep="")
 }
 if (XDFInfo$flag) {
