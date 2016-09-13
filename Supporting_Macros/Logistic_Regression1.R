@@ -100,12 +100,27 @@ if(has.car) {
  
 #########
 # The core portion of the macro
+
+## Create two lists: "config" and "inputs" ----
+config <- list(
+  used.weights = checkboxInput('%Question.Use Weights%', FALSE),
+  model.name   = validName(textInput('%Question.Model Name%')),
+  # to be removed, since there's no interface tool called "Omit Constant%"
+  no.constant  = '%Question.Omit Constant%', 
+  the.link     = dropdownInput('%Question.Link%', "logit"),
+  resolution   = dropdownInput('%Question.graph.resolution%') 
+)
+
+inputs <- list(
+  meta.data = read.AlteryxMetaInfo("#1"),
+  the.data  = read.Alteryx("#1")
+)
+
+
 library(rjson)
-# Determine if a compute context is being used (currently supports XDF files and
-# Pivotal/Postgresql databases
+# Determine if a compute context is being used (currently supports XDF files
 is.XDF <- FALSE
-meta.data <- read.AlteryxMetaInfo("#1")
-the.source <- as.character(meta.data$Source)
+the.source <- as.character(inputs$meta.data$Source)
 if (all(substr(the.source, 3, 9) == "Context")) {
 	meta.list <- fromJSON(the.source[1])
 	if (meta.list$Context == "XDF") {
@@ -117,23 +132,24 @@ if (all(substr(the.source, 3, 9) == "Context")) {
 }
 # Create an is.OSR field that indicates open source R is being used
 is.OSR <- !is.XDF 
-# Read the data / metadata stream into R
-the.data <- read.Alteryx("#1")
+
 # Get the field names
-name.y.var <- names(the.data)[1]
-names.x.vars <- names(the.data)[-1]
+name.y.var <- names(inputs$the.data)[1]
+names.x.vars <- names(inputs$the.data)[-1]
 # Check to see if the survey package is available in cases where open source R
 # is being used with sampling/case weights
 has.survey <- "survey" %in% row.names(installed.packages())
 # Boolean if weights are used (NOTE: Need a weight type now)
-used.weights <- '%Question.Use Weights%' == "True"
+# used.weights <- '%Question.Use Weights%' == "True"
+
 # Adjust the set of field names to remove the weight field if weights are used
-if (used.weights) {
+if (config$used.weights) {
+  # the weight is always the last column in the predictor dataframe
 	the.weights <- names.x.vars[length(names.x.vars)]
 	names.x.vars <- names.x.vars[1:(length(names.x.vars) - 1)]
 	if (has.survey && is.OSR) {
 		library(survey)
-		the.design <- eval(parse(text = paste("svydesign(ids = ~1, weights = ~", the.weights, ", data = the.data)", sep = "")))
+		the.design <- eval(parse(text = paste("svydesign(ids = ~1, weights = ~", the.weights, ", data = inputs$the.data)", sep = "")))
 	} else {
 		if (is.XDF) {
 			weight.arg <- paste(", pweights = '", the.weights, "'", sep = "")
@@ -161,12 +177,9 @@ if (is.XDF) {
 
 # Create the base right-hand side of the formula
 x.vars <- paste(names.x.vars, collapse = " + ")
-# Obtain and prep other user inputs
-model.name <- '%Question.Model Name%'
-model.name <- validName(model.name)
+
 # Create the elements of the model call
-no.constant <- '%Question.Omit Constant%'
-if(no.constant == "True") {
+if(config$no.constant == "True") {
   the.formula <- paste(name.y.var, '~ -1 +', x.vars)
 } else {
   the.formula <- paste(name.y.var, '~', x.vars)
@@ -174,37 +187,36 @@ if(no.constant == "True") {
 
 # The call elements when the input is a true data frame (not a schema stream)
 if (is.OSR) {
-	the.link <- '%Question.Link%'
-	if(the.link == "complementary log-log")
-		the.link <- "cloglog"
-	the.family <- paste("binomial(", the.link, ")", sep="")
-	if (used.weights)
-		the.family <- paste("quasibinomial(", the.link, ")", sep="")
-	model.call <- paste(model.name, ' <- glm(', the.formula, ', family = ', the.family, ', data = the.data)', sep="")
+	if(config$the.link == "complementary log-log")
+		config$the.link <- "cloglog"
+	the.family <- paste("binomial(", config$the.link, ")", sep="")
+	if (config$used.weights)
+		the.family <- paste("quasibinomial(", config$the.link, ")", sep="")
+	model.call <- paste(config$model.name, ' <- glm(', the.formula, ', family = ', the.family, ', data = inputs$the.data)', sep="")
 	# The model call if a sampling weights are used in estimation
-	if (used.weights && has.survey)
-		model.call <- paste(model.name, ' <- svyglm(', the.formula, ', family = ', the.family, ', design = the.design)', sep="")
+	if (config$used.weights && has.survey)
+		model.call <- paste(config$model.name, ' <- svyglm(', the.formula, ', family = ', the.family, ', design = the.design)', sep="")
 }
 if (is.XDF) {
-	model.call <- paste(model.name, ' <- rxLogit(', the.formula, ', data = "', xdf.path, '", dropFirst = TRUE)', sep = "")
+	model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', xdf.path, '", dropFirst = TRUE)', sep = "")
 	if ('%Question.Link%' != "logit")
 		AlteryxMessage("Only the logit link function is available for XDF files, and will be used.", iType = 2, iPriority = 3)
-	if (used.weights) {
-		model.call <- paste(model.name, ' <- rxLogit(', the.formula, ', data = "', xdf.path, '", ', weight.arg, ', dropFirst = TRUE)', sep = "")
+	if (config$used.weights) {
+		model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', xdf.path, '", ', weight.arg, ', dropFirst = TRUE)', sep = "")
 		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', xdf.path, '", ', weight.arg, ')', sep = "")))
 	}
-	if (!used.weights)
+	if (!config$used.weights)
 		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', xdf.path, '")', sep = "")))
 }
 
 # Model estimation
 print(model.call)
 eval(parse(text = model.call))
-the.model <- eval(parse(text = model.name))
+the.model <- eval(parse(text = config$model.name))
 # Add the level labels for the target and predictors, along with the target
 # counts to the model object
 if (is.OSR) {
-	ylevels <- levels(the.data[[1]])
+	ylevels <- levels(inputs$the.data[[1]])
 }
 if (is.XDF) {
 	target.info <- eval(parse(text = paste("rxSummary(~ ", name.y.var, ", data = xdf.path)$categorical", sep = "")))
@@ -230,12 +242,12 @@ if (is.XDF) {
 
 # Put the name of the model as the first entry in the key entry in the
 # key-value table.
-glm.out <- rbind(c("Model_Name", model.name), glm.out)
+glm.out <- rbind(c("Model_Name", config$model.name), glm.out)
 # Add the type "binomial" to the key-value pair table if non-weighted
-if (!used.weights || !is.OSR)
+if (!config$used.weights || !is.OSR)
 	glm.out <- rbind(glm.out, c("Model_Type", "binomial"))
 # Add the type "quasibinomial" to the key-value pair table if weights used
-if (used.weights && is.OSR)
+if (config$used.weights && is.OSR)
 	glm.out <- rbind(glm.out, c("Model_Type", "quasibinomial"))
 # If the ANOVA table is requested then create it and add its results to the
 # key-value table. Its creation will be surpressed if the car package isn't
@@ -254,8 +266,8 @@ write.Alteryx(glm.out)
 # Prepare the basic regression diagnostic plots if it is requested
 # and their isn't the combination of singularities and the use of
 # sampling weights or 
-if (!(singular && used.weights) && is.OSR) {
-	whr <- graphWHR(inches = "True", in.w = 6, in.h = 6, resolution ='%Question.graph.resolution%')
+if (!(singular && config$used.weights) && is.OSR) {
+	whr <- graphWHR(inches = "True", in.w = 6, in.h = 6, config$resolution)
 	AlteryxGraph(2, width = whr[1], height = whr[2], res = whr[3], pointsize = 9)
 	par(mfrow=c(2,2), mar=c(5, 4, 2, 2) + 0.1)
 	plot(the.model)
@@ -276,7 +288,7 @@ if (!(singular && used.weights) && is.OSR) {
 # Create a list with the model object and its name and write it out via
 # the third output
 the.obj <- vector(mode="list", length=2)
-the.obj[[1]] <- c(model.name)
+the.obj[[1]] <- c(config$model.name)
 the.obj[[2]] <- list(the.model)
 names(the.obj) <- c("Name", "Object")
 #levels.list <- list(levels = ylevels)
