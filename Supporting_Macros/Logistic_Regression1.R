@@ -108,8 +108,6 @@ if(has.car) {
 config <- list(
   used.weights = checkboxInput('%Question.Use Weights%', FALSE),
   model.name   = validName(textInput('%Question.Model Name%')),
-  # to be removed, since there's no interface tool called "Omit Constant%"
-  no.constant  = '%Question.Omit Constant%', 
   the.link     = dropdownInput('%Question.Link%', "logit"),
   resolution   = dropdownInput('%Question.graph.resolution%') 
 )
@@ -180,11 +178,7 @@ if (XDFInfo$flag) {
 x.vars <- paste(names.x.vars, collapse = " + ")
 
 # Create the elements of the model call
-if(config$no.constant == "True") {
-  the.formula <- paste(name.y.var, '~ -1 +', x.vars)
-} else {
-  the.formula <- paste(name.y.var, '~', x.vars)
-}
+the.formula <- paste(name.y.var, '~', x.vars)
 
 # The call elements when the input is a true data frame (not a schema stream)
 if (is.OSR) {
