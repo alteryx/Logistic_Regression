@@ -101,10 +101,9 @@ if(has.car) {
 } else {
 	warning("Unable to find the car package")
 }
+# checkPackage("car", 2)
  
 #########
-# The core portion of the macro
-
 ## Create two lists: "config" and "inputs" ----
 config <- list(
   used.weights = checkboxInput('%Question.Use Weights%', FALSE),
@@ -121,6 +120,7 @@ inputs <- list(
 )
 
 
+## The core portion of the macro ----
 library(rjson)
 #' @param metaData Meta data of input data stream from Alteryx.
 #' @return A list of flag and path, where: \cr
@@ -146,15 +146,15 @@ XDFInfo <- checkXDF(inputs$meta.data)
 # Create an is.OSR field that indicates open source R is being used
 is.OSR <- !XDFInfo$flag 
 
-# Get the field names
-name.y.var <- names(inputs$the.data)[1]
-names.x.vars <- names(inputs$the.data)[-1]
+
+var_names <- getNamesFromOrdered(names(inputs$the.data), config$used.weights)
+name.x.vars <- var_names$x
+name.y.var <- var_names$y
+the.weights <- var_names$w
+
 
 # Adjust the set of field names to remove the weight field if weights are used
 if (config$used.weights) {
-  # the weight is always the last column in the predictor dataframe
-	the.weights <- names.x.vars[length(names.x.vars)]
-	names.x.vars <- names.x.vars[1:(length(names.x.vars) - 1)]
 	if (is.OSR) {
 		library(survey)
 		the.design <- eval(parse(text = paste("svydesign(ids = ~1, weights = ~", the.weights, ", data = inputs$the.data)", sep = "")))
@@ -162,18 +162,11 @@ if (config$used.weights) {
 		if (XDFInfo$flag) {
 			weight.arg <- paste(", pweights = '", the.weights, "'", sep = "")
 		} else {
-			if (is.Pivotal) {
-				AlteryxMessage("The use of sampling weights is not supported for a model estimated in a Postgresql database. A model without weights is estimated instead.", iType = 2, iPriority = 3)
-			} else {
-				AlteryxMessage("The survey package, needed to use sampling weights, is not installed. A model without weights is estimated instead.", iType = 2, iPriority = 3)
-			}
+			AlteryxMessage("The survey package, needed to use sampling weights, is not installed. A model without weights is estimated instead.", iType = 2, iPriority = 3)
 		}
 	}
 }
-# Make sure that the target variable is not included in the set of
-# predictor variables. If it is, then remove it from the set.
-if (name.y.var %in% names.x.vars)
-	names.x.vars <- names.x.vars[names.x.vars != name.y.var]
+
 # Make sure the target is binary and get its levels if the context is Pivotal
 if (is.OSR && length(unique(inputs$the.data[,1])) != 2)
 	stop.Alteryx("The target variable must only have two unique values.")
