@@ -15,12 +15,12 @@ Logistic_Regression
 </head>
 <body>
     
-<fieldset>
-<legend>Setup</legend>
-<div id='intro-div'>
-  <button class='default-button primary' id='intro'>Guide Me</button>
-</div>
-<div class='page0 has-hint' id='page-basic'>
+<div class='page has-hint' id='page-basic'>
+  <fieldset>
+  <legend>Setup</legend>
+  <div id='intro-div'>
+    <button class='default-button primary' id='intro'>Guide Me</button>
+  </div>
   <div id='mname'>
 <!--  Model Name  -->
 <label for="Model Name">Model Name</label>
@@ -36,16 +36,22 @@ Logistic_Regression
 <label for="X Vars">Select the predictor variables</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelectorMulti" inputNumber="0" connectionNumber="0" fieldType="All" id="X Vars" dataName="X Vars"></alteryx-pluginwidget>
 </div>
+  <button class='default-button' onclick="switchToCustomize()" id='switch-to-customize'>Customize</button>
 </div>
 </fieldset>
-<fieldset>
-<legend>Customize</legend>
-<div class="tabs" id='header'>
-  <div class="tab" data-page='advanced' id='advanced'>Advanced</div>
-  <div class="tab" data-page='graphics' id='graphics'>Graphics</div>
-</div>
-<div class='page has-hint' id='page-advanced'>
-  <div id='div-link'>
+<div class='page' id='page-customize'>
+  <fieldset>
+  <legend>Customize</legend>
+  <div class="tabs" id='header'>
+    <div class="tab is-tab-selected" data-page='advanced' id='advanced'>
+      Advanced
+    </div>
+    <div class="tab" data-page='graphics' id='graphics'>
+      Graphics
+    </div>
+  </div>
+  <div class='tabpage has-hint' id='tabpage-advanced'>
+    <div id='div-link'>
 <!--  Link  -->
 <label for="Link">Model type</label>
 <alteryx-pluginwidget type="DropDown" id="Link" dataName="Link">
@@ -54,7 +60,7 @@ Logistic_Regression
   <alteryx-option uiobject="complementary log-log">complementary log-log</alteryx-option>
 </alteryx-pluginwidget>
 </div>
-  
+    
 <!--  Use Weights  -->
 <alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" default="false" showAsToggle="True" id="Use Weights" dataName="Use Weights"></alteryx-pluginwidget>
 
@@ -63,9 +69,9 @@ Logistic_Regression
 <label for="Weight Vec">Select the sampling weight field</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
 </div>
-</div>
-<div class='page has-hint' id='page-graphics'>
-  
+ </div>
+  <div class='tabpage has-hint' id='tabpage-graphics'>
+    
 <!--  graph.resolution  -->
 <label for="graph.resolution">Graph Resolution</label>
 <alteryx-pluginwidget type="DropDown" id="graph.resolution" dataName="graph.resolution">
@@ -74,16 +80,22 @@ Logistic_Regression
   <alteryx-option uiobject="3x (288 dpi)">3x</alteryx-option>
 </alteryx-pluginwidget>
 
-</div>
+  </div>
 </fieldset>
 <script>
-$('.page').hide()
+function switchToCustomize(){
+  $('#page-basic').hide()
+  $('#page-customize').show()
+  $(".tabpage").hide()
+  $('#tabpage-advanced').show()
+}
+$('#page-customize').hide()
 $('#page-basic').show()
 $('#intro').show()
 $('.tab').click(function(){
-  $('.page').hide()
+  $('.tabpage').hide()
   var activePage = $(this).data('page')
-  $('#page-' + activePage).show()
+  $('#tabpage-' + activePage).show()
   $('.tab').removeClass('is-tab-selected')
   $('#' + activePage).addClass('is-tab-selected')
 })

@@ -58,3 +58,8 @@ div.alteryx-toggle-switch-outer {
   bottom: 5px;
   display: hidden;
 }
+#switch-to-customize{
+  position: absolute;
+  right: 8px;
+  margin-top: 5px;
+}
