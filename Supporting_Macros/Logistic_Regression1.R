@@ -103,6 +103,9 @@ config <- list(
   resolution   = dropdownInput('%Question.graph.resolution%') 
 )
 
+if(config$the.link == "complementary log-log")
+  config$the.link <- "cloglog"
+
 inputs <- list(
   meta.data = read.AlteryxMetaInfo("#1"),
   the.data  = read.Alteryx("#1")
@@ -147,12 +150,8 @@ if (config$used.weights) {
 	if (is.OSR) {
 		library(survey)
 		the.design <- eval(parse(text = paste("svydesign(ids = ~1, weights = ~", the.weights, ", data = inputs$the.data)", sep = "")))
-	} else {
-		if (XDFInfo$flag) {
-			weight.arg <- paste(", pweights = '", the.weights, "'", sep = "")
-		} else {
-			AlteryxMessage("The survey package, needed to use sampling weights, is not installed. A model without weights is estimated instead.", iType = 2, iPriority = 3)
-		}
+	} else if (XDFInfo$flag) {
+			weight.arg <- paste(", pweights = '", the.weights, "'", sep = "")	 
 	}
 }
 
@@ -173,8 +172,6 @@ the.formula <- paste(name.y.var, '~', x.vars)
 
 # The call elements when the input is a true data frame (not a schema stream)
 if (is.OSR) {
-	if(config$the.link == "complementary log-log")
-		config$the.link <- "cloglog"
 	the.family <- paste("binomial(", config$the.link, ")", sep="")
 	if (config$used.weights)
 		the.family <- paste("quasibinomial(", config$the.link, ")", sep="")
