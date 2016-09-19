@@ -92,16 +92,7 @@ xdfLevels <- function(form, xdf) {
 	the.levels
 }
 
-#########
-# Determine if the "car" package is needed and, if it is, determine if it is
-# available.
-has.car <- "car" %in% row.names(installed.packages())
-if(has.car) {
-	library(car)
-} else {
-	warning("Unable to find the car package")
-}
-# checkPackage("car", 2)
+library(car)
  
 #########
 ## Create two lists: "config" and "inputs" ----
