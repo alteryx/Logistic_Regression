@@ -1,116 +1,53 @@
+#' ---
+#' title: My Macro
+#' author: Dan Putler, Kuo Liu, Ramnath Vaidyanathan
+#' ---
+
+#' ## Read
+#' 
+#' The first step is to read configuration and inputs that stream in.
+#' 
+#' ### Configuration
+#' 
+#' 
+## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
 library(AlteryxPredictive)
-
-#########
-# Helper function
-AlteryxReportRx <- function (rx.obj, null.deviance = NULL) {
-    if (!(class(rx.obj) %in% c("rxLinMod","rxLogit","rxGlm"))) 
-        stop("The object provided is not an appropriate RevoScaleR class object")
-    the.call <- paste(capture.output(rx.obj$call), collapse = "")
-    the.call = gsub("\\s\\s", "", the.call)
-	# The coefficients and related estimates need to be done by class
-	if (class(rx.obj) == "rxLinMod") {
-		param.names <- attributes(rx.obj$coefficients)$dimnames[[1]]
-		coefs1 <- rx.obj$coefficients[,1]
-		the.coefs <- format(coefs1, digits = 4)
-		the.coefs[is.na(coefs1)] <- "Dropped"
-		the.se <- format(rx.obj$coef.std.error[,1], digits = 4)
-		the.se[is.na(coefs1)] <- "Dropped"
-		the.t <- format(rx.obj$coef.t.value[,1], digits = 4)
-		the.t[is.na(coefs1)] <- "Dropped"
-		p.stars <- pStars(rx.obj$coef.p.value[,1])
-		p.stars$p_txt <- as.character(p.stars$p_txt)
-		p.stars$p_txt[is.na(coefs1)] <- "Dropped"
-		p.stars$Stars <- as.character(p.stars$Stars)
-		p.stars$Stars[is.na(coefs1)] <- " "
-	} else {
-		param.names <- names(rx.obj$coefficients)
-		the.coefs <- format(rx.obj$coefficients, digits = 4)
-		the.coefs[is.na(rx.obj$coefficients)] <- "Dropped"
-		the.se <- format(rx.obj$coef.std.error, digits = 4)
-		the.se[is.na(rx.obj$coefficients)] <- "Dropped"
-		the.t <- format(rx.obj$coef.t.value, digits = 4)
-		the.t[is.na(rx.obj$coefficients)] <- "Dropped"
-		p.stars <- pStars(rx.obj$coef.p.value)
-		p.stars$p_txt <- as.character(p.stars$p_txt)
-		p.stars$p_txt[is.na(rx.obj$coefficients)] <- "Dropped"
-		p.stars$Stars <- as.character(p.stars$Stars)
-		p.stars$Stars[is.na(rx.obj$coefficients)] <- " "
-	}
-	coef.est <- paste(param.names, the.coefs, the.se, the.t, p.stars$p_txt, p.stars$Stars, sep = "|")
-    coef.lab <- "Coefficients:"
-    omitted <- names(rx.obj$aliased)[rx.obj$aliased]
-    if (length(omitted) > 0)
-        coef.lab <- paste(coef.lab, " (", length(omitted), " not defined because of singularities)", sep = "")
-	# Model summary, slightly different for glm based objects versus lm objects
-	if (class(rx.obj) != "rxLinMod") {
-		if (class(rx.obj) == "rxGlm")
-			dispersion <- paste("(Dispersion parameter for ", rx.obj$family$family, " taken to be ", rx.obj$dispersion, ")", sep = "")
-		if (class(rx.obj) == "rxLogit")
-			dispersion <- "(Dispersion parameter for binomial taken to be 1)"
-		df.null <- rx.obj$nValidObs - 1
-		df.mod <- rx.obj$nValidObs - length(param.names)
-		null.dev <- paste("Null deviance:", format(null.deviance, digits = 5), "on", df.null, "degrees of freedom")
-		mod.dev <- paste("Residual deviance:", format(rx.obj$deviance, digits = 5), "on", df.mod, "degrees of freedom")
-		McF.R2 <- 1 - (rx.obj$deviance/null.deviance)
-		mod.fit <- paste("McFadden R-Squared: ", format(McF.R2, digits = 4), ", AIC: ", format(rx.obj$aic, digits = 4), sep = "")
-		fisher.it <- paste("Number of IRLS iterations:", rx.obj$iter)
-		sum.grps <- c("Call", "Coef_Label", rep("Coef_Est", length(coef.est)), "Dispersion", rep("Fit_Stats", 3), "Fisher")
-		sum.out <- c(the.call, coef.lab, coef.est, dispersion, null.dev, mod.dev, mod.fit, fisher.it)
-		summary.df <- data.frame(grp = sum.grps, out = sum.out)
-		summary.df$grp <- as.character(summary.df$grp)
-		summary.df$out <- as.character(summary.df$out)
-	} else {
-		resid.se <- paste("Residual standard error:", format(rx.obj$sigma, digits = 5), "on", rx.obj$df[2], "degrees of freedom")
-		r.sq <- paste("Multiple R-squared: ", format(rx.obj$r.squared, digits = 4), ", Adjusted R-Squared: ", format(rx.obj$adj.r.squared, 
-        digits = 4), sep = "")
-		p.f <- format(rx.obj$f.pvalue, digits = 4)
-		p.f[rx.obj$f.pvalue < 2.2e-16] <- "< 2.2e-16"
-		f.stat <- paste("F-statistic: ", format(rx.obj$fstatistic$value, digits = 4), " on ", as.integer(rx.obj$fstatistic$numdf), " and ", as.integer(rx.obj$fstatistic$dendf), " DF, p-value: ", p.f, sep = "")
-		sum.grps <- c("Call", "Coef_Label", rep("Coef_Est", length(coef.est)), rep("Fit_Stats", 3))
-		sum.out <- c(the.call, coef.lab, coef.est, resid.se, r.sq, f.stat)
-		summary.df <- data.frame(grp = sum.grps, out = sum.out)
-		summary.df$grp <- as.character(summary.df$grp)
-		summary.df$out <- as.character(summary.df$out)
-	}
-	json.str <- paste("\"", names(rx.obj$coefficients), "\":\"", rx.obj$coefficients, "\"", sep = "", collapse = ", ")
-	json.str <- paste("{", json.str, "}")
-	coef.str <- c("Coef_JSON", json.str)
-	summary.df <- rbind(summary.df, coef.str)
-	summary.df
-}
-
-
-xdfLevels <- function(form, xdf) {
-	factors <- rxSummary(form, data = xdf)$categorical
-	the.names <- sapply(factors, function(x) names(x)[1])
-	if (length(the.names) == 1) {
-		the.levels <- eval(parse(text = paste("list(", the.names, " = as.character(factors[[1]][[1]]))")))
-	} else {
-		the.levels <- sapply(factors, function(x) as.character(x[[1]]))
-		names(the.levels) <- the.names
-	}
-	the.levels
-}
-
-
- 
-#########
-## Create two lists: "config" and "inputs" ----
 config <- list(
-  used.weights = checkboxInput('%Question.Use Weights%', FALSE),
-  model.name   = validName(textInput('%Question.Model Name%')),
-  the.link     = dropdownInput('%Question.Link%', "logit"),
-  resolution   = dropdownInput('%Question.graph.resolution%') 
+  `graph.resolution` = dropdownInput('%Question.graph.resolution%' , '1x'),
+  `the.link` = dropdownInput('%Question.Link%' , 'logit'),
+  `model.name` = textInput('%Question.Model Name%'),
+  `used.weights` = checkboxInput('%Question.Use Weights%' , FALSE),
+  `Weight Vec` = dropdownInput('%Question.Weight Vec%'),
+  `X Vars` = listInput('%Question.X Vars%', c('Sepal.Length', 'Petal.Length')),
+  `Y Var` = dropdownInput('%Question.Y Var%', 'Species')
 )
+options(alteryx.wd = '%Engine.WorkflowDirectory%')
+options(alteryx.debug = config$debug)
+##----
 
-if(config$the.link == "complementary log-log")
+#' #### Tweak
+#' Insert code to manually tweak the config list here.
+
+if (config$the.link == "complementary log-log"){
   config$the.link <- "cloglog"
+}
 
-inputs <- list(
-  meta.data = read.AlteryxMetaInfo("#1"),
-  the.data  = read.Alteryx("#1")
+#' ### Defaults
+#' 
+#' These defaults are used when the R code is run outside Alteryx
+#' FIXME: ensure that columns are in the same order as in alteryx.
+defaults <- list(
+  data = transform(iris, Species = Species != "setosa")[,5:1]
 )
 
+#' ### Inputs
+#' 
+#' This is a named list of all inputs that stream into the R tool.
+#' FIXME: add defaults for metadata
+inputs <- list(
+  the.data = read.Alteryx2("#1", default = defaults$data)
+  #meta.data = read.AlteryxMetaInfo("#1")
+)
 
 ## The core portion of the macro ----
 library(car)
@@ -135,63 +72,79 @@ checkXDF <- function(metaData) {
   return(list(flag = flag, path = path))
 }
 
-XDFInfo <- checkXDF(inputs$meta.data)
+# XDFInfo <- checkXDF(inputs$meta.data)
 # Create an is.OSR field that indicates open source R is being used
-is.OSR <- !XDFInfo$flag 
+is.OSR <- TRUE # !XDFInfo$flag 
 
 
 var_names <- getNamesFromOrdered(names(inputs$the.data), config$used.weights)
-name.x.vars <- var_names$x
-name.y.var <- var_names$y
-the.weights <- var_names$w
+the.formula <- makeFormula(var_names$x, var_names$y)
+
+processOSR <- function(inputs, config){
+  if (config$used.weights) {
+    library(survey)
+    the.design <- svydesign(
+      ids = ~1, weights = makeFormula(the.weights,""), data = inputs$the.data
+    )
+    the.family <- quasibinomial(config$the.link)
+    the.model <- svyglm(the.formula, family = the.family, design = the.design)
+  } else {
+    the.family <- binomial(config$the.link)
+    the.model <- glm(the.formula, family = the.family, data = inputs$the.data)
+  }
+  
+  if (length(unique(inputs$the.data[,1])) != 2){
+    stop.Alteryx("The target variable must only have two unique values.")
+  }
+  
+}
 
 
 # Adjust the set of field names to remove the weight field if weights are used
-if (config$used.weights) {
-	if (is.OSR) {
-		library(survey)
-		the.design <- svydesign(ids = ~1, weights = makeFormula(the.weights,""), data = inputs$the.data)
-	} else if (XDFInfo$flag) {
-			weight.arg <- paste(", pweights = '", the.weights, "'", sep = "")	 
-	}
-}
+# if (config$used.weights) {
+# 	if (is.OSR) {
+# 		library(survey)
+# 		the.design <- svydesign(ids = ~1, weights = makeFormula(the.weights,""), data = inputs$the.data)
+# 	} else if (XDFInfo$flag) {
+# 			weight.arg <- paste(", pweights = '", the.weights, "'", sep = "")	 
+# 	}
+# }
 
 
 # Make sure the target is binary 
-if (is.OSR && length(unique(inputs$the.data[,1])) != 2)
-	stop.Alteryx("The target variable must only have two unique values.")
-if (XDFInfo$flag) {
-	len.target <- eval(parse(text = paste("length(rxGetVarInfo(XDFInfo$path)$", name.y.var, "$levels)", sep = "")))
-	if(len.target != 2)
-		stop.Alteryx("The target variable must only have two unique values.")
-}
+# if (is.OSR && length(unique(inputs$the.data[,1])) != 2)
+# 	stop.Alteryx("The target variable must only have two unique values.")
+# if (XDFInfo$flag) {
+# 	len.target <- eval(parse(text = paste("length(rxGetVarInfo(XDFInfo$path)$", name.y.var, "$levels)", sep = "")))
+# 	if(len.target != 2)
+# 		stop.Alteryx("The target variable must only have two unique values.")
+# }
 
-the.formula <- makeFormula(name.x.vars, name.y.var)
+
 
 # The call elements when the input is a true data frame (not a schema stream)
 if (is.OSR) {
-	if (config$used.weights) {
-		the.family <- paste("quasibinomial(", config$the.link, ")", sep="")
-  } else {
-    the.family <- paste("binomial(", config$the.link, ")", sep="")
-   }
+# 	if (config$used.weights) {
+# 		the.family <- paste("quasibinomial(", config$the.link, ")", sep="")
+#   } else {
+#     the.family <- paste("binomial(", config$the.link, ")", sep="")
+#    }
 	model.call <- paste(config$model.name, ' <- glm(', the.formula, ', family = ', the.family, ', data = inputs$the.data)', sep="")
-  model.call <- 
 	# The model call if a sampling weights are used in estimation
 	if (config$used.weights)
 		model.call <- paste(config$model.name, ' <- svyglm(', the.formula, ', family = ', the.family, ', design = the.design)', sep="")
 }
-if (XDFInfo$flag) {
-	model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', XDFInfo$path, '", dropFirst = TRUE)', sep = "")
-	if ('%Question.Link%' != "logit")
-		AlteryxMessage("Only the logit link function is available for XDF files, and will be used.", iType = 2, iPriority = 3)
-	if (config$used.weights) {
-		model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', XDFInfo$path, '", ', weight.arg, ', dropFirst = TRUE)', sep = "")
-		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', XDFInfo$path, '", ', weight.arg, ')', sep = "")))
-	}
-	if (!config$used.weights)
-		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', XDFInfo$path, '")', sep = "")))
-}
+# if (XDFInfo$flag) {
+# 	model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', XDFInfo$path, '", dropFirst = TRUE)', sep = "")
+# 	if ('%Question.Link%' != "logit")
+# 		AlteryxMessage("Only the logit link function is available for XDF files, and will be used.", iType = 2, iPriority = 3)
+# 	if (config$used.weights) {
+# 		model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', XDFInfo$path, '", ', weight.arg, ', dropFirst = TRUE)', sep = "")
+# 		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', XDFInfo$path, '", ', weight.arg, ')', sep = "")))
+# 	}
+# 	if (!config$used.weights)
+# 		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', XDFInfo$path, '")', sep = "")))
+# }
 
 # Model estimation
 print(model.call)
@@ -202,12 +155,12 @@ the.model <- eval(parse(text = config$model.name))
 if (is.OSR) {
 	ylevels <- levels(inputs$the.data[[1]])
 }
-if (XDFInfo$flag) {
-	target.info <- eval(parse(text = paste("rxSummary(~ ", name.y.var, ", data = XDFInfo$path)$categorical", sep = "")))
-	the.model$yinfo <- list(levels = as.character(target.info[[1]][,1]), counts = target.info[[1]][,2])
-	ylevels <- the.model$yinfo$levels
-	the.model$xlevels <- eval(parse(text = paste("xdfLevels(~ ", x.vars, ", XDFInfo$path)")))
-}
+# if (XDFInfo$flag) {
+# 	target.info <- eval(parse(text = paste("rxSummary(~ ", name.y.var, ", data = XDFInfo$path)$categorical", sep = "")))
+# 	the.model$yinfo <- list(levels = as.character(target.info[[1]][,1]), counts = target.info[[1]][,2])
+# 	ylevels <- the.model$yinfo$levels
+# 	the.model$xlevels <- eval(parse(text = paste("xdfLevels(~ ", x.vars, ", XDFInfo$path)")))
+# }
 # When running the macro within Alteryx by itself, the line of code below
 # causes the model summary to be written to the ouput window. However, this
 # does not occur when the macro is called from another module
@@ -219,10 +172,10 @@ if (is.OSR) {
 	glm.out <- glm.out1$summary.df
 	singular <- glm.out1$singular
 }
-if (XDFInfo$flag) {
-	singular <- FALSE
-	glm.out <- AlteryxReportRx(the.model, null.model$deviance)
-}
+# if (XDFInfo$flag) {
+# 	singular <- FALSE
+# 	glm.out <- AlteryxReportRx(the.model, null.model$deviance)
+# }
 
 # Put the name of the model as the first entry in the key entry in the
 # key-value table.
@@ -269,14 +222,6 @@ if (!(singular && config$used.weights) && is.OSR) {
 		AlteryxMessage("The diagnostic plot is not available due to singularities", iType = 2, iPriority = 3) 
 	}
 }
-# Create a list with the model object and its name and write it out via
-# the third output
-the.obj <- vector(mode="list", length=2)
-the.obj[[1]] <- c(config$model.name)
-the.obj[[2]] <- list(the.model)
-names(the.obj) <- c("Name", "Object")
-#levels.list <- list(levels = ylevels)
-#levels.json <- toJSON(levels.list)
-#print(levels.json)
-#write.Alteryx(the.obj, source = "Hello World", nOutput = 3)
+# Create a list with the model object and its name
+the.obj <- prepModelForOutput(config$model.name, the.model)
 write.Alteryx(the.obj, nOutput = 3)
