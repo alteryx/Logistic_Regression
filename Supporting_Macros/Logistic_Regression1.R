@@ -149,13 +149,13 @@ the.weights <- var_names$w
 if (config$used.weights) {
 	if (is.OSR) {
 		library(survey)
-		the.design <- eval(parse(text = paste("svydesign(ids = ~1, weights = ~", the.weights, ", data = inputs$the.data)", sep = "")))
+		the.design <- svydesign(ids = ~1, weights = makeFormula(the.weights,""), data = inputs$the.data)
 	} else if (XDFInfo$flag) {
 			weight.arg <- paste(", pweights = '", the.weights, "'", sep = "")	 
 	}
 }
 
-# Make sure the target is binary and get its levels if the context is Pivotal
+# Make sure the target is binary 
 if (is.OSR && length(unique(inputs$the.data[,1])) != 2)
 	stop.Alteryx("The target variable must only have two unique values.")
 if (XDFInfo$flag) {
@@ -164,11 +164,7 @@ if (XDFInfo$flag) {
 		stop.Alteryx("The target variable must only have two unique values.")
 }
 
-# Create the base right-hand side of the formula
-x.vars <- paste(names.x.vars, collapse = " + ")
-
-# Create the elements of the model call
-the.formula <- paste(name.y.var, '~', x.vars)
+the.formula <- makeFormula(name.x.vars, name.y.var)
 
 # The call elements when the input is a true data frame (not a schema stream)
 if (is.OSR) {
