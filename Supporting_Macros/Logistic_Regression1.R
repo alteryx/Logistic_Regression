@@ -92,7 +92,7 @@ xdfLevels <- function(form, xdf) {
 	the.levels
 }
 
-library(car)
+
  
 #########
 ## Create two lists: "config" and "inputs" ----
@@ -113,6 +113,7 @@ inputs <- list(
 
 
 ## The core portion of the macro ----
+library(car)
 library(rjson)
 #' @param metaData Meta data of input data stream from Alteryx.
 #' @return A list of flag and path, where: \cr
@@ -155,6 +156,7 @@ if (config$used.weights) {
 	}
 }
 
+
 # Make sure the target is binary 
 if (is.OSR && length(unique(inputs$the.data[,1])) != 2)
 	stop.Alteryx("The target variable must only have two unique values.")
@@ -168,10 +170,13 @@ the.formula <- makeFormula(name.x.vars, name.y.var)
 
 # The call elements when the input is a true data frame (not a schema stream)
 if (is.OSR) {
-	the.family <- paste("binomial(", config$the.link, ")", sep="")
-	if (config$used.weights)
+	if (config$used.weights) {
 		the.family <- paste("quasibinomial(", config$the.link, ")", sep="")
+  } else {
+    the.family <- paste("binomial(", config$the.link, ")", sep="")
+   }
 	model.call <- paste(config$model.name, ' <- glm(', the.formula, ', family = ', the.family, ', data = inputs$the.data)', sep="")
+  model.call <- 
 	# The model call if a sampling weights are used in estimation
 	if (config$used.weights)
 		model.call <- paste(config$model.name, ' <- svyglm(', the.formula, ', family = ', the.family, ', design = the.design)', sep="")
