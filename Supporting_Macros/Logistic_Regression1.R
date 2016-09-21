@@ -1,29 +1,53 @@
-# Determine if the "car" package is needed and, if it is, determine if it is
-# available.
-has.car <- "car" %in% row.names(installed.packages())
-if(has.car) {
-	library(car)
-} else {
-	warning("Unable to find the car package")
+#' ---
+#' title: My Macro
+#' author: Dan Putler, Kuo Liu, Ramnath Vaidyanathan
+#' ---
+
+#' ## Read
+#' 
+#' The first step is to read configuration and inputs that stream in.
+#' 
+#' ### Configuration
+#' 
+#' 
+## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
+library(AlteryxPredictive)
+config <- list(
+  `graph.resolution` = dropdownInput('%Question.graph.resolution%' , '1x'),
+  `the.link` = dropdownInput('%Question.Link%' , 'logit'),
+  `model.name` = textInput('%Question.Model Name%'),
+  `used.weights` = checkboxInput('%Question.Use Weights%' , FALSE),
+  `Weight Vec` = dropdownInput('%Question.Weight Vec%'),
+  `X Vars` = listInput('%Question.X Vars%', c('Sepal.Length', 'Petal.Length')),
+  `Y Var` = dropdownInput('%Question.Y Var%', 'Species')
+)
+options(alteryx.wd = '%Engine.WorkflowDirectory%')
+options(alteryx.debug = config$debug)
+##----
+
+#' #### Tweak
+#' Insert code to manually tweak the config list here.
+
+if (config$the.link == "complementary log-log"){
+  config$the.link <- "cloglog"
 }
 
-library(AlteryxPredictive)
-## Create two lists: "config" and "inputs" ----
-config <- list(
-  used.weights = checkboxInput('%Question.Use Weights%', FALSE),
-  model.name   = validName(textInput('%Question.Model Name%')),
-  the.link     = dropdownInput('%Question.Link%', "logit"),
-  resolution   = dropdownInput('%Question.graph.resolution%') 
+#' ### Defaults
+#' 
+#' These defaults are used when the R code is run outside Alteryx
+#' FIXME: ensure that columns are in the same order as in alteryx.
+defaults <- list(
+  data = transform(iris, Species = Species != "setosa")[,5:1]
 )
 
-if(config$the.link == "complementary log-log")
-  config$the.link <- "cloglog"
-
+#' ### Inputs
+#' 
+#' This is a named list of all inputs that stream into the R tool.
+#' FIXME: add defaults for metadata
 inputs <- list(
-  meta.data = read.AlteryxMetaInfo("#1"),
-  the.data  = read.Alteryx("#1")
+  the.data = read.Alteryx2("#1", default = defaults$data)
+  #meta.data = read.AlteryxMetaInfo("#1")
 )
-
 
 ## The core portion of the macro ----
 library(car)
@@ -48,63 +72,79 @@ checkXDF <- function(metaData) {
   return(list(flag = flag, path = path))
 }
 
-XDFInfo <- checkXDF(inputs$meta.data)
+# XDFInfo <- checkXDF(inputs$meta.data)
 # Create an is.OSR field that indicates open source R is being used
-is.OSR <- !XDFInfo$flag 
+is.OSR <- TRUE # !XDFInfo$flag 
 
 
 var_names <- getNamesFromOrdered(names(inputs$the.data), config$used.weights)
-name.x.vars <- var_names$x
-name.y.var <- var_names$y
-the.weights <- var_names$w
+the.formula <- makeFormula(var_names$x, var_names$y)
+
+processOSR <- function(inputs, config){
+  if (config$used.weights) {
+    library(survey)
+    the.design <- svydesign(
+      ids = ~1, weights = makeFormula(the.weights,""), data = inputs$the.data
+    )
+    the.family <- quasibinomial(config$the.link)
+    the.model <- svyglm(the.formula, family = the.family, design = the.design)
+  } else {
+    the.family <- binomial(config$the.link)
+    the.model <- glm(the.formula, family = the.family, data = inputs$the.data)
+  }
+  
+  if (length(unique(inputs$the.data[,1])) != 2){
+    stop.Alteryx("The target variable must only have two unique values.")
+  }
+  
+}
 
 
 # Adjust the set of field names to remove the weight field if weights are used
-if (config$used.weights) {
-	if (is.OSR) {
-		library(survey)
-		the.design <- svydesign(ids = ~1, weights = makeFormula(the.weights,""), data = inputs$the.data)
-	} else if (XDFInfo$flag) {
-			weight.arg <- paste(", pweights = '", the.weights, "'", sep = "")	 
-	}
-}
+# if (config$used.weights) {
+# 	if (is.OSR) {
+# 		library(survey)
+# 		the.design <- svydesign(ids = ~1, weights = makeFormula(the.weights,""), data = inputs$the.data)
+# 	} else if (XDFInfo$flag) {
+# 			weight.arg <- paste(", pweights = '", the.weights, "'", sep = "")	 
+# 	}
+# }
 
 
 # Make sure the target is binary 
-if (is.OSR && length(unique(inputs$the.data[,1])) != 2)
-	stop.Alteryx("The target variable must only have two unique values.")
-if (XDFInfo$flag) {
-	len.target <- eval(parse(text = paste("length(rxGetVarInfo(XDFInfo$path)$", name.y.var, "$levels)", sep = "")))
-	if(len.target != 2)
-		stop.Alteryx("The target variable must only have two unique values.")
-}
+# if (is.OSR && length(unique(inputs$the.data[,1])) != 2)
+# 	stop.Alteryx("The target variable must only have two unique values.")
+# if (XDFInfo$flag) {
+# 	len.target <- eval(parse(text = paste("length(rxGetVarInfo(XDFInfo$path)$", name.y.var, "$levels)", sep = "")))
+# 	if(len.target != 2)
+# 		stop.Alteryx("The target variable must only have two unique values.")
+# }
 
-the.formula <- makeFormula(name.x.vars, name.y.var)
+
 
 # The call elements when the input is a true data frame (not a schema stream)
 if (is.OSR) {
-	if (config$used.weights) {
-		the.family <- paste("quasibinomial(", config$the.link, ")", sep="")
-  } else {
-    the.family <- paste("binomial(", config$the.link, ")", sep="")
-   }
+# 	if (config$used.weights) {
+# 		the.family <- paste("quasibinomial(", config$the.link, ")", sep="")
+#   } else {
+#     the.family <- paste("binomial(", config$the.link, ")", sep="")
+#    }
 	model.call <- paste(config$model.name, ' <- glm(', the.formula, ', family = ', the.family, ', data = inputs$the.data)', sep="")
-  model.call <- 
 	# The model call if a sampling weights are used in estimation
 	if (config$used.weights)
 		model.call <- paste(config$model.name, ' <- svyglm(', the.formula, ', family = ', the.family, ', design = the.design)', sep="")
 }
-if (XDFInfo$flag) {
-	model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', XDFInfo$path, '", dropFirst = TRUE)', sep = "")
-	if ('%Question.Link%' != "logit")
-		AlteryxMessage("Only the logit link function is available for XDF files, and will be used.", iType = 2, iPriority = 3)
-	if (config$used.weights) {
-		model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', XDFInfo$path, '", ', weight.arg, ', dropFirst = TRUE)', sep = "")
-		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', XDFInfo$path, '", ', weight.arg, ')', sep = "")))
-	}
-	if (!config$used.weights)
-		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', XDFInfo$path, '")', sep = "")))
-}
+# if (XDFInfo$flag) {
+# 	model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', XDFInfo$path, '", dropFirst = TRUE)', sep = "")
+# 	if ('%Question.Link%' != "logit")
+# 		AlteryxMessage("Only the logit link function is available for XDF files, and will be used.", iType = 2, iPriority = 3)
+# 	if (config$used.weights) {
+# 		model.call <- paste(config$model.name, ' <- rxLogit(', the.formula, ', data = "', XDFInfo$path, '", ', weight.arg, ', dropFirst = TRUE)', sep = "")
+# 		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', XDFInfo$path, '", ', weight.arg, ')', sep = "")))
+# 	}
+# 	if (!config$used.weights)
+# 		null.model <- eval(parse(text = paste('rxLogit(', name.y.var, ' ~ 1, data = "', XDFInfo$path, '")', sep = "")))
+# }
 
 # Model estimation
 print(model.call)
@@ -115,12 +155,12 @@ the.model <- eval(parse(text = config$model.name))
 if (is.OSR) {
 	ylevels <- levels(inputs$the.data[[1]])
 }
-if (XDFInfo$flag) {
-	target.info <- eval(parse(text = paste("rxSummary(~ ", name.y.var, ", data = XDFInfo$path)$categorical", sep = "")))
-	the.model$yinfo <- list(levels = as.character(target.info[[1]][,1]), counts = target.info[[1]][,2])
-	ylevels <- the.model$yinfo$levels
-	the.model$xlevels <- eval(parse(text = paste("xdfLevels(~ ", x.vars, ", XDFInfo$path)")))
-}
+# if (XDFInfo$flag) {
+# 	target.info <- eval(parse(text = paste("rxSummary(~ ", name.y.var, ", data = XDFInfo$path)$categorical", sep = "")))
+# 	the.model$yinfo <- list(levels = as.character(target.info[[1]][,1]), counts = target.info[[1]][,2])
+# 	ylevels <- the.model$yinfo$levels
+# 	the.model$xlevels <- eval(parse(text = paste("xdfLevels(~ ", x.vars, ", XDFInfo$path)")))
+# }
 # When running the macro within Alteryx by itself, the line of code below
 # causes the model summary to be written to the ouput window. However, this
 # does not occur when the macro is called from another module
@@ -132,10 +172,10 @@ if (is.OSR) {
 	glm.out <- glm.out1$summary.df
 	singular <- glm.out1$singular
 }
-if (XDFInfo$flag) {
-	singular <- FALSE
-	glm.out <- AlteryxReportRx(the.model, null.model$deviance)
-}
+# if (XDFInfo$flag) {
+# 	singular <- FALSE
+# 	glm.out <- AlteryxReportRx(the.model, null.model$deviance)
+# }
 
 # Put the name of the model as the first entry in the key entry in the
 # key-value table.
@@ -182,14 +222,6 @@ if (!(singular && config$used.weights) && is.OSR) {
 		AlteryxMessage("The diagnostic plot is not available due to singularities", iType = 2, iPriority = 3) 
 	}
 }
-# Create a list with the model object and its name and write it out via
-# the third output
-the.obj <- vector(mode="list", length=2)
-the.obj[[1]] <- c(config$model.name)
-the.obj[[2]] <- list(the.model)
-names(the.obj) <- c("Name", "Object")
-#levels.list <- list(levels = ylevels)
-#levels.json <- toJSON(levels.list)
-#print(levels.json)
-#write.Alteryx(the.obj, source = "Hello World", nOutput = 3)
+# Create a list with the model object and its name
+the.obj <- prepModelForOutput(config$model.name, the.model)
 write.Alteryx(the.obj, nOutput = 3)
