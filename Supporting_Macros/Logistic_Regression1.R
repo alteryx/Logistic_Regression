@@ -102,7 +102,9 @@ processXDF <- function(inputs, config){
     AlteryxMessage2("Only the logit link function is available for XDF files, and will be used.", iType = 2, iPriority = 3)
   }
   
-  # CHECK: default for pweights is NULL
+  # CHECK: 
+  # 1. is the default for pweights NULL ?
+  # 2. does this take a character or a vector ?
   the.model <- rxLogit(formula = the.formula, data = XDFInfo$xdf_path, 
     pweights = var_names$w, dropFirst = TRUE
   )
@@ -175,7 +177,8 @@ createPlotOutputsOSR <- function(the.model, singular, config, nOutput = 2){
 
 #' __Plots in XDF__
 createPlotOutputsXDF <- function(nOutput = 2){
-  noDiagnosticPlot("The diagnostic plot is not available for XDF based models")
+  noDiagnosticPlot("The diagnostic plot is not available for XDF based models",
+    nOutput = nOutput)
 }
 
 #' Function to create empty plot with a message
