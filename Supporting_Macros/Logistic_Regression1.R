@@ -103,12 +103,11 @@ processXDF <- function(inputs, config){
   }
   
   # CHECK: default for pweights is NULL
-  pweights = if (config$used.weights) var_names$w else NULL        
   the.model <- rxLogit(formula = the.formula, data = XDFInfo$xdf_path, 
-    pweights = pweights, dropFirst = TRUE
+    pweights = var_names$w, dropFirst = TRUE
   )
   null.model <- rxLogit(makeFormula("1", var_names$y), data = XDFInfo$xdf_path, 
-    pweights = pweights
+    pweights = var_names$w
   )
   
   # Add the level labels for the target and predictors, along with 
