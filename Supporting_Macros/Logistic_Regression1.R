@@ -158,35 +158,25 @@ createReportXDF <- function(the.model, config, null.model, nOutput = 2) {
 #' sampling weights.
 #' 
 #' __Plots in Open Source R__
-createPlotOutputsOSR <- function(the.model, singular, config, nOutput = 2){
+createPlotOutputsOSR <- function(the.model, singular, config){
   if (!(singular && config$used.weights)) {
-    #whr <- graphWHR(inches = "True", in.w = 6, in.h = 6, config$resolution)
-    whr <- AlteryxPredictive:::graphWHR2(inches = TRUE, in.w = 6, in.h = 6, 
-      config$graph.resolution)
-    AlteryxGraph2({
-        par(mfrow=c(2, 2), mar=c(5, 4, 2, 2) + 0.1)
-        plot(the.model)
-      }, 2, width = whr[1], height = whr[2], res = whr[3], pointsize = 9
-    )
+    par(mfrow=c(2, 2), mar=c(5, 4, 2, 2) + 0.1)
+    plot(the.model)
   } else {
-    noDiagnosticPlot("The diagnostic plot is not available due to singularities",
-      nOutput = nOutput
-    )
+    noDiagnosticPlot("The diagnostic plot is not available due to singularities")
   }
 }
 
 #' __Plots in XDF__
-createPlotOutputsXDF <- function(nOutput = 2){
-  noDiagnosticPlot("The diagnostic plot is not available for XDF based models",
-    nOutput = nOutput)
+createPlotOutputsXDF <- function(){
+  noDiagnosticPlot("The diagnostic plot is not available for XDF based models")
 }
 
 #' Function to create empty plot with a message
-noDiagnosticPlot <- function(msg, nOutput = 2){
-  AlteryxGraph2({
-    plot(x = c(0,1), y = c(0,1), type = "n", main = "Plot not available", 
-      xlab = "", ylab = "", xaxt = "n", yaxt = "n")
-  }, nOutput)
+noDiagnosticPlot <- function(msg){
+  plot(x = c(0,1), y = c(0,1), type = "n", main = "Plot not available", 
+    xlab = "", ylab = "", xaxt = "n", yaxt = "n"
+  )
   AlteryxMessage2(msg, iType = 2, iPriority = 3)  
 }
 
@@ -196,16 +186,23 @@ XDFInfo <- if (inAlteryx()) getXdfProperties("#1") else list(is_XDF = FALSE)
 if (XDFInfo$is_XDF){
   d <- processXDF(inputs, config)
   glm.out <- createReportXDF(d$the.model, config, d$null.model)
-  createPlotOutputsXDF()
+  plot.out <- function(){createPlotOutputsXDF()}
 } else {
   d <- processOSR(inputs, config)
   glm.out <- createReportOSR(d$the.model, config, d$model_type)
-  createPlotOutputsOSR(d$the.model, FALSE, config)
+  plot.out <- function(){createPlotOutputsOSR(d$the.model, FALSE, config)}
 }
 
-# Report
+# Report Output
 write.Alteryx2(glm.out, nOutput = 1)
 
-# Model Object
+# Plot Output
+# whr <- graphWHR(inches = "True", in.w = 6, in.h = 6, config$resolution)
+whr <- AlteryxPredictive:::graphWHR2(inches = TRUE, in.w = 6, in.h = 6, 
+  config$graph.resolution)
+AlteryxGraph2(plot.out(), 2, width = whr[1], height = whr[2], 
+  res = whr[3], pointsize = 9)
+
+# Model Output
 the.obj <- prepModelForOutput(config$model.name, d$the.model)
 write.Alteryx2(the.obj, nOutput = 3)
