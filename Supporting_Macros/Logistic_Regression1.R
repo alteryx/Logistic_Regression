@@ -31,7 +31,7 @@ options(alteryx.debug = config$debug)
 #' We also specify defaults for use when R code is run outside Alteryx.
 iris$Species <- as.factor(ifelse(iris$Species != "setosa", "other", "setosa"))
 defaults <- list(
-  data = iris[,c(config$`Y Var`, config$`X Vars`)]
+  data = iris[,c('Species', 'Sepal.Length', 'Petal.Length')]
 )
 inputs <- list(
   the.data = read.Alteryx2("#1", default = defaults$data),
