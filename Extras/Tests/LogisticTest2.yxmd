@@ -3,43 +3,43 @@
   <Nodes>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="258" y="162"/>
+        <Position x="258" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2692_dac54ccb8bd849659397807312d735c4_\Engine_5044_b9862ebbcca740378485d092ee129ac7_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_6296_7e23a55101854939a99c1d22098b1df2_\Engine_5044_083dbb1d43524a91b56eac390676e7ac_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
-            <ViewSize value="100"/>
+            <ViewSize value="100" />
             <View1>
               <DefaultTab>Report</DefaultTab>
               <Hints>
-                <Table/>
+                <Table />
               </Hints>
             </View1>
-            <View2/>
+            <View2 />
           </Layout>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name/>
-          <DefaultAnnotationText/>
-          <Left value="False"/>
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2"/>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="54" y="114"/>
+        <Position x="54" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <NumRows value="183"/>
+          <NumRows value="183" />
           <Fields>
-            <Field name="sch.wide"/>
-            <Field name="ell"/>
-            <Field name="meals"/>
-            <Field name="pw"/>
+            <Field name="sch.wide" />
+            <Field name="ell" />
+            <Field name="meals" />
+            <Field name="pw" />
           </Fields>
           <Data>
             <r>
@@ -1143,103 +1143,103 @@
           </Data>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name/>
-          <DefaultAnnotationText/>
-          <Left value="False"/>
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput"/>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="Logistic_Regression">
-        <Position x="162" y="114"/>
+        <Position x="162" y="114" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Value name="graph.resolution">1x</Value>
-          <Value name="Link">logit</Value>
-          <Value name="Model Name">Logistic_Regression_With_Weights</Value>
-          <Value name="Use Weights">TRUE</Value>
-          <Value name="X Vars">ell,meals</Value>
           <Value name="Weight Vec">pw</Value>
+          <Value name="Use Weights">True</Value>
+          <Value name="Link">logit</Value>
+          <Value name="X Vars">ell,meals</Value>
           <Value name="Y Var">sch.wide</Value>
+          <Value name="Model Name">Logistic_Regression_With_Weights</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name>Logistic Regression (8)</Name>
-          <DefaultAnnotationText/>
-          <Left value="False"/>
+          <DefaultAnnotationText />
+          <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings Macro="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc" EngineDll="Macro" EngineDllEntryPoint="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc"/>
+      <EngineSettings Macro="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc" EngineDll="Macro" EngineDllEntryPoint="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc" />
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="258" y="54"/>
+        <Position x="258" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_2692_dac54ccb8bd849659397807312d735c4_\Engine_5044_223f8c53b98d42a8b3c07b1bcdefc3c3_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2692_dac54ccb8bd849659397807312d735c4_\Engine_5044_ef352b1a5c1e445fa060a6e275abb22b_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_6296_7e23a55101854939a99c1d22098b1df2_\Engine_5044_fcd0536e946c46faa5074d4c4e5586bf_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_6296_7e23a55101854939a99c1d22098b1df2_\Engine_5044_85ca498575c341758a0dad316dbd10c7_.yxdb</TempFile>
         </Configuration>
         <Annotation DisplayMode="0">
-          <Name/>
-          <DefaultAnnotationText/>
-          <Left value="False"/>
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
         </Annotation>
       </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2"/>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
   </Nodes>
   <Connections>
     <Connection>
-      <Origin ToolID="2" Connection="Output"/>
-      <Destination ToolID="8" Connection="Input"/>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="8" Connection="Output"/>
-      <Destination ToolID="12" Connection="Input"/>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="8" Connection="Reports"/>
-      <Destination ToolID="4" Connection="Input"/>
+      <Origin ToolID="8" Connection="Reports" />
+      <Destination ToolID="4" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
-    <Memory default="True"/>
-    <GlobalRecordLimit value="0"/>
-    <TempFiles default="True"/>
-    <Annotation on="True" includeToolName="False"/>
-    <ConvErrorLimit value="10"/>
-    <ConvErrorLimit_Stop value="False"/>
-    <CancelOnError value="False"/>
-    <DisableBrowse value="False"/>
-    <EnablePerformanceProfiling value="False"/>
-    <DisableAllOutput value="False"/>
-    <ShowAllMacroMessages value="False"/>
-    <ShowConnectionStatusIsOn value="True"/>
-    <ShowConnectionStatusOnlyWhenRunning value="True"/>
-    <ZoomLevel value="0"/>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
-      <NameIsFileName value="True"/>
-      <Name>SampleTest</Name>
-      <Description/>
-      <RootToolName/>
-      <ToolVersion/>
-      <ToolInDb value="False"/>
-      <CategoryName/>
-      <SearchTags/>
-      <Author/>
-      <Company/>
-      <Copyright/>
-      <DescriptionLink actual="" displayed=""/>
+      <NameIsFileName value="True" />
+      <Name>LogisticTest2</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
       <Example>
-        <Description/>
-        <File/>
+        <Description />
+        <File />
       </Example>
     </MetaInfo>
     <Events>
-      <Enabled value="True"/>
+      <Enabled value="True" />
     </Events>
   </Properties>
 </AlteryxDocument>
