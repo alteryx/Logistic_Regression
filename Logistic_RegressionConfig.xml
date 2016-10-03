@@ -18,9 +18,9 @@
 
 [Can be used with Oracle R In-DB workflows.]</Description>
       <RootToolName>Logistic_Regression</RootToolName>
-      <ToolVersion>1.0</ToolVersion>
+      <ToolVersion>1.1</ToolVersion>
       <ToolInDb></ToolInDb>
-      <CategoryName>Predictive Refresh</CategoryName>
+      <CategoryName>Predictive</CategoryName>
       <SearchTags>predictive, macro, R, logistic, model, variable, binary, regression, predictive category</SearchTags>
       <Author>Dan Putler</Author>
       <Company>Alteryx, Inc.</Company>
