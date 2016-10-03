@@ -7,7 +7,7 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_7052_d89cd1a917d64980898e166a3a15f523_\Engine_4844_472147cbe1f4472197d55506197d5c19_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4284_f9e264fb77194992bedbd254c9b932c2_\Engine_5044_b55d2da0aca74579a9c1cb1a7201fe07_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -2452,38 +2452,20 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
     </Node>
-    <Node ToolID="8">
-      <GuiSettings>
-        <Position x="162" y="114" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Value name="Model Name" />
-          <Value name="Y Var">admit</Value>
-          <Value name="X Vars">gre</Value>
-          <Value name="Link">logit</Value>
-          <Value name="Use Weights">False</Value>
-          <Value name="Weight Vec">gre</Value>
-          <Value name="graph.resolution">1x</Value>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
-      </Properties>
-      <EngineSettings Macro="\\vmware-host\Shared Folders\SNIPPETS\dev\Predictive_Refresh\Logistic_Regression\Supporting_Macros\Logistic_Regression.yxmc" />
-    </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
         <Position x="258" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_7052_d89cd1a917d64980898e166a3a15f523_\Engine_4844_a7947c9400db42b194ef40babbbe2f6c_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4284_f9e264fb77194992bedbd254c9b932c2_\Engine_5044_a1b389f40d87412a9617e63db269d4f0_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -2493,18 +2475,40 @@
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="Logistic_Regression">
+        <Position x="150" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="graph.resolution">1x</Value>
+          <Value name="Weight Vec" />
+          <Value name="Use Weights">False</Value>
+          <Value name="Link">logit</Value>
+          <Value name="X Vars">gre</Value>
+          <Value name="Y Var">admit</Value>
+          <Value name="Model Name">Sample_Logistic_Regression</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc" EngineDll="Macro" EngineDllEntryPoint="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
       <Origin ToolID="2" Connection="Output" />
-      <Destination ToolID="8" Connection="Input" />
+      <Destination ToolID="13" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="8" Connection="Reports" />
+      <Origin ToolID="13" Connection="Reports" />
       <Destination ToolID="4" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="8" Connection="Output" />
+      <Origin ToolID="13" Connection="Output" />
       <Destination ToolID="12" Connection="Input" />
     </Connection>
   </Connections>
@@ -2526,7 +2530,7 @@
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>LogisticTest1</Name>
+      <Name>SampleTest</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
