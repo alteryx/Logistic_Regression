@@ -63,3 +63,7 @@ div.alteryx-toggle-switch-outer {
   right: 8px;
   margin-top: 5px;
 }
+#switch-to-home{
+  margin-left: -1px;
+  margin-top: 10px;
+}
