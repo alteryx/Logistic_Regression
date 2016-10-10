@@ -1,3 +1,5 @@
 # Override Configuration Properties
-"Use Weights":
-  showAsToggle: "True"
+# "X Vars":
+#  dataType: MultiStringSelector
+#  type: MultiSelectListBox
+
