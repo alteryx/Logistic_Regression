@@ -18,25 +18,25 @@ Logistic_Regression
 <div class='page has-hint' id='page-basic'>
   <fieldset>
   <legend>Setup</legend>
-  <div id='intro-div'>
+  <!-- <div id='intro-div'>
     <button class='default-button primary' id='intro'>Guide Me</button>
-  </div>
-  <div id='mname'>
+  </div> -->
+  <div id='mname' class="qconst">
 <!--  Model Name  -->
 <label for="Model Name">Model Name</label>
 <alteryx-pluginwidget type="TextBox" password="false" id="Model Name" dataName="Model Name"></alteryx-pluginwidget>
 </div>
-  <div id='yvar'>
+  <div id='yvar' class="qconst">
 <!--  Y Var  -->
 <label for="Y Var">Select the target variable</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="Y Var" dataName="Y Var"></alteryx-pluginwidget>
 </div>
-  <div id='xvars'>
+  <div id='xvars' class="qconst">
 <!--  X Vars  -->
 <label for="X Vars">Select the predictor variables</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelectorMulti" inputNumber="0" connectionNumber="0" fieldType="All" id="X Vars" dataName="X Vars"></alteryx-pluginwidget>
 </div>
-  <button class='default-button' onclick="switchToCustomize()" id='switch-to-customize'>Customize</button>
+  <button class='default-button primary' onclick="switchToCustomize()" id='switch-to-customize'>Customize</button>
 </div>
 </fieldset>
 <div class='page' id='page-customize'>
@@ -44,14 +44,15 @@ Logistic_Regression
   <legend>Customize</legend>
   <div class="tabs" id='header'>
     <div class="tab is-tab-selected" data-page='advanced' id='advanced'>
-      Advanced
+      Model
     </div>
     <div class="tab" data-page='graphics' id='graphics'>
-      Graphics
+      Plots
     </div>
   </div>
   <div class='tabpage has-hint' id='tabpage-advanced'>
     <div id='div-link'>
+      
 <!--  Link  -->
 <label for="Link">Model type</label>
 <alteryx-pluginwidget type="DropDown" id="Link" dataName="Link">
@@ -59,10 +60,11 @@ Logistic_Regression
   <alteryx-option uiobject="probit">probit</alteryx-option>
   <alteryx-option uiobject="complementary log-log">complementary log-log</alteryx-option>
 </alteryx-pluginwidget>
-</div>
+
+    </div>
     
 <!--  Use Weights  -->
-<alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" default="false" showAsToggle="True" id="Use Weights" dataName="Use Weights"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" default="false" id="Use Weights" dataName="Use Weights"></alteryx-pluginwidget>
 
   <div id='weight-vec'>
 <!--  Weight Vec  -->
@@ -81,6 +83,7 @@ Logistic_Regression
 </alteryx-pluginwidget>
 
   </div>
+  <button class='default-button primary' onclick="switchToHome()" id='switch-to-home'>Back</button>
 </fieldset>
 <script>
 function switchToCustomize(){
@@ -88,6 +91,10 @@ function switchToCustomize(){
   $('#page-customize').show()
   $(".tabpage").hide()
   $('#tabpage-advanced').show()
+}
+function switchToHome(){
+  $('#page-basic').show()
+  $('#page-customize').hide()
 }
 $('#page-customize').hide()
 $('#page-basic').show()
