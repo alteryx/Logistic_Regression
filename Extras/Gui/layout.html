@@ -1,13 +1,13 @@
 <div class='page has-hint' id='page-basic'>
   <fieldset>
   <legend>Setup</legend>
-  <div id='intro-div'>
+  <!-- <div id='intro-div'>
     <button class='default-button primary' id='intro'>Guide Me</button>
-  </div>
-  <div id='mname'>{{ `Model Name` }}</div>
-  <div id='yvar'>{{ `Y Var` }}</div>
-  <div id='xvars'>{{ `X Vars` }}</div>
-  <button class='default-button' onclick="switchToCustomize()" id='switch-to-customize'>Customize</button>
+  </div> -->
+  <div id='mname' class="qconst">{{ `Model Name` }}</div>
+  <div id='yvar' class="qconst">{{ `Y Var` }}</div>
+  <div id='xvars' class="qconst">{{ `X Vars` }}</div>
+  <button class='default-button primary' onclick="switchToCustomize()" id='switch-to-customize'>Customize</button>
 </div>
 </fieldset>
 <div class='page' id='page-customize'>
@@ -15,20 +15,23 @@
   <legend>Customize</legend>
   <div class="tabs" id='header'>
     <div class="tab is-tab-selected" data-page='advanced' id='advanced'>
-      Advanced
+      Model
     </div>
     <div class="tab" data-page='graphics' id='graphics'>
-      Graphics
+      Plots
     </div>
   </div>
   <div class='tabpage has-hint' id='tabpage-advanced'>
-    <div id='div-link'>{{ `Link` }}</div>
+    <div id='div-link'>
+      {{ `Link` }}
+    </div>
     {{ `Use Weights` }}
   <div id='weight-vec'>{{ `Weight Vec` }}</div>
  </div>
   <div class='tabpage has-hint' id='tabpage-graphics'>
     {{ `graph.resolution` }}
   </div>
+  <button class='default-button primary' onclick="switchToHome()" id='switch-to-home'>Back</button>
 </fieldset>
 <script>
 function switchToCustomize(){
@@ -36,6 +39,10 @@ function switchToCustomize(){
   $('#page-customize').show()
   $(".tabpage").hide()
   $('#tabpage-advanced').show()
+}
+function switchToHome(){
+  $('#page-basic').show()
+  $('#page-customize').hide()
 }
 $('#page-customize').hide()
 $('#page-basic').show()
