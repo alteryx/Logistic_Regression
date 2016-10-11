@@ -1,0 +1,318 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="10.5">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="54" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" FileFormat="19" SearchSubDirs="False" RecordLimit="">.\Data\New_Donor.yxdb</File>
+          <FormatSpecificOptions />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>New_Donor.yxdb</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Donate" size="64" source="Formula: [Donate2]" type="String" />
+            <Field name="Degrees" source="File: C:\Users\dputler\Dropbox\R_Commander\Windows_Packages\UBC.dbf" type="Int32" />
+            <Field name="First_Years" source="File: C:\Users\dputler\Dropbox\R_Commander\Windows_Packages\UBC.dbf" type="Int32" />
+            <Field name="Last_Years" source="File: C:\Users\dputler\Dropbox\R_Commander\Windows_Packages\UBC.dbf" type="Int32" />
+            <Field name="Undergraduate" size="64" source="Formula: IF [Undergradu] == 1 THEN &quot;Yes&quot; ELSE &quot;No&quot; ENDIF" type="String" />
+            <Field name="First_School" size="64" source="Formula: IF [First_School] == &quot;HK&quot; THEN &quot;PE&quot; ELSE [First_School] ENDIF" type="String" />
+            <Field name="Last_School" size="64" source="Formula: IF [Last_School] == &quot;CO&quot; THEN &quot;BU&quot; ELSE [Last_School] ENDIF" type="String" />
+            <Field name="Faculty_Staff" size="64" source="Formula: IF [Faculty_St] == 1 THEN &quot;Yes&quot; ELSE &quot;No&quot; ENDIF" type="String" />
+            <Field name="Intercollegiate" size="64" source="Formula: IF [Intercolle] == 1 THEN &quot;Yes&quot; ELSE &quot;No&quot; ENDIF" type="String" />
+            <Field name="Intramural" size="64" source="Formula: [Intramural2]" type="String" />
+            <Field name="Other_Activities" size="64" source="Formula: IF [Other_Acti] == 1 THEN &quot;Yes&quot; ELSE &quot;No&quot; ENDIF" type="String" />
+            <Field name="Gender" size="64" source="Formula: [Gender2]" type="String" />
+            <Field name="Child" size="64" source="Formula: [Child2]" type="String" />
+            <Field name="Parent" size="64" source="Formula: [Parent2]" type="String" />
+            <Field name="Spouse" size="64" source="Formula: [Spouse2]" type="String" />
+            <Field name="Telephone" source="File: C:\Users\dputler\Dropbox\R_Commander\Windows_Packages\UBC.dbf" type="Int32" />
+            <Field name="Mail" source="File: C:\Users\dputler\Dropbox\R_Commander\Windows_Packages\UBC.dbf" type="Int32" />
+            <Field name="Personal" source="File: C:\Users\dputler\Dropbox\R_Commander\Windows_Packages\UBC.dbf" type="Int32" />
+            <Field name="Combined" source="File: C:\Users\dputler\Dropbox\R_Commander\Windows_Packages\UBC.dbf" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="804" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Coefficients Regression Test</Text>
+          <Font name="Segoe UI" size="20.25" style="0" />
+          <TextColor name="White" />
+          <FillColor r="22" g="145" b="198" />
+          <Shape shape="0" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="390" y="54" width="456" height="60" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>This workflow is a basic regression test that compares the coefficients from the model given by the new logistic regression plugin to expected coefficients (accuracy to .001). This workflow with throw an error when the coefficients are not approximately the same.</Text>
+          <Font name="Segoe UI" size="9" style="0" />
+          <TextColor name="White" />
+          <FillColor r="111" g="111" b="111" />
+          <Shape shape="3" />
+          <Justification Justification="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="150" y="174" width="100" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Plugin</Text>
+          <Font name="Segoe UI" size="9.75" style="0" />
+          <TextColor r="0" g="128" b="192" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="Logistic_Regression">
+        <Position x="174" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="graph.resolution">1x</Value>
+          <Value name="Weight Vec" />
+          <Value name="Use Weights">False</Value>
+          <Value name="Link">logit</Value>
+          <Value name="X Vars">First_Years,Last_Years,First_School</Value>
+          <Value name="Y Var">Donate</Value>
+          <Value name="Model Name">New Donor</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc" EngineDll="Macro" EngineDllEntryPoint="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="174" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="18" />
+          <Fields>
+            <Field name="Variable" />
+            <Field name="Coefficient" />
+          </Fields>
+          <Data>
+            <r>
+              <c>(Intercept)</c>
+              <c>-0.455884096971617</c>
+            </r>
+            <r>
+              <c>First_Years</c>
+              <c>5.56660296281665e-02</c>
+            </r>
+            <r>
+              <c>Last_Years</c>
+              <c>-6.15182434666447e-02</c>
+            </r>
+            <r>
+              <c>First_SchoolAG</c>
+              <c>0.326474594739305</c>
+            </r>
+            <r>
+              <c>First_SchoolAR</c>
+              <c>0.337607539121709</c>
+            </r>
+            <r>
+              <c>First_SchoolBU</c>
+              <c>0.378410181732018</c>
+            </r>
+            <r>
+              <c>First_SchoolDE</c>
+              <c>1.6244195136616</c>
+            </r>
+            <r>
+              <c>First_SchoolED</c>
+              <c>-0.486828237514938</c>
+            </r>
+            <r>
+              <c>First_SchoolEN</c>
+              <c>0.772454679027575</c>
+            </r>
+            <r>
+              <c>First_SchoolFR</c>
+              <c>-0.482346964144603</c>
+            </r>
+            <r>
+              <c>First_SchoolGR</c>
+              <c>0.963175964676765</c>
+            </r>
+            <r>
+              <c>First_SchoolLA</c>
+              <c>1.15204488764817</c>
+            </r>
+            <r>
+              <c>First_SchoolME</c>
+              <c>1.69377446959543</c>
+            </r>
+            <r>
+              <c>First_SchoolNU</c>
+              <c>1.10011593593865</c>
+            </r>
+            <r>
+              <c>First_SchoolPE</c>
+              <c>0.384552143319488</c>
+            </r>
+            <r>
+              <c>First_SchoolPH</c>
+              <c>0.605394324222725</c>
+            </r>
+            <r>
+              <c>First_SchoolSC</c>
+              <c>0.790738693320979</c>
+            </r>
+            <r>
+              <c>First_SchoolSO</c>
+              <c>0.579476511342283</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings>
+        <Position x="366" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Drop Down (6)">Coefficient</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro=".\Helpers\test_coefficients.yxmc" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="270" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="Variable" selected="False" />
+            <SelectField field="Coefficient" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="17" Connection="Object" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="17" Connection="Coefficients" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="True" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>BasicCoefRegTest</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
