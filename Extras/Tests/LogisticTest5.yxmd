@@ -16,9 +16,6 @@
           <DefaultAnnotationText>New_Donor.yxdb</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Donate" size="64" source="Formula: [Donate2]" type="String" />
@@ -151,7 +148,7 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Text>Basic Test</Text>
+          <Text>Basic Comparison Test</Text>
           <Font name="Segoe UI" size="20.25" style="0" />
           <TextColor name="White" />
           <FillColor r="22" g="145" b="198" />
@@ -244,9 +241,6 @@
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
       </Properties>
       <EngineSettings Macro="Predictive Tools\Logistic_Regression.yxmc" />
     </Node>
@@ -328,6 +322,10 @@
       <Company />
       <Copyright />
       <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
     </MetaInfo>
     <Events>
       <Enabled value="True" />
