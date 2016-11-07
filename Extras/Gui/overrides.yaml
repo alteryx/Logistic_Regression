@@ -1,5 +1,8 @@
 # Override Configuration Properties
-# "X Vars":
-#  dataType: MultiStringSelector
-#  type: MultiSelectListBox
-
+"Y Var":
+  fieldType: Numeric
+"X Vars":
+  type: MultiSelectListBox
+  dataType: MultiStringSelector
+"Weight Vec":
+  clearable: "true"
