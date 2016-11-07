@@ -21,39 +21,42 @@ div.alteryx-toggle-switch-outer {
   margin-bottom: 20px;
 }
 .tabs {
-  /**
-   * Setting display to flex makes this container lay
-   * out its children using flexbox, the exact same
-   * as in the above "Stepper input" example.
-   */
+/**
+ * Setting display to flex makes this container lay
+ * out its children using flexbox, the exact same
+ * as in the above "Stepper input" example.
+ */
   display: flex;
 
-  border-bottom: 1px solid #D7DBDD;
+  /* border-bottom: 1px solid #D7DBDD; */
 }
 
-.tab{
-  position: relative;
-  display: inline-block;
-  padding: 2px 0px;
-  font-family: 'Segoe UI';
-  font-size: 12px;
+.tab {
   cursor: pointer;
-  text-align: center;
-  color: black;
-  border: 1px solid #D9D9D9;
-  background-color: white;
+  padding-left: 25px; 
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 25px;
+  /* color: #16A2D7; */
+  color: #000000;
+  font-size: 12px;
+  /* border-bottom: 2px solid transparent; */
+  background: #DBDBDB;
 }
-.tab.is-tab-selected{
-  color: white;
-  border: 1px solid #8B8B8B;
-  background-color: #1691C6;
+.tab:hover {
+  background: #D8D8D8;
+}
+
+.tab.is-tab-selected {
+  /* border-bottom-color: #4EBBE4; */
+  background: #1691c6;
+  color: #ffffff;
+  font: "Segoe UI Semibold";
+  font-size: 12px;
 }
 
 .pull-right{
   float: right;
-}
-#advanced, #graphics{
-  width: 60px;
 }
 
 #intro-div{
@@ -69,4 +72,8 @@ div.alteryx-toggle-switch-outer {
 #switch-to-home{
   margin-left: -1px;
   margin-top: 10px;
+}
+
+#xvars label {
+  margin-bottom: 5px;
 }
