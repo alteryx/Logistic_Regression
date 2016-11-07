@@ -29,12 +29,12 @@ Logistic_Regression
   <div id='yvar' class="qconst">
 <!--  Y Var  -->
 <label for="Y Var">Select the target variable</label>
-<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="Y Var" dataName="Y Var"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="Numeric" id="Y Var" dataName="Y Var"></alteryx-pluginwidget>
 </div>
   <div id='xvars' class="qconst">
 <!--  X Vars  -->
 <label for="X Vars">Select the predictor variables</label>
-<alteryx-pluginwidget type="DropDown" dataType="FieldSelectorMulti" inputNumber="0" connectionNumber="0" fieldType="All" id="X Vars" dataName="X Vars"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="MultiSelectListBox" dataType="MultiStringSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="X Vars" dataName="X Vars"></alteryx-pluginwidget>
 </div>
   <button class='default-button primary' onclick="switchToCustomize()" id='switch-to-customize'>Customize</button>
 </div>
@@ -62,14 +62,10 @@ Logistic_Regression
 </alteryx-pluginwidget>
 
     </div>
-    
-<!--  Use Weights  -->
-<alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" default="false" id="Use Weights" dataName="Use Weights"></alteryx-pluginwidget>
-
   <div id='weight-vec'>
 <!--  Weight Vec  -->
 <label for="Weight Vec">Select the sampling weight field</label>
-<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" clearable="true" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
 </div>
  </div>
   <div class='tabpage has-hint' id='tabpage-graphics'>
