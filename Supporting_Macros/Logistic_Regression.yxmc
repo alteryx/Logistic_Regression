@@ -5076,7 +5076,7 @@ write.Alteryx(data.frame(Class = the.class))
     </Node>
     <Node ToolID="90">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54" y="174" width="959" height="318.0001"/>
+        <Position x="54.00002" y="174" width="959" height="318.0002"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -5107,7 +5107,7 @@ write.Alteryx(data.frame(Class = the.class))
         </Node>
         <Node ToolID="55">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="198" y="373" width="59" height="59"/>
+            <Position x="197.9999" y="373.0001" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -5172,7 +5172,7 @@ write.Alteryx(data.frame(Class = the.class))
         </Node>
         <Node ToolID="60">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="294" y="373" width="59" height="59"/>
+            <Position x="294" y="372.9999" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -5950,7 +5950,7 @@ complementary log-log
               <Questions>
                 <Question>
                   <Type>ListBox</Type>
-                  <Description>Select the sampling weight field</Description>
+                  <Description/>
                   <Name>Weight Vec</Name>
                   <ToolId value="71"/>
                   <Multiple value="False"/>
