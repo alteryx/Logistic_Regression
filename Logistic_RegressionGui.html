@@ -62,9 +62,12 @@ Logistic_Regression
 </alteryx-pluginwidget>
 
     </div>
+     
+<!--  Use Weights  -->
+<alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" default="false" id="Use Weights" dataName="Use Weights"></alteryx-pluginwidget>
+
   <div id='weight-vec'>
 <!--  Weight Vec  -->
-<label for="Weight Vec">Select the sampling weight field</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" clearable="true" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
 </div>
  </div>
