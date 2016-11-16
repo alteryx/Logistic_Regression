@@ -7,10 +7,10 @@
   <div id='mname' class="qconst">{{ `Model Name` }}</div>
   <div id='yvar' class="qconst">{{ `Y Var` }}</div>
   <div id='xvars' class="qconst">{{ `X Vars` }}</div>
-  <button class='default-button primary' onclick="switchToCustomize()" id='switch-to-customize'>Customize</button>
+  <button class='default-button primary' id='switch-to-customize'>Customize</button>
 </div>
 </fieldset>
-<div class='page' id='page-customize'>
+<div class='page' id='page-customize' style='display:none;'>
   <fieldset>
   <legend>Customize</legend>
   <div class="tabs" id='header'>
@@ -31,30 +31,8 @@
   <div class='tabpage has-hint' id='tabpage-graphics'>
     {{ `graph.resolution` }}
   </div>
-  <button class='default-button primary' onclick="switchToHome()" id='switch-to-home'>Back</button>
+  <button class='default-button primary' id='switch-to-home'>Back</button>
 </fieldset>
-<script>
-function switchToCustomize(){
-  $('#page-basic').hide()
-  $('#page-customize').show()
-  $(".tabpage").hide()
-  $('#tabpage-advanced').show()
-}
-function switchToHome(){
-  $('#page-basic').show()
-  $('#page-customize').hide()
-}
-$('#page-customize').hide()
-$('#page-basic').show()
-$('#intro').show()
-$('.tab').click(function(){
-  $('.tabpage').hide()
-  var activePage = $(this).data('page')
-  $('#tabpage-' + activePage).show()
-  $('.tab').removeClass('is-tab-selected')
-  $('#' + activePage).addClass('is-tab-selected')
-})
-</script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/intro.min.js'>
 </script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/introjs.min.css' />
