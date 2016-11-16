@@ -29,17 +29,17 @@ Logistic_Regression
   <div id='yvar' class="qconst">
 <!--  Y Var  -->
 <label for="Y Var">Select the target variable</label>
-<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="Numeric" id="Y Var" dataName="Y Var"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="String" id="Y Var" dataName="Y Var"></alteryx-pluginwidget>
 </div>
   <div id='xvars' class="qconst">
 <!--  X Vars  -->
 <label for="X Vars">Select the predictor variables</label>
 <alteryx-pluginwidget type="MultiSelectListBox" dataType="MultiStringSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="X Vars" dataName="X Vars"></alteryx-pluginwidget>
 </div>
-  <button class='default-button primary' onclick="switchToCustomize()" id='switch-to-customize'>Customize</button>
+  <button class='default-button primary' id='switch-to-customize'>Customize</button>
 </div>
 </fieldset>
-<div class='page' id='page-customize'>
+<div class='page' id='page-customize' style='display:none;'>
   <fieldset>
   <legend>Customize</legend>
   <div class="tabs" id='header'>
@@ -68,7 +68,7 @@ Logistic_Regression
 
   <div id='weight-vec'>
 <!--  Weight Vec  -->
-<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="All" clearable="true" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="Numeric" clearable="true" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
 </div>
  </div>
   <div class='tabpage has-hint' id='tabpage-graphics'>
@@ -82,30 +82,8 @@ Logistic_Regression
 </alteryx-pluginwidget>
 
   </div>
-  <button class='default-button primary' onclick="switchToHome()" id='switch-to-home'>Back</button>
+  <button class='default-button primary' id='switch-to-home'>Back</button>
 </fieldset>
-<script>
-function switchToCustomize(){
-  $('#page-basic').hide()
-  $('#page-customize').show()
-  $(".tabpage").hide()
-  $('#tabpage-advanced').show()
-}
-function switchToHome(){
-  $('#page-basic').show()
-  $('#page-customize').hide()
-}
-$('#page-customize').hide()
-$('#page-basic').show()
-$('#intro').show()
-$('.tab').click(function(){
-  $('.tabpage').hide()
-  var activePage = $(this).data('page')
-  $('#tabpage-' + activePage).show()
-  $('.tab').removeClass('is-tab-selected')
-  $('#' + activePage).addClass('is-tab-selected')
-})
-</script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/intro.min.js'>
 </script>
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/introjs.min.css' />
