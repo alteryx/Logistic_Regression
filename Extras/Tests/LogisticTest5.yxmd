@@ -48,7 +48,8 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4644_bd81b6b9e55244c9ab4b930f8fe022b2_\Engine_3612_d343180d80f046178c041163bc874a6c_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_492ffc3b0d264beea94ab58f5d43d0ef_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_2afdda191d7945c6885cf49395bbee42_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -71,7 +72,8 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4644_bd81b6b9e55244c9ab4b930f8fe022b2_\Engine_3612_0becb626b91f4245a26ef9458ed6bf46_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_310e3f4af550449eada7c5130642ae76_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_027c0bbb98b84b21aa6bf42c13a801f9_.yxdb</TempFileDataProfiling>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -98,7 +100,8 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4644_bd81b6b9e55244c9ab4b930f8fe022b2_\Engine_3612_1cdc2b3f6c8e4970b98d151e3f0306a2_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_d4ea5de5008e47638209a660aedd5924_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_64d933310cba4c6a96c7c9517cc7be25_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -121,7 +124,8 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4644_bd81b6b9e55244c9ab4b930f8fe022b2_\Engine_3612_6f8a85f773c14bc78cf68ebf5fb74caa_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_922e2d5e785c43a09cf7be9fa30c5cd1_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_b7b12845d4d642ed86713bae4bbf189b_.yxdb</TempFileDataProfiling>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -257,6 +261,8 @@
           <Value name="X Vars">First_Years,Last_Years,First_School</Value>
           <Value name="Y Var">Donate</Value>
           <Value name="Model Name">New Donor</Value>
+          <Value name="curTab">advanced</Value>
+          <Value name="curPage">Home</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -311,7 +317,7 @@
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>BasicTest</Name>
+      <Name>LogisticTest5</Name>
       <Description />
       <RootToolName />
       <ToolVersion />

@@ -1125,7 +1125,7 @@
     </Node>
     <Node ToolID="8">
       <GuiSettings Plugin="Logistic_Regression">
-        <Position x="198" y="162" />
+        <Position x="282" y="162" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1136,6 +1136,8 @@
           <Value name="X Vars">ell,meals</Value>
           <Value name="Y Var">sch.wide</Value>
           <Value name="Model Name">Logistic_Regression_With_Weights</Value>
+          <Value name="curTab">advanced</Value>
+          <Value name="curPage">Home</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name>Logistic Regression (8)</Name>
@@ -1237,11 +1239,12 @@
     </Node>
     <Node ToolID="18">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="294" y="210" />
+        <Position x="378" y="210" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_4360_095692880bf940a184b939e9c8a515ef_\Engine_4176_c8d069d4c7e74e57941e71de39907bf3_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_5860_8a1ebc7a736c45e5a0965189930f1121_\Engine_4680_7627e2ee95064377afc2dad41be56fe7_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5860_8a1ebc7a736c45e5a0965189930f1121_\Engine_4680_0bf6650b7a344472b24ac7d78c81978c_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -1304,7 +1307,7 @@
     </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="162" y="150" width="120" height="24" />
+        <Position x="246" y="150" width="120" height="24" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1362,11 +1365,32 @@
         </Annotation>
       </Properties>
     </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="186" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="ell" selected="True" type="Double" size="8" />
+            <SelectField field="meals" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
       <Origin ToolID="2" Connection="Output" />
-      <Destination ToolID="8" Connection="Input" />
+      <Destination ToolID="25" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="8" Connection="Output" />
@@ -1379,6 +1403,10 @@
     <Connection>
       <Origin ToolID="8" Connection="Reports" />
       <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>

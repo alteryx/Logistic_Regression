@@ -14,6 +14,8 @@
           <Value name="X Vars">First_Years,Last_Years,First_School</Value>
           <Value name="Y Var">Donate</Value>
           <Value name="Model Name">Basic_Logistic_Regression</Value>
+          <Value name="curTab">advanced</Value>
+          <Value name="curPage">Home</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name>Logistic Regression (8)</Name>
@@ -85,7 +87,8 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5464_b68b916495fc468ca10cc3741ab26f0d_\Engine_4176_79842a87db464bb1908ee35add5509ba_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1372_b151c3bb16044113925c32ea4def68b7_\Engine_4680_5a2d6134a75c4452b918f6f8f10d702a_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1372_b151c3bb16044113925c32ea4def68b7_\Engine_4680_a489583b561a43169f158490f901def1_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
