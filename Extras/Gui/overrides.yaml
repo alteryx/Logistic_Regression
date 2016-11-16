@@ -1,8 +1,9 @@
 # Override Configuration Properties
 "Y Var":
-  fieldType: Numeric
+  fieldType: String
 "X Vars":
   type: MultiSelectListBox
   dataType: MultiStringSelector
 "Weight Vec":
   clearable: "true"
+  fieldType: Numeric
