@@ -123,7 +123,8 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_492_5726447c0918421fbd555c173f5e3acf_\Engine_5968_61ceb84b85714f4cb009f77be66b33c7_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_5824_bb7518baf7be4e04a9634ff5cdc95a4c_\Engine_2336_8e1802c7d8574d7c80ce7241ba854a3f_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5824_bb7518baf7be4e04a9634ff5cdc95a4c_\Engine_2336_19534e1d00134d20a8e248ac4879229e_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
@@ -244,7 +245,7 @@
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="25">
+    <Node ToolID="26">
       <GuiSettings>
         <Position x="90" y="162" />
       </GuiSettings>
@@ -265,14 +266,14 @@
         </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="admit" size="1073741823" source="{&quot;Context&quot;:&quot;XDF&quot;,&quot;File.Loc&quot;:&quot;C:/Users/dblanchard/Documents/Logistic_Regression/Extras/Tests/Data/gpaData.xdf&quot;}" type="V_WString" />
-            <Field name="gre" source="{&quot;Context&quot;:&quot;XDF&quot;,&quot;File.Loc&quot;:&quot;C:/Users/dblanchard/Documents/Logistic_Regression/Extras/Tests/Data/gpaData.xdf&quot;}" type="Int32" />
-            <Field name="gpa" source="{&quot;Context&quot;:&quot;XDF&quot;,&quot;File.Loc&quot;:&quot;C:/Users/dblanchard/Documents/Logistic_Regression/Extras/Tests/Data/gpaData.xdf&quot;}" type="Double" />
-            <Field name="rank" source="{&quot;Context&quot;:&quot;XDF&quot;,&quot;File.Loc&quot;:&quot;C:/Users/dblanchard/Documents/Logistic_Regression/Extras/Tests/Data/gpaData.xdf&quot;}" type="Int32" />
+            <Field name="admit" size="1073741823" source="{&quot;Context&quot;:&quot;XDF&quot;,&quot;File.Loc&quot;:&quot;//vmware-host/Shared Folders/SNIPPETS/dev/Predictive_Tools/Logistic_Regression/Extras/Tests/Data/gpaData.xdf&quot;}" type="V_WString" />
+            <Field name="gre" source="{&quot;Context&quot;:&quot;XDF&quot;,&quot;File.Loc&quot;:&quot;//vmware-host/Shared Folders/SNIPPETS/dev/Predictive_Tools/Logistic_Regression/Extras/Tests/Data/gpaData.xdf&quot;}" type="Int32" />
+            <Field name="gpa" source="{&quot;Context&quot;:&quot;XDF&quot;,&quot;File.Loc&quot;:&quot;//vmware-host/Shared Folders/SNIPPETS/dev/Predictive_Tools/Logistic_Regression/Extras/Tests/Data/gpaData.xdf&quot;}" type="Double" />
+            <Field name="rank" source="{&quot;Context&quot;:&quot;XDF&quot;,&quot;File.Loc&quot;:&quot;//vmware-host/Shared Folders/SNIPPETS/dev/Predictive_Tools/Logistic_Regression/Extras/Tests/Data/gpaData.xdf&quot;}" type="Int32" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings Macro="Input_XDF.yxmc" />
+      <EngineSettings Macro="XDF_Macros\Input_XDF.yxmc" />
     </Node>
   </Nodes>
   <Connections>
@@ -289,7 +290,7 @@
       <Destination ToolID="18" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="25" Connection="Output" />
+      <Origin ToolID="26" Connection="Output" />
       <Destination ToolID="8" Connection="Input" />
     </Connection>
   </Connections>
@@ -322,6 +323,10 @@
       <Company />
       <Copyright />
       <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
     </MetaInfo>
     <Events>
       <Enabled value="True" />
