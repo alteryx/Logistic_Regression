@@ -1,83 +1,64 @@
 <div class='page has-hint' id='page-basic'>
-  <fieldset style='border-top:0;'>
-  <!-- <legend>Setup</legend> -->
-  <!-- <div id='intro-div'>
-    <button class='default-button primary' id='intro'>Guide Me</button>
-  </div> -->
-  <div id='mname' class="qconst">{{ `Model Name` }}</div>
-  <div id='yvar' class="qconst">{{ `Y Var` }}</div>
-  <div id='xvars' class="qconst">{{ `X Vars` }}</div>
-  <button class='default-button primary' id='switch-to-customize'>Customize</button>
+  
+  <div class='fd-header'>
+    <div class='fd-header-title-text'>Setup</div>
+  </div>
+  
+  <div class='content'>
+    <div class='content-padded'>
+      
+      <div id='mname' class="qconst">{{ `Model Name` }}</div>
+      <div id='yvar' class="qconst">{{ `Y Var` }}</div>
+      <div id='xvars' class="qconst">{{ `X Vars` }}</div>
+      <button class='default-button primary switch' id='switch-to-customize'
+        data-page='Customize'
+      >
+        Customize 
+        <i class = 'en-right-open-big pull-right'></i>
+      </button>
+      
+    </div>
+  </div>
+  
 </div>
-</fieldset>
+
 <div class='page' id='page-customize' style='display:none;'>
-  <fieldset>
-  <legend>Customize</legend>
+  
+  <div class='fd-header'>
+    <div class='fd-header-title'>
+      <i class = 'en-left-open-big switch' id='switch-to-home'
+        data-page='Home'
+      >
+      </i> 
+      <span class='fd-header-title-text'>Customize</span>
+    </div>
+  </div>
+  
   <div class="tabs" id='header'>
-    <div class="tab is-tab-selected" data-page='advanced' id='advanced'>
-      Model
-    </div>
-    <div class="tab" data-page='graphics' id='graphics'>
-      Plots
+      <div class="tab active tab-one-half" data-page='advanced' id='advanced'>
+        Model
+      </div>
+      <div class="tab tab-one-half" data-page='graphics' id='graphics'>
+        Plots
+      </div>
+  </div>
+  
+  <div class='content'>
+    <div class='content-padded'>
+      
+      <div class='tabpage has-hint' id='tabpage-advanced'>
+        <div id='div-link'>
+          {{ `Link` }}
+        </div>
+        {{ `Use Weights` }}
+        <div id='weight-vec'>{{ `Weight Vec` }}</div>
+      </div>
+      
+      <div class='tabpage has-hint' id='tabpage-graphics'>
+        {{ `graph.resolution` }}
+      </div>
+      
     </div>
   </div>
-  <div class='tabpage has-hint' id='tabpage-advanced'>
-    <div id='div-link'>
-      {{ `Link` }}
-    </div>
-     {{ `Use Weights` }}
-  <div id='weight-vec'>{{ `Weight Vec` }}</div>
- </div>
-  <div class='tabpage has-hint' id='tabpage-graphics'>
-    {{ `graph.resolution` }}
-  </div>
-  <button class='default-button primary' id='switch-to-home'>Back</button>
-</fieldset>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/intro.min.js'>
-</script>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/introjs.min.css' />
-<script type="text/javascript">
-  var map_  = {
-    "Model Name": 1,
-    "Y Var": 2,
-    "X Vars": 3,
-    "Link": 4
-  }         
-  var intro = introJs();
-         intro.setOptions({
-            steps: [
-              { 
-                intro: "Welcome to Logistic Regression!"
-              },
-              {
-                element: document.querySelector('#mname'),
-                intro: 'Each model needs to be given a name so it can later be identified. Model names must start with a letter and may contain letters, numbers, and the special characters period (".") and underscore ("_"). No other special characters are allowed, and R is case sensitive.'
-              },
-               {
-                element: document.querySelector('#yvar'),
-                intro: "Select the field from the data stream you want to predict."
-              },
-              {
-                element: document.querySelector("#xvars"),
-                intro: 'Choose the fields from the data stream you believe "cause" changes in the value of the target variable.'
-              },
-              {
-                element: document.querySelector("#div-link"),
-                intro: 'The link function.'
-              }
-            ],
-            showStepNumbers: false,
-            showBullets: false,
-            disableInteraction: false
-          });
-      function startIntro(){
-          console.log('starting intro')
-          intro.start();
-      }
-      $('#intro').click(startIntro)
-      $('.has-hint label').click(function(){
-        console.log('clicked...')
-        var step = map_[$(this).attr('for')]
-        intro.goToStep(step).start()
-      })
-</script>
+  
+</div>
