@@ -5,6 +5,8 @@
     <title>
 Logistic_Regression
 </title>
+    <link href='./assets/entypo/entypo.css' rel='stylesheet' />
+    <link rel="stylesheet" href="./assets/alteryx-utils.css" charset="utf-8">
     <link rel="stylesheet" href="app.css" media="screen" charset="utf-8">
     <script type="text/javascript">
       // Include version 1 of the base GUI library.
@@ -16,43 +18,68 @@ Logistic_Regression
 <body>
     
 <div class='page has-hint' id='page-basic'>
-  <fieldset style='border-top:0;'>
-  <!-- <legend>Setup</legend> -->
-  <!-- <div id='intro-div'>
-    <button class='default-button primary' id='intro'>Guide Me</button>
-  </div> -->
-  <div id='mname' class="qconst">
+  
+  <div class='fd-header'>
+    <div class='fd-header-title-text'>Setup</div>
+  </div>
+  
+  <div class='content'>
+    <div class='content-padded'>
+      
+      <div id='mname' class="qconst">
 <!--  Model Name  -->
 <label for="Model Name">Model Name</label>
 <alteryx-pluginwidget type="TextBox" password="false" id="Model Name" dataName="Model Name"></alteryx-pluginwidget>
 </div>
-  <div id='yvar' class="qconst">
+      <div id='yvar' class="qconst">
 <!--  Y Var  -->
 <label for="Y Var">Select the target variable</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="String" id="Y Var" dataName="Y Var"></alteryx-pluginwidget>
 </div>
-  <div id='xvars' class="qconst">
+      <div id='xvars' class="qconst">
 <!--  X Vars  -->
 <label for="X Vars">Select the predictor variables</label>
 <alteryx-pluginwidget type="MultiSelectListBox" dataType="MultiStringSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="X Vars" dataName="X Vars"></alteryx-pluginwidget>
 </div>
-  <button class='default-button primary' id='switch-to-customize'>Customize</button>
-</div>
-</fieldset>
-<div class='page' id='page-customize' style='display:none;'>
-  <fieldset>
-  <legend>Customize</legend>
-  <div class="tabs" id='header'>
-    <div class="tab is-tab-selected" data-page='advanced' id='advanced'>
-      Model
-    </div>
-    <div class="tab" data-page='graphics' id='graphics'>
-      Plots
+      <button class='default-button primary switch' id='switch-to-customize'
+        data-page='Customize'
+      >
+        Customize 
+        <i class = 'en-right-open-big pull-right'></i>
+      </button>
+      
     </div>
   </div>
-  <div class='tabpage has-hint' id='tabpage-advanced'>
-    <div id='div-link'>
+  
+</div>
+
+<div class='page' id='page-customize' style='display:none;'>
+  
+  <div class='fd-header'>
+    <div class='fd-header-title'>
+      <i class = 'en-left-open-big switch' id='switch-to-home'
+        data-page='Home'
+      >
+      </i> 
+      <span class='fd-header-title-text'>Customize</span>
+    </div>
+  </div>
+  
+  <div class="tabs" id='header'>
+      <div class="tab active tab-one-half" data-page='advanced' id='advanced'>
+        Model
+      </div>
+      <div class="tab tab-one-half" data-page='graphics' id='graphics'>
+        Plots
+      </div>
+  </div>
+  
+  <div class='content'>
+    <div class='content-padded'>
       
+      <div class='tabpage has-hint' id='tabpage-advanced'>
+        <div id='div-link'>
+          
 <!--  Link  -->
 <label for="Link">Model type</label>
 <alteryx-pluginwidget type="DropDown" id="Link" dataName="Link">
@@ -61,18 +88,19 @@ Logistic_Regression
   <alteryx-option uiobject="complementary log-log">complementary log-log</alteryx-option>
 </alteryx-pluginwidget>
 
-    </div>
-     
+        </div>
+        
 <!--  Use Weights  -->
-<alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" default="false" id="Use Weights" dataName="Use Weights"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" id="Use Weights" dataName="Use Weights" defaultValue="false"></alteryx-pluginwidget>
 
-  <div id='weight-vec'>
+        <div id='weight-vec'>
 <!--  Weight Vec  -->
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="Numeric" clearable="true" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
 </div>
- </div>
-  <div class='tabpage has-hint' id='tabpage-graphics'>
-    
+      </div>
+      
+      <div class='tabpage has-hint' id='tabpage-graphics'>
+        
 <!--  graph.resolution  -->
 <label for="graph.resolution">Graph Resolution</label>
 <alteryx-pluginwidget type="DropDown" id="graph.resolution" dataName="graph.resolution">
@@ -81,58 +109,15 @@ Logistic_Regression
   <alteryx-option uiobject="3x (288 dpi)">3x</alteryx-option>
 </alteryx-pluginwidget>
 
+      </div>
+      
+    </div>
   </div>
-  <button class='default-button primary' id='switch-to-home'>Back</button>
-</fieldset>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/intro.min.js'>
-</script>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.2.0/introjs.min.css' />
-<script type="text/javascript">
-  var map_  = {
-    "Model Name": 1,
-    "Y Var": 2,
-    "X Vars": 3,
-    "Link": 4
-  }         
-  var intro = introJs();
-         intro.setOptions({
-            steps: [
-              { 
-                intro: "Welcome to Logistic Regression!"
-              },
-              {
-                element: document.querySelector('#mname'),
-                intro: 'Each model needs to be given a name so it can later be identified. Model names must start with a letter and may contain letters, numbers, and the special characters period (".") and underscore ("_"). No other special characters are allowed, and R is case sensitive.'
-              },
-               {
-                element: document.querySelector('#yvar'),
-                intro: "Select the field from the data stream you want to predict."
-              },
-              {
-                element: document.querySelector("#xvars"),
-                intro: 'Choose the fields from the data stream you believe "cause" changes in the value of the target variable.'
-              },
-              {
-                element: document.querySelector("#div-link"),
-                intro: 'The link function.'
-              }
-            ],
-            showStepNumbers: false,
-            showBullets: false,
-            disableInteraction: false
-          });
-      function startIntro(){
-          console.log('starting intro')
-          intro.start();
-      }
-      $('#intro').click(startIntro)
-      $('.has-hint label').click(function(){
-        console.log('clicked...')
-        var step = map_[$(this).attr('for')]
-        intro.goToStep(step).start()
-      })
-</script>
+  
+</div>
 
   <script src="app.min.js" type="text/javascript"></script>
+  <script src="./assets/alteryx-utils.js"></script>
+  <script src='./assets/jquery-sticky-kit/jquery.sticky-kit.min.js'></script>
 </body>
 </html>
