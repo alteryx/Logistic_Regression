@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="10.5">
+<AlteryxDocument yxmdVer="11.0">
   <Nodes>
     <Node ToolID="49">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
@@ -28,7 +28,7 @@ Logistic Regression</Text>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_728_ef97e8156f69416a9ea944ba71f114b6_\Engine_4844_db0a3cb6efb6456f8f9879e5ab1e951f_.yxdb</TempFile>
+          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5092_ec618e2f5642468f99f25525d934882b_\Engine_3800_a6830474377c4225885ccfde8296f400_.yxdb</TempFile>
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100"/>
@@ -5076,7 +5076,7 @@ write.Alteryx(data.frame(Class = the.class))
     </Node>
     <Node ToolID="90">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="54.00002" y="174" width="959" height="318.0002"/>
+        <Position x="54" y="167" width="959" height="325.0002"/>
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -5107,7 +5107,7 @@ write.Alteryx(data.frame(Class = the.class))
         </Node>
         <Node ToolID="55">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="197.9999" y="373.0001" width="59" height="59"/>
+            <Position x="197.9998" y="373.0001" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -5120,7 +5120,7 @@ write.Alteryx(data.frame(Class = the.class))
         </Node>
         <Node ToolID="56">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="114" y="373.0001" width="59" height="59"/>
+            <Position x="114" y="373.0002" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -5211,7 +5211,7 @@ write.Alteryx(data.frame(Class = the.class))
         </Node>
         <Node ToolID="65">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.TextBox">
-            <Position x="114" y="253" width="59" height="59"/>
+            <Position x="114" y="253.0001" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -5224,7 +5224,7 @@ write.Alteryx(data.frame(Class = the.class))
         </Node>
         <Node ToolID="68">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.DropDownListBox.DropDown">
-            <Position x="202.5" y="253" width="59" height="59"/>
+            <Position x="202.5001" y="253" width="59" height="59"/>
           </GuiSettings>
           <Properties>
             <Configuration/>
@@ -5308,6 +5308,32 @@ write.Alteryx(data.frame(Class = the.class))
             <Configuration/>
             <Annotation DisplayMode="0">
               <Name/>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="91">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+            <Position x="774" y="246" width="59" height="59"/>
+          </GuiSettings>
+          <Properties>
+            <Configuration/>
+            <Annotation DisplayMode="0">
+              <Name>curPage</Name>
+              <DefaultAnnotationText/>
+              <Left value="False"/>
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="92">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+            <Position x="846" y="246" width="59" height="59"/>
+          </GuiSettings>
+          <Properties>
+            <Configuration/>
+            <Annotation DisplayMode="0">
+              <Name>curTab</Name>
               <DefaultAnnotationText/>
               <Left value="False"/>
             </Annotation>
@@ -5717,6 +5743,18 @@ Union</Text>
         <Value>1x</Value>
         <IsNumeric value="False"/>
       </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>curPage</Name>
+        <Value/>
+        <IsNumeric value="False"/>
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>curTab</Name>
+        <Value/>
+        <IsNumeric value="False"/>
+      </Constant>
     </Constants>
     <MetaInfo>
       <NameIsFileName value="False"/>
@@ -5870,6 +5908,26 @@ Union</Text>
               <Description>Reports</Description>
               <Name>Reports</Name>
               <ToolId value="79"/>
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Current Page</Description>
+              <Name>curPage</Name>
+              <ToolId value="91"/>
+              <Default/>
+              <Password value="False"/>
+              <Multiline value="False"/>
+              <Hidden value="False"/>
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Current Tab</Description>
+              <Name>curTab</Name>
+              <ToolId value="92"/>
+              <Default/>
+              <Password value="False"/>
+              <Multiline value="False"/>
+              <Hidden value="False"/>
             </Question>
           </Questions>
         </Question>
