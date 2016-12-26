@@ -54,8 +54,13 @@ function displayTarget(targetId, di, cond) {
   function display(v) {
     targetDiv.style.display = condition(v) ? 'block' : 'none';
   }
-  dataItem.BindUserDataChanged(display);
-  display(dataItem.value);
+  if (targetDiv === null){
+    console.log('div with id ' + targetId + 'not found...');
+    return;
+  } else {
+    dataItem.BindUserDataChanged(display);
+    display(dataItem.value);
+  }
 }
 
 function activateDisplayRules(rules){
