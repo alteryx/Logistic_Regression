@@ -7204,7 +7204,7 @@ if (outer_config$external_cv) {
     </Node>
     <Node ToolID="114">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="1974" y="222" width="565" height="308" />
+        <Position x="2070" y="222" width="565" height="308" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -7222,7 +7222,7 @@ if (outer_config$external_cv) {
       <ChildNodes>
         <Node ToolID="97">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1999" y="302" width="59" height="59" />
+            <Position x="2095" y="302" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7235,7 +7235,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="98">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
-            <Position x="2095" y="350" width="59" height="59" />
+            <Position x="2191" y="350" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7248,7 +7248,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="99">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="2167" y="314" width="59" height="59" />
+            <Position x="2263" y="314" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7261,7 +7261,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="100">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
-            <Position x="2239" y="362" width="59" height="59" />
+            <Position x="2335" y="362" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7274,7 +7274,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="103">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="2347" y="278" width="59" height="59" />
+            <Position x="2443" y="278" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7287,7 +7287,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="104">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
-            <Position x="2455" y="266" width="59" height="59" />
+            <Position x="2551" y="266" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7300,7 +7300,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="111">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
-            <Position x="2107" y="446" width="59" height="59" />
+            <Position x="2203" y="446" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7315,7 +7315,7 @@ if (outer_config$external_cv) {
     </Node>
     <Node ToolID="113">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="1073" y="198" width="806" height="380" />
+        <Position x="1073" y="190" width="902" height="388" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -7333,7 +7333,7 @@ if (outer_config$external_cv) {
       <ChildNodes>
         <Node ToolID="94">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1387" y="254" width="59" height="59" />
+            <Position x="1338" y="234" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7346,7 +7346,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="95">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1615" y="266" width="59" height="59" />
+            <Position x="1711" y="266" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7359,7 +7359,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="101">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
-            <Position x="1795" y="278" width="59" height="59" />
+            <Position x="1891" y="278" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7372,7 +7372,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="102">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1711" y="278" width="59" height="59" />
+            <Position x="1807" y="278" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7385,7 +7385,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="105">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
-            <Position x="1603" y="410" width="59" height="59" />
+            <Position x="1699" y="410" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7398,7 +7398,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="106">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.RadioButtonGroup.RadioButtonGroup">
-            <Position x="1675" y="410" width="59" height="59" />
+            <Position x="1771" y="410" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7411,7 +7411,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="107">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
-            <Position x="1759" y="410" width="59" height="59" />
+            <Position x="1855" y="410" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7424,7 +7424,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="108">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.NumericUpDown.NumericUpDown">
-            <Position x="1759" y="494" width="59" height="59" />
+            <Position x="1855" y="494" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7437,7 +7437,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="109">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.RadioButtonGroup.RadioButtonGroup">
-            <Position x="1675" y="494" width="59" height="59" />
+            <Position x="1771" y="494" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7450,7 +7450,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="110">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1603" y="482" width="59" height="59" />
+            <Position x="1699" y="482" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7463,7 +7463,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="96">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1099" y="242" width="59" height="59" />
+            <Position x="1099" y="241.9999" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7476,7 +7476,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="112">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1387" y="386" width="59" height="59" />
+            <Position x="1494" y="258" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7489,7 +7489,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="184">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1098" y="342" width="59" height="59" />
+            <Position x="1098" y="341.9999" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7502,7 +7502,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="185">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1170" y="342" width="59" height="59" />
+            <Position x="1170" y="341.9999" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7515,7 +7515,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="186">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1098" y="438" width="59" height="59" />
+            <Position x="1098" y="437.9999" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7529,6 +7529,84 @@ if (outer_config$external_cv) {
         <Node ToolID="187">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
             <Position x="1170" y="438" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="188">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="1278" y="318" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="189">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="1338" y="318" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="190">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="1338" y="438" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="191">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="1398" y="318" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="192">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="1410" y="438" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="193">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="1278" y="438" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7936,17 +8014,33 @@ Union</Text>
       <Origin ToolID="2" Connection="Output1" />
       <Destination ToolID="136" Connection="Input" />
     </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="189" Connection="Action" />
+      <Destination ToolID="136" Connection="Action" />
+    </Connection>
     <Connection>
       <Origin ToolID="2" Connection="Output3" />
       <Destination ToolID="137" Connection="Input" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="190" Connection="Action" />
+      <Destination ToolID="137" Connection="Action" />
     </Connection>
     <Connection>
       <Origin ToolID="2" Connection="Output2" />
       <Destination ToolID="138" Connection="Input" />
     </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="193" Connection="Action" />
+      <Destination ToolID="138" Connection="Action" />
+    </Connection>
     <Connection>
       <Origin ToolID="2" Connection="Output4" />
       <Destination ToolID="140" Connection="Input" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="192" Connection="Action" />
+      <Destination ToolID="140" Connection="Action" />
     </Connection>
     <Connection>
       <Origin ToolID="2" Connection="Output3" />
@@ -7955,6 +8049,10 @@ Union</Text>
     <Connection>
       <Origin ToolID="2" Connection="Output5" />
       <Destination ToolID="158" Connection="Input" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="188" Connection="Action" />
+      <Destination ToolID="158" Connection="Action" />
     </Connection>
     <Connection name="#1">
       <Origin ToolID="2" Connection="Output3" />
@@ -8063,6 +8161,10 @@ Union</Text>
     <Connection>
       <Origin ToolID="127" Connection="Output1" />
       <Destination ToolID="141" Connection="Input" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="191" Connection="Action" />
+      <Destination ToolID="141" Connection="Action" />
     </Connection>
     <Connection>
       <Origin ToolID="127" Connection="Output2" />
@@ -8283,6 +8385,30 @@ Union</Text>
     <Connection name="#2" Wireless="True">
       <Origin ToolID="184" Connection="Action" />
       <Destination ToolID="179" Connection="Action" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="94" Connection="Question" />
+      <Destination ToolID="188" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="94" Connection="Question" />
+      <Destination ToolID="189" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="94" Connection="Question" />
+      <Destination ToolID="190" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="94" Connection="Question" />
+      <Destination ToolID="191" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="94" Connection="Question" />
+      <Destination ToolID="192" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="94" Connection="Question" />
+      <Destination ToolID="193" Connection="Question" />
     </Connection>
     <Connection name="#1" Wireless="True">
       <Origin ToolID="96" Connection="Question" />
@@ -8701,6 +8827,72 @@ Union</Text>
               <ToolId value="187" />
               <Expression>{{INPUT}}</Expression>
               <Destination>176/DetourRight/@value</Destination>
+              <Mapping>Update Detour Direction from Question</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="188" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>158/DetourRight/@value</Destination>
+              <Mapping>Update Detour Direction from Question</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="189" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>136/DetourRight/@value</Destination>
+              <Mapping>Update Detour Direction from Question</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="190" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>137/DetourRight/@value</Destination>
+              <Mapping>Update Detour Direction from Question</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="191" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>141/DetourRight/@value</Destination>
+              <Mapping>Update Detour Direction from Question</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="192" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>140/DetourRight/@value</Destination>
+              <Mapping>Update Detour Direction from Question</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="193" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>138/DetourRight/@value</Destination>
               <Mapping>Update Detour Direction from Question</Mapping>
               <Mode>Expression</Mode>
               <DynamicConfiguration />
