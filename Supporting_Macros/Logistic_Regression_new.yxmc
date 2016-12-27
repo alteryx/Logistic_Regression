@@ -4966,6 +4966,2326 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
         </Annotation>
       </Properties>
     </Node>
+    <Node ToolID="115">
+      <GuiSettings>
+        <Position x="1170" y="702" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="C:\Users\dblanchard\Documents\svn\DBlanchardSandbox\share_with_Debian_VM\git\Linear_Regression\Supporting_Macros\Supporting_Macros\Linear_Model_summary.yxmc" />
+    </Node>
+    <Node ToolID="116">
+      <GuiSettings>
+        <Position x="1170" y="810" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="C:\Users\dblanchard\Documents\svn\DBlanchardSandbox\share_with_Debian_VM\git\Linear_Regression\Supporting_Macros\Supporting_Macros\Linear_Model_ANOVA.yxmc" />
+    </Node>
+    <Node ToolID="117">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+        <Position x="1170" y="1098" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Images />
+          <Output>Graph_Title</Output>
+          <HeaderMode value="False" />
+          <RawMode value="False" />
+          <ValidatePCXML value="True" />
+          <Message />
+          <RichTextMode value="True" />
+          <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Verdana;}}
+\viewkind4\uc1\pard\i\f0\fs24 Basic Diagnostic Plots\par
+}
+]]></RichTextString>
+          <Styles>
+            <Style Name="TextStyle" />
+          </Styles>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Basic Diagnostic Plots</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+    </Node>
+    <Node ToolID="118">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1242" y="1098" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField field="Desc" type="V_String" size="64" expression="&quot;BasicDiagnosticPlotsTitle&quot;" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Desc="BasicDiagnosticPlotsTitle"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="119">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1002" y="1410" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_433733cdfe9a4e05aa818426bddab94a_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8032_187d00c98f724c8d848b10df41636b51_\Engine_8640_1ff960c66688408989a874a112e8fb3e_.yxdb</TempFileDataProfiling>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="120">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1338" y="1098" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <SelectFields>
+            <SelectField field="Desc" selected="True" />
+            <SelectField field="Graph_Title" selected="True" rename="Report" />
+            <SelectField field="Name" selected="True" />
+            <SelectField field="Object" selected="True" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="121">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1218" y="1218" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField field="Desc" type="V_String" size="64" expression="&quot;BasicDiagnosticPlots&quot;" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Desc="BasicDiagnosticPlots"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="122">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1314" y="1218" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <SelectFields>
+            <SelectField field="Desc" selected="True" />
+            <SelectField field="Graph" selected="True" rename="Report" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="123">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1482" y="1098" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Ignore</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="True" />
+          <OutputOrder>
+            <Connection>#1</Connection>
+            <Connection>#2</Connection>
+            <Connection>#3</Connection>
+            <Connection>#4</Connection>
+          </OutputOrder>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="124">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="2370" y="1026" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8032_187d00c98f724c8d848b10df41636b51_\Engine_8640_ae9f4dcd23fc49148ebf677d3eda9e09_.yxdb</TempFileDataProfiling>
+          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_942355ee4f1a44a68dafa9f13c76181a_.yxdb</TempFile>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="125">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1110" y="1482" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output</Name>
+          <Abbrev>O</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="126">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="2514" y="1242" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Reports</Name>
+          <Abbrev>R</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="127">
+      <GuiSettings Plugin="AlteryxRPluginGui.R">
+        <Position x="1374" y="1170" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <RScript>suppressWarnings(library(AlteryxPredictive))
+outer_config &lt;- list(
+  `graph.resolution` = dropdownInput('%Question.graph.resolution%' , '1x'),
+  `Model Name` = textInput('%Question.Model Name%', "mtcars"),
+  `Omit Constant` = checkboxInput('%Question.Omit Constant%' , FALSE),
+  `Use Weights` = checkboxInput('%Question.Use Weights%' , FALSE),
+  `Weight Vec` = dropdownInput('%Question.Weight Vec%'),
+  `X Vars` = listInput('%Question.X Vars%', names(mtcars)[-1]),
+  `Y Var` = dropdownInput('%Question.Y Var%', 'mpg'),
+  regularization = checkboxInput('%Question.regularization%', FALSE),
+  alpha = numericInput('%Question.alpha%', .5),
+  lambda_1se = radioInput('%Question.lambda.1se%', TRUE),
+  lambda_min = radioInput('%Question.lambda.min%', FALSE),
+  standardize_pred = checkboxInput('%Question.standardize_pred%', TRUE),
+  internal_cv = checkboxInput('%Question.internal_cv%', TRUE),
+  set_seed_internal_cv = checkboxInput('%Question.set_seed_internal_cvv%', TRUE),
+  seed_internal_cv = numericInput('%Question.seed_internal_cv%', 1),
+  nfolds = numericInput('%Question.nfolds%', 5),
+  lambda_no_cv = numericInput('%Question.lambda_no_cv%', NULL),
+  display_graphs = checkboxInput('%Question.display_graphs%', TRUE),
+  external_cv = checkboxInput('%Question.external_cv%', FALSE),
+  nfolds_external = numericInput('%Question.nfolds_external%', NULL),
+  set_seed_external_cv = checkboxInput('%Question.set_seed_external_cv%', FALSE),
+  external_seed_value = numericInput('%Question.external_seed_value%', NULL)
+) 
+options(alteryx.wd = '%Engine.WorkflowDirectory%')
+options(alteryx.debug = outer_config)
+
+
+if (!(outer_config$regularization)) {
+  mod.df &lt;- read.Alteryx("#1")
+  mod.obj &lt;- unserializeObject(as.character(mod.df$Object[1]))
+  the.class &lt;- class(mod.obj)[1]
+  write.Alteryx(data.frame(Class = the.class))
+}
+if (outer_config$external_cv) {
+  ###########################################
+  #' ---
+  #' title: Cross Validation Macro
+  #' author: Bridget Toomey
+  #' ---
+  #' 
+  #' 
+  #' Utility function to check to see if the necessary packages are
+  #' installed and install them if they're not.
+  #'
+  #'
+  #' @param packages vector of package names to check and install.
+  #' @export
+  #' @author Bridget Toomey, Dan Putler
+  checkInstalls &lt;- function(packages) {
+    # See if the desired packages are installed, and install if they're not
+    if (!all(packages %in% row.names(installed.packages()))) {
+      # Use the IE based "Internet2" since it is most reliable for this action,
+      # it will be switched back at the end
+      #setInternet2(use = TRUE)
+      # Make sure the path to the users library is in place and create it if it
+      # is not
+      minor_ver &lt;- strsplit(R.Version()$minor, "\\.")[[1]][1]
+      R_ver &lt;- paste(R.Version()$major, minor_ver, sep = ".")
+      the_path &lt;- paste0(normalizePath("~"), "\\R\\win-library\\", R_ver)
+      # Create the user's personal folder if it doesn't already exist
+      if (!dir.exists(the_path)) {
+        dir.create(the_path, recursive = TRUE, showWarnings = FALSE)
+      }
+      # The set of possible repositories to use
+      repos &lt;- c("http://cran.revolutionanalytics.com", "https://cran.rstudio.com")
+      # Select a particular repository
+      repo &lt;- sample(repos, 1)
+      repo &lt;- c(repo, "https://alteryx.github.io/drat")
+      missingPackages &lt;- packages[which(!(packages %in% row.names(installed.packages())))]
+      install.packages(missingPackages, lib = the_path, repos = repo)
+      #setInternet2(use = FALSE)
+    }
+  }
+  
+  checkInstalls(c("ROCR", "plyr", "TunePareto", "sm", "vioplot", "ggplot2", "AlteryxPredictive"))
+  library(ROCR)
+  library("TunePareto")
+  library("sm")
+  library("vioplot")
+  library("ggplot2")
+  
+  #Make sure the user has at least AlteryxPredictive 0.3.1, since that version
+  #contains scoreModel2
+  if (packageVersion("AlteryxPredictive") &lt; '0.3.2') {
+    setInternet2(use = TRUE)
+    the_path &lt;- paste0(normalizePath("~"), "\\R\\win-library\\", R.Version()$major, ".", substr(R.Version()$minor, start = 1, stop = 1))
+    install.packages("AlteryxPredictive", lib = the_path, repos = "https://alteryx.github.io/drat")
+    setInternet2(use = FALSE)
+  }
+  
+  #' ### Read Configuration
+  #' ## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
+  suppressWarnings(library(AlteryxPredictive))
+  config &lt;- list(
+    `classification` = FALSE,
+    `modelType` = NULL,
+    `numberFolds` = numericInput('%Question.nfolds_external%' , 5),
+    `numberTrials` = numericInput('%Question.numberTrials%' , 3),
+    #This should be added as a config option in Logistic Regression, but it's irrelevant
+    #here, since we're solving a regression problem
+    `posClass` = NULL,
+    `predFields` = listInput('%Question.predFields%'),
+    `regression` = TRUE,
+    `stratified` = FALSE,
+    `seed` = numericInput('%Question.seed%', 1)
+  )
+  config &lt;- append(config, outer_config)
+  options(alteryx.wd = '%Engine.WorkflowDirectory%')
+  options(alteryx.debug = config$debug)
+  ##----
+  
+  
+  library(plyr)
+  #' ### Defaults
+  #' These defaults are used when the R code is run outside Alteryx
+  if (!inAlteryx()){
+    macroDirectory &lt;- textInput('%Engine.WorkflowDirectory%', "Supporting_Macros")
+    dataDir &lt;- file.path(macroDirectory, "Data")
+    defaults &lt;- list(
+      data = readRDS(file.path(dataDir, "data.rds")),
+      models = readRDS(file.path(dataDir, "models.rds"))
+    )
+  }
+  
+  #' ### Inputs
+  #' 
+  #' This is a named list of all inputs that stream into the R tool.
+  inputs &lt;- list(
+    data = read.Alteryx2("#2", default = defaults$data),
+    models = readModelObjects("#1", default = defaults$models)
+  )
+  
+  
+  ##---- Inputs/Config Complete
+  
+  #' ### Helper Functions
+  areIdentical &lt;- function(v1, v2){
+    identical(sort(v1), sort(v2))
+  }
+  
+  #' Helper Functions For Tests
+  makePayload &lt;- function(csvFile, modelsFile){
+    test_data &lt;- read.csv(csvFile)
+    list(
+      #data = test_data[, c(targetVar, setdiff(names(test_data), targetVar))],
+      data = test_data,
+      models = AlteryxPredictive::readModelObjects("2", readRDS(modelsFile))
+    )
+  }
+  
+  runTest &lt;- function(modelName, payload){
+    inputs &lt;- list(data = payload$data, models = payload$models[modelName])
+    message(paste(modelName, 'passes'))
+    test_that(paste(modelName, 'passes'), {
+      expect_that(invisible(getResultsCrossValidation(inputs, config)), throws_error(NA) )
+    })
+  }
+  
+  #' ## Check predictor variables
+  #' 
+  #' Check if predictor variables in the models and input data are identical.
+  checkXVars &lt;- function(inputs){
+    numModels &lt;- length(inputs$models)
+    modelNames &lt;- names(inputs$models)
+    modelXVars &lt;-  if (packageVersion('AlteryxPredictive') &lt;= '0.3.2'){
+      lapply(inputs$models, getXVars2)
+    } else {
+      lapply(inputs$models, getXVars)
+    }
+    dataXVars &lt;- names(inputs$data)[which(names(inputs$data) %in% unlist(modelXVars))]
+    errorMsg &lt;- NULL
+    if (numModels &gt; 1) {
+      for (i in 1:(numModels - 1)){
+        mvars1 &lt;- modelXVars[[i]]
+        mvars2 &lt;- modelXVars[[i + 1]]
+        if (!areIdentical(mvars1, mvars2)){
+          errorMsg &lt;- paste("Models", modelNames[i] , "and", modelNames[i + 1],
+                            "were created using different predictor variables.")
+          stopMsg &lt;- "Please ensure all models were created using the same predictors."
+        } 
+        else if (!all(mvars1 %in% dataXVars)){
+          errorMsg &lt;- paste("Model ", modelNames[i], 
+                            "used predictor variables which were not contained in the input data.")
+          stopMsg &lt;- paste("Please ensure input data contains all the data",
+                           "used to create the models and try again.")
+        }
+        if (!is.null(errorMsg)){
+          AlteryxMessage2(errorMsg, iType = 2, iPriority = 3)
+          stop.Alteryx2(stopMsg)
+        }
+      }
+    } else {
+      mvars1 &lt;- modelXVars[[1]]
+      if (!all(mvars1 %in% dataXVars)){
+        errorMsg &lt;- paste("Model ", modelNames[1], 
+                          "used predictor variables which were not contained in the input data.")
+        stopMsg &lt;- paste("Please ensure input data contains all the data",
+                         "used to create the models and try again.")
+      }
+      if (!is.null(errorMsg)){
+        AlteryxMessage2(errorMsg, iType = 2, iPriority = 3)
+        stop.Alteryx2(stopMsg)
+      }
+    }
+  }
+  
+  #' Given a factor variable and a set of records in a fixed trial and fold,
+  #' return the list of classes not present in that trial and fold.
+  getMissingClasses &lt;- function(currentClasses, currentRecords) {
+    currentClasses[(!(currentClasses %in% currentRecords))]
+  }
+  
+  #' For each factor variable, check to see if all levels are present in each fold. 
+  #' If not, warn the user.
+  #' 
+  
+  checkFactorVars &lt;- function(data, folds, config) {
+    #All of the discrete variables will be some type of string in Alteryx. So they'll be read as factors, since stringsAsFactors is TRUE in read.Alteryx.
+    factorVars &lt;- data[,sapply(data, FUN = is.factor), drop = FALSE]
+    #We only need to check if there's at least one factor variable. If all variables are continuous, we don't need to do anything.
+    if (NCOL(factorVars) &gt; 0) {
+      for (k in 1:NCOL(factorVars)) {
+        uniqueClasses &lt;- unique(factorVars[,k])
+        currentVar &lt;- factorVars[,k]
+        #We want to check if one of the folds on one of the trials is missing any classes.
+        #If a class is missing from a fold, we output a warning suggesting that the user check their data/try to collect more data.
+        #If a training set is missing a class, we output a fatal error telling the user they must ensure
+        #that each training set contains all classes.
+        for (i in 1: (config$numberTrials)) {
+          for (j in 1:(config$numberFolds)) {
+            currentTestRecords &lt;- currentVar[unlist(folds[[i]][j])]
+            currentTrainingRecords &lt;- currentVar[unlist(folds[[i]][-j])]
+            missingTestClasses &lt;- getMissingClasses(currentClasses = uniqueClasses, currentRecords = currentTestRecords)
+            missingTrainingClasses &lt;- getMissingClasses(currentClasses = uniqueClasses, currentRecords = currentTrainingRecords)
+            #testing if all classes are represented in trial i, fold j
+            if (length(missingTestClasses) &gt; 0) {
+              currentColumnName &lt;- colnames(factorVars)[k]
+              if (length(missingTestClasses) &gt; 1) {
+                warningMessage1 &lt;- paste0("Classes ", missingTestClasses, " were not present in variable ", currentColumnName, " of the test set.")
+                warningMessage2 &lt;- "It is recommended that you either check your data to ensure no records were mis-labeled or collect more data on these classes."
+              } else {
+                warningMessage1 &lt;- paste0("Class ", missingTestClasses, " was not present in variable ", currentColumnName, " of the test set.")
+                warningMessage2 &lt;- "It is recommended that you either check your data to ensure no records were mis-labeled or collect more data on this class."
+              }
+              AlteryxMessage2(warningMessage1)
+              AlteryxMessage2(warningMessage2)
+            }
+            #testing if all classes are represented in the training set when trial i, fold j is the test set. 
+            #So the training set here is trial i, all folds except fold j.
+            if (length(missingTrainingClasses) &gt; 0) {
+              currentColumnName &lt;- colnames(factorVars)[k]
+              if (length(missingTrainingClasses) &gt; 1) {
+                warningMessage1 &lt;- paste0("Classes ", missingTrainingClasses, " were not present in variable ", currentColumnName," of the training set.")
+                warningMessage2 &lt;- "It is recommended that you either check your data to ensure no records were mis-labeled or collect more data on these classes."
+                errorMessage &lt;- "It is very difficult to create an accurate model when the training set is missing a class."
+              } else {
+                warningMessage1 &lt;- paste0("Class ", missingTrainingClasses, " was not present in variable ", currentColumnName, " of the training set.")
+                warningMessage2 &lt;- "It is recommended that you either check your data to ensure no records were mis-labeled or collect more data on this class."
+                errorMessage &lt;- "It is very difficult to create an accurate model when the training set is missing classes."
+              }
+              AlteryxMessage2(warningMessage1)
+              AlteryxMessage2(warningMessage2)
+              AlteryxMessage2(errorMessage)
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  
+  #Create the list of cross-validation folds and output warnings/errors as appropriate
+  createFolds &lt;- function(data, config) {
+    target &lt;- data[, 1]
+    set.seed(config$seed)
+    foldList &lt;- generateCVRuns(labels = target, ntimes = config$numberTrials, nfold = config$numberFolds, stratified = config$stratified)
+    checkFactorVars(data = data, folds = foldList, config = config)
+    return(foldList)
+  }
+  
+  
+  
+  #Check if response variable is the same in the pre-built model(s) and the input data.
+  #If so, output this variable.
+  getYvars &lt;- function(data, models) {
+    # Get the names of the target fields and make sure they are all same. If not,
+    # throw an error.
+    y_names &lt;- sapply(models, AlteryxPredictive:::getYVar)
+    if (!all(y_names == y_names[1])) {
+      stop.Alteryx2("More than one target variable are present in the provided models")
+    } else if (!(y_names[1] %in% colnames(data))) {
+      stop.Alteryx2("The target variable from the models is different than the target chosen in the configuration. Please check your configuration settings and try again.")
+    }
+    # get the target variable name
+    y_name &lt;- y_names[1]
+    # Get the target variable
+    return(list(y_col = data[[y_name]], y_name = y_name))
+  }
+  
+  #In the 2-class classification case, get the positive class. Otherwise, do nothing.
+  getPosClass &lt;- function(config, yVar) {
+    
+    #Use the function from the Model Comparison tool to get/set positive class:
+    setPositiveClass &lt;- function(tar_lev) {
+      # Set the postive class for two-class classification.
+      # The setPositiveClass function is only triggered if the user leaves the
+      # question on positive class (target level) blank.
+      #   1) if there's "yes/Yes/YES ..." in the target variable, then use "yes/Yes/YES"
+      #   2) if there's "true/True/TRUE..." in the target variable, then use "true/True/TRUE"
+      #   3) otherwise: use the first level by alphabetical order.
+      #
+      # Parameters:
+      #   tar_lev: a vector of string
+      #            the levels of the target variable.
+      #
+      # Returns:
+      #   no_name: a string, the name of the positive class.
+      
+      yes_id &lt;- match("yes", tolower(tar_lev))
+      true_id &lt;- match("true", tolower(tar_lev))
+      if (!is.na(yes_id)) {
+        return (tar_lev[yes_id])
+      } else if (!is.na(true_id)) {
+        return (tar_lev[true_id])
+      } else {
+        return (tar_lev[1])
+      }
+    }
+    return(setPositiveClass(yVar))
+  }
+  
+  adjustGbmModel &lt;- function(model){
+    method &lt;- if (model$cv.folds &gt; 1){
+      "cv"
+    } else if (model$train.function &lt; 1){
+      "test"
+    } else {
+      "OOB"
+    }
+    model$best.trees &lt;- gbm.perf(model, method = method)
+    return(model)
+  }
+  
+#   naiveBayesUpdate &lt;- function(model, trainingData, currentYvar) {
+#     
+#     if (is.null(model$laplace)) {
+#       model$laplace &lt;- 0
+#       AlteryxMessage2("The Laplace smoothing parameter was not saved in the model object.", iType = 2, iPriority = 3)
+#       AlteryxMessage2("Hence, we are using a smoothing parameter of 0 for Cross-Validation.", iType = 2, iPriority = 3)
+#     }
+#     predictors &lt;- trainingData[,-(which(colnames(trainingData) == currentYvar))]
+#     response &lt;- trainingData[,(which(colnames(trainingData) == currentYvar))]
+#     naiveBayes.default &lt;- getS3method("naiveBayes", "default")
+#     currentModel &lt;- update(model, x = predictors, y = response, laplace = model$laplace)
+#     return(currentModel)
+#   }
+  glmnetUpdate &lt;- function(model, trainingData, currentYvar, config, weight_vec = NULL) {
+    predictors &lt;- trainingData[,AlteryxPredictive:::getXVars(model)]
+    response &lt;- trainingData[,(which(colnames(trainingData) == currentYvar))]
+    library(glmnet)
+    model_w_call &lt;- if (config$internal_cv) {
+      model$glmnet.fit
+    } else {
+      model
+    }
+    if (config$`Use Weights`) {
+      currentModel &lt;- update(model_w_call, x = predictors, y = response, weights = weight_vec)
+    } else {
+      #currentModel &lt;- update(model, formula. = makeFormula(AlteryxPredictive:::getXVars(model), currentYvar), data = trainingData)
+      currentModel &lt;- update(model_w_call, x = predictors, y = response)
+    }
+    currentModel$xvars &lt;- colnames(predictors)
+    currentModel$lambda_pred &lt;- if (config$internal_cv) {
+      if (config$lambda_1se) {
+        model$lambda.1se
+      } else {
+        model$lambda.min
+      }
+    } else {
+      config$lambda_no_cv
+    }
+    return(currentModel)
+  }
+  
+  #' Given a model, a dataset and index of test cases, return actual and response
+  getActualandResponse &lt;- function(model, data, testIndices, extras, mid, config){
+    trainingData &lt;- data[-testIndices,]
+    testData &lt;- data[testIndices,]
+    testData &lt;- matchLevels(testData, getXlevels(model))
+    currentYvar &lt;- extras$y_name
+    #Check if the model is Naive Bayes and lacking a Laplace parameter.
+    #If so, set the Laplace parameter to 0 and warn the user.
+#     if (inherits(model, "naiveBayes")) {
+#       currentModel &lt;- naiveBayesUpdate(model, trainingData, currentYvar)
+#     } else 
+    if ((inherits(model, "cv.glmnet")) || (inherits(model, "glmnet"))) {
+      #Ideally, it would be more efficient to convert the x df to a matrix earlier so that
+      #this conversion wouldn't be necessary with every trial/fold. However, the code assumes
+      #that we're dealing with a df in many other places. This are could be ripe for refactoring
+      #in the future.
+      weights_v &lt;- trainingData[[config$`Weight Vec`]]
+      trainingData &lt;- AlteryxPredictive:::df2NumericMatrix(trainingData)
+      #No need to call df2NmericMatrix on testData, since scoreModel calls df2NumericMatrix with glmnet models.
+      currentModel &lt;- glmnetUpdate(model, trainingData, currentYvar, config, weight_vec = weights_v)
+    } else {
+      if (config$`Use Weights`) {
+        # WORKAROUND
+        # The assign() statement below moves the token ‘getActualandResponse’ to the global environment, where the update() function can find it.  
+        # Otherwise, something inside update() isn’t finding ‘getActualandResponse’ on its environment search path.
+        #assign(x = 'trainingDatagetActualandResponse403', value = trainingData, envir = globalenv())
+        my_envir &lt;- environment()
+        lapply(
+          X = 1:ncol(trainingData),
+          FUN = function(i){
+            assign(
+              x = names(trainingData)[i],
+              value = trainingData[,i],
+              envir = my_envir
+            )
+          }
+        )
+        currentModel &lt;- update(model, formula. = makeFormula(AlteryxPredictive:::getXVars(model), currentYvar), data = environment(), weights = trainingData$`Weight Vec`)
+        } else {
+        currentModel &lt;- update(model, formula. = makeFormula(AlteryxPredictive:::getXVars(model), currentYvar), data = trainingData)
+      }
+    }
+    if (inherits(currentModel, 'gbm')){
+      currentModel &lt;- adjustGbmModel(currentModel)
+    }
+    pred &lt;- if (packageVersion('AlteryxPredictive') &lt;= '0.3.2') {
+      AlteryxPredictive::scoreModel2(currentModel, new.data = testData)
+    } else {
+      AlteryxPredictive::scoreModel(currentModel, new.data = testData)
+    }
+    actual &lt;- (extras$yVar)[testIndices]
+    recordID &lt;- (data[testIndices,])$recordID
+    response &lt;- pred$Score
+    return(data.frame(recordID = recordID, response = response, actual = actual))
+  }
+  
+  safeGetActualAndResponse &lt;- failwith(NULL, getActualandResponse, quiet = FALSE)
+  
+  #' 
+  getCrossValidatedResults &lt;- function(inputs, allFolds, extras, config){
+    function(mid, trial, fold){
+      model &lt;- inputs$models[[mid]]
+      testIndices &lt;- allFolds[[trial]][[fold]]
+      out &lt;- (safeGetActualAndResponse(model, inputs$data, testIndices, extras, mid, config))
+      if (is.null(out)) {
+        AlteryxMessage2(paste0("For model ", mid, " trial ", trial, " fold ", fold, " the data could not be scored."), iType = 2, iPriority = 3)
+      } else {
+        out &lt;- cbind(trial = trial, fold = fold, mid = mid, out)
+      }
+      return(out)
+    }
+  }
+  
+  getPkgListForModels &lt;- function(models){
+    modelClasses &lt;- unlist(lapply(models, class))
+    pkgMap = list(
+      gbm = "gbm", rpart = "rpart", svm.formula = "e1071", svm = "e1071",
+      naiveBayes = "e1071", svyglm = "survey", nnet.formula = "nnet",
+      randomForest.formula = "randomForest", earth = "earth", glmnet = "glmnet",
+      elnet = "glmnet", cv.glmnet = "glmnet", lognet = "glmnet"
+    )
+    unique(unlist(pkgMap[modelClasses]))
+  }
+  
+  #Get the necessary measures in the regression case
+  getMeasuresRegression &lt;- function(outData, extras) {
+    actual &lt;- unlist(outData$actual)
+    predicted &lt;- unlist(outData$response)
+    modelIndic &lt;- outData$mid
+    trialIndic &lt;- outData$trial
+    foldIndic &lt;- outData$fold
+    err &lt;- actual - predicted
+    rmse &lt;- sqrt(mean(err*err))
+    mae &lt;- mean(abs(err))
+    # When there are values near 0 in the target variable, it can lead to an attempt to divide by 0
+    # In this case, use the weighted version.
+    if (any(abs(actual) &lt; 0.001)) {
+      AlteryxMessage("The target variable contains values very close to 0 (-0.001, 0.001). WPE and WAPE are being used instead of MPE and MAPE.", iType = 2, iPriority = 3)
+      mpe &lt;- 100 * sum(err) / sum(actual)
+      mape &lt;- 100 * sum(abs(err)) / sum(actual)
+    } else {
+      mpe &lt;- 100*mean(err/actual)
+      mape &lt;- 100*mean(abs(err/actual))
+    }
+    data.frame(
+      Correlation = cor(predicted, actual), RMSE = rmse, MAE = mae, MPE= mpe, MAPE = mape
+    )
+  }
+  
+  #Get the necessary measures in the classification case
+  getMeasuresClassification &lt;- function(outData, extras) {
+    actual &lt;- as.character(outData$actual)
+    scoredData &lt;- outData[,7:8]
+    scoredOutput &lt;- as.character(outData$response)
+    posClass &lt;- extras$posClass
+    modelIndic &lt;- unique(outData$mid)
+    trialIndic &lt;- unique(outData$trial)
+    foldIndic &lt;- unique(outData$fold)
+    overallAcc &lt;- sum(actual == scoredOutput)/length(actual)
+    if (length(extras$levels) == 2) {
+      true_y &lt;- factor(TRUE*(actual == posClass)) # if levels are strings rather than TRUE/FALSE
+      #We need to know which column of scoredData corresponds to the positive class in order to set up the needed intermediate steps for obtaining the AUC
+      posClassCol &lt;- which((extras$levels) == posClass)
+      negClassCol &lt;- which((extras$levels) != posClass)
+      predictions &lt;- scoredData[,posClassCol]
+      predictionObj &lt;- prediction(predictions = predictions, labels = actual)
+      
+      # =================================================================
+      # Quick Reference:
+      #       precision = tp / (tp + fp)
+      #          recall = tp / (tp + fn)
+      #             tpr = tp / (tp + fn)
+      #             fpr = fp / (fp + tn)
+      #              f1 = 2 * precision * recall / (precision + recall)
+      # ==================================================================
+      
+      #     perf_acc &lt;- performance(predictionObj, "acc", "cutoff")
+      #     perf_lift &lt;- performance(predictionObj, "lift", "rpp")
+      #     perf_gain &lt;- performance(predictionObj, "tpr", "rpp")
+      #     perf_roc &lt;- performance(predictionObj, "tpr", "fpr")
+      #     perf_pr &lt;- performance(predictionObj, "prec", "rec")
+      actualPosIndic &lt;- which(actual == posClass)
+      nActualPos &lt;- length(actualPosIndic)
+      nCorrectPos &lt;- sum(scoredOutput[actualPosIndic] == posClass)
+      nPredPos &lt;- sum(scoredOutput == posClass)
+      precision &lt;- nCorrectPos/nPredPos
+      recall &lt;- nCorrectPos/nActualPos
+      F1 &lt;- 2*(precision*recall)/(precision + recall)
+      AUC &lt;- performance(prediction.obj = predictionObj, measure = "auc")
+      AUC &lt;- unlist(AUC@y.values)
+      percentClass1Right &lt;- sum(scoredOutput[which(actual == (extras$levels)[1])] == (extras$levels)[[1]])/length(which(actual == (extras$levels)[1]))
+      percentClass2Right &lt;- sum(scoredOutput[which(actual == (extras$levels)[2])] == (extras$levels)[[2]])/length(which(actual == (extras$levels)[2]))
+      outVec &lt;- c(mid = modelIndic, trial = trialIndic, fold = foldIndic, Accuracy_Overall = overallAcc, Accuracy_Class_1 = percentClass1Right, Accuracy_Class_2 = percentClass2Right, F1 = F1, AUC = AUC)
+    } else {
+      #Compute accuracy by class
+      outVec &lt;- vector(length = length((extras$levels)))
+      for (l in 1:length((extras$levels))) {
+        tempPred &lt;- scoredOutput[actual == (extras$levels)[[l]]]
+        nCorrect &lt;- sum(tempPred == (extras$levels)[[l]])
+        thisAcc &lt;- nCorrect/sum(actual == (extras$levels)[[l]])
+        outVec[l] &lt;- thisAcc
+        names(outVec)[l] &lt;- paste0("Accuracy_Class_", l)
+      }
+      outVec &lt;- c(mid = modelIndic, trial = trialIndic, fold = foldIndic, Accuracy_Overall = overallAcc, outVec)
+    }
+    return(outVec)
+  }
+  
+  #' ### Functions to Generate Output
+  #' 
+  generateConfusionMatrices &lt;- function(outData, extras) {
+    outvec &lt;- vector(length = length(extras$levels))
+    pasteClass &lt;- function(nameOfClass) {
+      paste0("Class_", nameOfClass)
+    }
+    names(outvec) &lt;- sapply(X = (extras$levels), FUN = pasteClass, simplify = TRUE)
+    for (i in 1:length(extras$levels)) {
+      outvec[i] &lt;- length(which((outData$actual) == ((extras$levels)[i])))
+    }
+    return(c(mid = unique(outData$mid), trial = unique(outData$trial), fold = unique(outData$fold), Predicted_class = as.character(unique(outData$response)), outvec))
+  }
+  
+  generateOutput3 &lt;- function(data, extras, modelNames) {
+    d &lt;- ddply(data, .(trial, fold, mid, response), generateConfusionMatrices, 
+               extras = extras
+    )
+    d$Model &lt;- modelNames[as.numeric(d$mid)]
+    d$Type &lt;- rep.int('Classification', times = length(d$Model))
+    d &lt;- subset(d, select = -c(mid, response))
+    d &lt;- reshape2::melt(d, id = c('trial', 'fold', 'Model', 'Type', 'Predicted_class'))
+    colnames(d) &lt;- c('Trial', 'Fold', 'Model', 'Type', 'Predicted_class', 'Variable', 'Value')
+    return(d)
+  }
+  
+  generateOutput2 &lt;- function(data, extras, modelNames) {
+    fun &lt;- if (is.null(extras$levels)) {
+      getMeasuresRegression 
+    } else {
+      getMeasuresClassification
+    }
+    d &lt;- ddply(data, .(trial, fold, mid), fun, extras = extras)
+    d$Model &lt;- modelNames[as.numeric(d$mid)]
+    d &lt;- subset(d, select = -c(mid))
+    return(d)
+  }
+  
+  generateOutput1 &lt;- function(inputs, config, extras){
+    pkgsToLoad &lt;- getPkgListForModels(inputs$models)
+    for (pkg in pkgsToLoad) library(pkg, character.only = TRUE)
+    allFolds &lt;- extras$allFolds
+    g &lt;- expand.grid(
+      mid = seq_along(inputs$models),
+      trial = seq_along(allFolds),
+      fold = seq_along(allFolds[[1]])
+    )
+    return(mdply(g, getCrossValidatedResults(inputs, allFolds, extras, config)))
+  }
+  
+  computeBinaryMetrics &lt;- function(pred_prob, actual, threshold){
+    #Pred_prob gives the predicted probability of belonging to the positive class
+    #Actual is true if the record belongs to the positive class and negative if not
+    actualPosIndic &lt;- which(actual == TRUE)
+    actualNegIndic &lt;- which(actual == FALSE)
+    nActualPos &lt;- length(actualPosIndic)
+    thresholdedPredictions &lt;- (pred_prob &gt;= threshold)
+    nCorrectPos &lt;- sum(thresholdedPredictions[actualPosIndic])
+    nPredPos &lt;- sum(thresholdedPredictions)
+    nPredNeg &lt;- length(actual) - length(nPredPos)
+    nCorrectNeg &lt;- sum(1 - (thresholdedPredictions[-actualPosIndic]))
+    overallAcc &lt;- sum(thresholdedPredictions == actual)/length(actual)
+    PosAcc &lt;- length(intersect(which(thresholdedPredictions == TRUE), actualPosIndic))/length(actualPosIndic)
+    NegAcc &lt;- length(intersect(which(thresholdedPredictions == FALSE), actualNegIndic))/length(actualNegIndic)
+    precision &lt;- nCorrectPos/nPredPos
+    recall &lt;- nCorrectPos/nActualPos
+    F1 &lt;- 2*(precision*recall)/(precision + recall)
+    tpr &lt;- recall
+    rpp &lt;- nPredPos/length(pred_prob)
+    lift &lt;- tpr/rpp
+    fpr &lt;- (nPredPos - nCorrectPos)/length(actualNegIndic)
+    pred &lt;- prediction(predictions = pred_prob, labels = actual)
+    auc &lt;- performance(pred, "auc")
+    auc &lt;- unlist(auc@y.values)
+    data.frame(threshold = threshold, recall = recall, F1 = F1, lift = lift, Rate_Pos_Predictions = rpp, True_Pos_Rate = tpr, False_Pos_Rate = fpr, Precision = precision)
+  }
+  
+  generateDataForPlots &lt;- function(d, extras, config){
+    data.frame(response = d$response, actual = d$actual)
+  }
+  
+  generateLabels &lt;- function(plotData, config) {
+    trials &lt;- c()
+    for (i in 1:length(unique(plotData$trial))) {
+      trials &lt;- c(trials, paste0("Trial ", unique(plotData$trial))[i])
+    }
+    models &lt;- c()
+    for (i in 1:length(unique(plotData$mid))) {
+      models &lt;- c(models, paste0("Model ", unique(plotData$model))[i])
+    }
+    list(trials = trials, models = models)
+  }
+  
+  plotBinaryData &lt;- function(plotData, config, modelNames) {
+    labels &lt;- generateLabels(plotData, config)
+    modelVec &lt;- modelNames[plotData$mid]
+    trialVec &lt;- paste0('Trial ', plotData$trial)
+    plotData &lt;- cbind(plotData, modelVec, trialVec)
+    liftdf &lt;- data.frame(Rate_positive_predictions = plotData$Rate_Pos_Predictions, lift = plotData$lift, fold = paste0("Fold", plotData$fold), 
+                         models = plotData$modelVec, trial = plotData$trialVec)
+    gaindf &lt;- data.frame(Rate_positive_predictions = plotData$Rate_Pos_Predictions, True_Pos_Rate = plotData$True_Pos_Rate, fold = paste0("Fold", plotData$fold),
+                         models = plotData$modelVec, trial = plotData$trialVec)
+    prec_recalldf &lt;- data.frame(recall = plotData$recall, precision = plotData$Precision, fold = paste0("Fold", plotData$fold),
+                                models = plotData$modelVec, trial = plotData$trialVec)
+    rocdf &lt;- data.frame(False_Pos_Rate = plotData$False_Pos_Rate, True_Pos_Rate = plotData$True_Pos_Rate, fold = paste0("Fold", plotData$fold),
+                        models = plotData$modelVec, trial = plotData$trialVec)
+    
+    liftPlotObj &lt;- ggplot(data = liftdf, aes(x = Rate_positive_predictions, y = lift)) + 
+      geom_smooth(aes(colour=models)) + ggtitle("Lift curves") 
+    gainPlotObj &lt;- ggplot(data = gaindf, aes(x = Rate_positive_predictions, y = True_Pos_Rate)) + 
+      geom_smooth(aes(colour=models)) + ggtitle('Gain Charts')
+    PrecRecallPlotObj &lt;- ggplot(data = prec_recalldf, aes(x = recall, y = precision)) + 
+      geom_smooth(aes(colour=models)) + ggtitle('Precision and Recall Curves')
+    ROCPlotObj &lt;- ggplot(data = rocdf, aes(x = False_Pos_Rate, y = True_Pos_Rate)) +
+      geom_smooth(aes(colour=models)) + ggtitle('ROC Curves')
+    AlteryxGraph2(liftPlotObj, nOutput = 4)
+    AlteryxGraph2(gainPlotObj, nOutput = 4)
+    AlteryxGraph2(PrecRecallPlotObj, nOutput = 4)
+    AlteryxGraph2(ROCPlotObj, nOutput = 4)
+  }
+  
+  plotRegressionData &lt;- function(plotData, config, modelNames) {
+    modelVec &lt;- modelNames[plotData$mid]
+    trialVec &lt;- paste0('Trial ', plotData$trial)
+    plotData &lt;- cbind(plotData, modelVec, trialVec)
+    plotdf &lt;- data.frame(Actual = plotData$actual, Predicted = plotData$response, fold = paste0("Fold", plotData$fold), 
+                         models = plotData$modelVec, trial = plotData$trialVec)
+    plotObj &lt;- ggplot(data = plotdf, aes(x = Actual, y = Predicted)) + 
+      geom_smooth(aes(colour=models)) + ggtitle("Predicted value vs actual values")
+    AlteryxGraph2(plotObj, nOutput = 4)
+  }
+  
+  # Helper Functions End ----
+  getResultsCrossValidation &lt;- function(inputs, config){
+    inputs$data$recordID &lt;- 1:NROW(inputs$data)
+    yVarList &lt;- getYvars(inputs$data, inputs$models)
+    yVar &lt;- yVarList$y_col
+    y_name &lt;- yVarList$y_name
+    inputs$modelNames &lt;- names(inputs$models)
+    modelNames &lt;- names(inputs$models)
+    checkXVars(inputs)
+    extras &lt;- list(
+      yVar = yVar,
+      y_name = y_name,
+      posClass = config$posClass,
+      allFolds = createFolds(data = inputs$data, config = config),
+      levels = NULL
+    )
+    dataOutput1 &lt;- generateOutput1(inputs, config, extras)
+    if ("Score" %in% colnames(dataOutput1)) {
+      dataOutput1 &lt;- data.frame(trial = dataOutput1$trial, fold = dataOutput1$fold, 
+                                mid = dataOutput1$mid, recordID = dataOutput1$recordID,
+                                response = dataOutput1$Score, actual = dataOutput1$actual)
+    }
+    preppedOutput1 &lt;- data.frame(RecordID = dataOutput1$recordID, 
+                 Trial = dataOutput1$trial, Fold = dataOutput1$fold, 
+                 Model = modelNames[dataOutput1$mid], Response = dataOutput1$response, 
+                 Actual = dataOutput1$actual)
+
+    dataOutput2 &lt;- generateOutput2(dataOutput1, extras, modelNames)
+    preppedOutput2 &lt;- reshape2::melt(dataOutput2, id = c('trial', 'fold', 'Model'))
+    plotData &lt;- ddply(dataOutput1, .(trial, fold, mid), generateDataForPlots, 
+                      extras = extras, config = config
+    )
+    outputPlot &lt;- plotRegressionData(plotData, config, modelNames)
+    list(
+      data = preppedOutput1, fitMeasures = preppedOutput2, 
+      outputPlot = outputPlot   
+    )
+  }
+  
+  runCrossValidation &lt;- function(inputs, config){
+    results &lt;- getResultsCrossValidation(inputs, config)
+    write.Alteryx2(results$data, 2)
+    write.Alteryx2(results$fitMeasures, 3)
+    AlteryxGraph2(results$outputPlot, 4)
+  }
+  
+  if (is.null(getOption("testscript"))){
+    runCrossValidation(inputs, config)
+  }
+  
+}
+ 
+</RScript>
+          <UseFullUpdate value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Get the model class, to determine if it is a lm or rxLinMod model.</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output1">
+          <RecordInfo>
+            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output4">
+          <RecordInfo>
+            <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output2">
+          <RecordInfo>
+            <Field name="RecordID" source="R-DATA:" type="Int32" />
+            <Field name="Trial" source="R-DATA:" type="Int32" />
+            <Field name="Fold" source="R-DATA:" type="Int32" />
+            <Field name="Model" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Response" source="R-DATA:" type="Double" />
+            <Field name="Actual" source="R-DATA:" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output3">
+          <RecordInfo>
+            <Field name="trial" source="R-DATA:" type="Int32" />
+            <Field name="fold" source="R-DATA:" type="Int32" />
+            <Field name="Model" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="variable" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="value" source="R-DATA:" type="Double" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR" />
+    </Node>
+    <Node ToolID="128">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="1674" y="1122" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Add the model class field to the report snippets</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="129">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1854" y="1122" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Class] == "rxLinMod"</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Fork depending on whether the models is a rxLinMod or lm model:
+[Class] == "rxLinMod"</AnnotationText>
+          <DefaultAnnotationText>[Class] == "rxLinMod"</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="130">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2226" y="1146" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="Desc" selected="True" />
+            <SelectField field="Report" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Remove the "Class" field.</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="131">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2082" y="1146" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Unioning the elements back together, but only one of the two inputs will have data.</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="132">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1938" y="1086" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Desc] == "ResidualsTitle" OR [Desc] == "ANOVAAnalysisTitle" OR [Desc] == "ANOVAAnalysis" OR [Desc] == "BasicDiagnosticPlotsTitle" OR [Desc] == "BasicDiagnosticPlots"</Expression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Filter out the report elements that aren't available for rxLinMod models:
+[Desc] == "ResidualsTitle" OR [Desc] == "ANOVAAnalysisTitle" O...</AnnotationText>
+          <DefaultAnnotationText>[Desc] == "ResidualsTitle" OR [Desc] == "ANOVAAnalysisTitle" ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="133">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1158" y="1050" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_eaa9fc28971d4bd39143edf9e436eceb_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8032_187d00c98f724c8d848b10df41636b51_\Engine_8640_2badc95510d9491dbef76c826d79f54b_.yxdb</TempFileDataProfiling>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="134">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1230" y="1002" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_2235568d0bb94190b1a775f98e4afb87_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8032_187d00c98f724c8d848b10df41636b51_\Engine_8640_61d8189c5dc64638b042c3a18d6c1aba_.yxdb</TempFileDataProfiling>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="135">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1086" y="1278" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_608531c05a7b4417b1642a3754e09ee9_.yxdb</TempFile>
+          <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8032_187d00c98f724c8d848b10df41636b51_\Engine_8640_e4f38547f1074634acbbbbab56a3c8cb_.yxdb</TempFileDataProfiling>
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="136">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+        <Position x="1062" y="738" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <DetourRight value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+    </Node>
+    <Node ToolID="137">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+        <Position x="1086" y="1122" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <DetourRight value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+    </Node>
+    <Node ToolID="138">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+        <Position x="1218" y="1470" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <DetourRight value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+    </Node>
+    <Node ToolID="139">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DetourEnd.DetourEnd">
+        <Position x="2418" y="1290" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetourEnd" />
+    </Node>
+    <Node ToolID="140">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+        <Position x="1362" y="1482" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <DetourRight value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+    </Node>
+    <Node ToolID="141">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+        <Position x="1566" y="1158" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <DetourRight value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+    </Node>
+    <Node ToolID="142">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="1638" y="1026" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_87118381c38c48d7866e57cd526c11c1_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="158">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+        <Position x="966" y="1722" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <DetourRight value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+    </Node>
+    <Node ToolID="157">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="2622" y="959" width="947" height="474" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Cross-validation reporting tools</Caption>
+          <Style TextColor="#314c4a" FillColor="#ffff80" BorderColor="#314c4a" Transparency="25" Margin="60" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="143">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+            <Position x="2850" y="1038" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Name>Data</Name>
+              <Abbrev>D</Abbrev>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>**D output**: This output provides the actual data values as well as their predictions.</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+        </Node>
+        <Node ToolID="144">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+            <Position x="2910" y="1170" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Name>Fit Measures</Name>
+              <Abbrev>F</Abbrev>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <AnnotationText>**F output:** This output reports various model fit measures, depending on model type (see the second paragraph for more details on these measures).</AnnotationText>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+        </Node>
+        <Node ToolID="145">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="2802" y="1170" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields />
+              <HeaderField field="variable" />
+              <DataField field="value" />
+              <Methods>
+                <Method method="First" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="146">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+            <Position x="2946" y="1314" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Images />
+              <HeaderMode value="True" />
+              <HeaderField>Graph</HeaderField>
+              <Position>Above</Position>
+              <RawMode value="False" />
+              <ValidatePCXML value="True" />
+              <Message />
+              <RichTextMode value="True" />
+              <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}}
+\viewkind4\uc1\pard\f0\fs29 Performance Diagnostic Plots with 95% Confidence Interval\par
+}
+]]></RichTextString>
+              <Styles>
+                <Style Name="TextStyle" />
+              </Styles>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Performance Diagnostic Plots w...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+        </Node>
+        <Node ToolID="147">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="3102" y="1242" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <AutoResetMode>Custom</AutoResetMode>
+              <MultiMetaInfo>
+                <MetaInfo name="#1">
+                  <RecordInfo>
+                    <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" column="1" />
+                  </RecordInfo>
+                </MetaInfo>
+                <MetaInfo name="#2">
+                  <RecordInfo>
+                    <Field name="Table" size="2147483647" source="Report:Table:Basic:" type="V_String" column="1" />
+                  </RecordInfo>
+                </MetaInfo>
+              </MultiMetaInfo>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ManualDelayed</Mode>
+              <SetOutputOrder value="True" />
+              <OutputOrder>
+                <Connection>#1</Connection>
+                <Connection>#2</Connection>
+              </OutputOrder>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="148">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+            <Position x="3210" y="1182" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Name>Full Cross-Validation Report</Name>
+              <Abbrev>C</Abbrev>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+        </Node>
+        <Node ToolID="149">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+            <Position x="3066" y="1098" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <GroupFields />
+              <HeaderField field="variable" />
+              <DataField field="value" />
+              <Methods>
+                <Method method="Avg" />
+              </Methods>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+        </Node>
+        <Node ToolID="150">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+            <Position x="3174" y="1098" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TableMode>Basic</TableMode>
+              <GroupingFields orderChanged="False" />
+              <Width>100%</Width>
+              <ShowHeader value="True" />
+              <ShowBarGraph value="False" />
+              <TableFields orderChanged="False">
+                <Field name="Model" selected="True" Alignment="Left" />
+                <Field name="Avg_Accuracy_Class_1" selected="True" Alignment="Right" Places="6" />
+                <Field name="Avg_Accuracy_Class_2" selected="True" Alignment="Right" Places="6" />
+                <Field name="Avg_Accuracy_Overall" selected="True" Alignment="Right" Places="6" />
+                <Field name="Avg_AUC" selected="True" Alignment="Right" Places="6" />
+                <Field name="Avg_F1" selected="True" Alignment="Right" Places="6" Width="" />
+                <Field name="*Unknown" selected="True" Alignment="Right" Places="6" Width="" />
+              </TableFields>
+              <TableStyles>
+                <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+                <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+                <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+                <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+              </TableStyles>
+              <StyleRules />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+        </Node>
+        <Node ToolID="151">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+            <Position x="3270" y="1098" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Images />
+              <HeaderMode value="True" />
+              <HeaderField>Table</HeaderField>
+              <Position>Above</Position>
+              <RawMode value="False" />
+              <ValidatePCXML value="True" />
+              <Message />
+              <RichTextMode value="True" />
+              <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}}
+\viewkind4\uc1\pard\f0\fs29 Model fit metrics (average per model)\par
+}
+]]></RichTextString>
+              <Styles>
+                <Style Name="TextStyle" />
+              </Styles>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Model fit metrics (average per...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+        </Node>
+        <Node ToolID="152">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="3210" y="1278" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_9648_e48c2b480cd94364962f6e2b91da7e76_\Engine_9172_e4007d3be7a64e728ad105da3c4c86d1_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_10984_646fb7662b5b437d90b48a230752d9f5_\Engine_1404_4a118f442d094cf9a3ce8f3dfcbb69b3_.yxdb</TempFileDataProfiling>
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="153">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="3450" y="1086" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_10984_646fb7662b5b437d90b48a230752d9f5_\Engine_1404_17298ee47b56493eb5e4a71a17b98a01_.yxdb</TempFileDataProfiling>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_9648_e48c2b480cd94364962f6e2b91da7e76_\Engine_9172_18b418fe875a4ebd9b2fc993b8e5cda1_.yxdb</TempFile>
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="154">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+            <Position x="2682" y="1038" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <DetourRight value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Left">
+              <RecordInfo>
+                <Field name="RecordID" source="R-DATA:" type="Int32" />
+                <Field name="Trial" source="R-DATA:" type="Int32" />
+                <Field name="Fold" source="R-DATA:" type="Int32" />
+                <Field name="Model" size="1073741823" source="R-DATA:" type="V_WString" />
+                <Field name="Response" source="R-DATA:" type="Double" />
+                <Field name="Actual" source="R-DATA:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Right">
+              <RecordInfo>
+                <Field name="RecordID" source="R-DATA:" type="Int32" />
+                <Field name="Trial" source="R-DATA:" type="Int32" />
+                <Field name="Fold" source="R-DATA:" type="Int32" />
+                <Field name="Model" size="1073741823" source="R-DATA:" type="V_WString" />
+                <Field name="Response" source="R-DATA:" type="Double" />
+                <Field name="Actual" source="R-DATA:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+        </Node>
+        <Node ToolID="155">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+            <Position x="2682" y="1146" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <DetourRight value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Left">
+              <RecordInfo>
+                <Field name="trial" source="R-DATA:" type="Int32" />
+                <Field name="fold" source="R-DATA:" type="Int32" />
+                <Field name="Model" size="1073741823" source="R-DATA:" type="V_WString" />
+                <Field name="variable" size="1073741823" source="R-DATA:" type="V_WString" />
+                <Field name="value" source="R-DATA:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Right">
+              <RecordInfo>
+                <Field name="trial" source="R-DATA:" type="Int32" />
+                <Field name="fold" source="R-DATA:" type="Int32" />
+                <Field name="Model" size="1073741823" source="R-DATA:" type="V_WString" />
+                <Field name="variable" size="1073741823" source="R-DATA:" type="V_WString" />
+                <Field name="value" source="R-DATA:" type="Double" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+        </Node>
+        <Node ToolID="156">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+            <Position x="2754" y="1278" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <DetourRight value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Left">
+              <RecordInfo>
+                <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="Right">
+              <RecordInfo>
+                <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="183">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1326" y="1571" width="1475" height="732" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 238</Caption>
+          <Style TextColor="#314c4a" FillColor="#ff8080" BorderColor="#314c4a" Transparency="25" Margin="60" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="159">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="1650" y="1770" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression><![CDATA[[Record ID] = 1
+
+
+// [Graph] = ""
+]]></Expression>
+              <Mode>Simple</Mode>
+              <Simple>
+                <Field>Record ID</Field>
+                <Operator>=</Operator>
+                <Operands>
+                  <Operand>1</Operand>
+                </Operands>
+              </Simple>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Record ID] = 1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+        <Node ToolID="160">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+            <Position x="1554" y="1734" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldName>Record ID</FieldName>
+              <StartValue>1</StartValue>
+              <FieldType>Int32</FieldType>
+              <FieldSize>6</FieldSize>
+              <Position>First Column</Position>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+        </Node>
+        <Node ToolID="161">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+            <Position x="1842" y="1710" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Images />
+              <HeaderMode value="True" />
+              <HeaderField>Graph</HeaderField>
+              <Position>Above</Position>
+              <RawMode value="False" />
+              <ValidatePCXML value="True" />
+              <Message />
+              <RichTextMode value="True" />
+              <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Verdana;}}
+\viewkind4\uc1\pard\i\f0\fs24 Absolute value of individual coefficients vs L1 norm of all coefficients\par
+}
+]]></RichTextString>
+              <Styles>
+                <Style Name="TextStyle" />
+              </Styles>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Absolute value of individual c...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+        </Node>
+        <Node ToolID="162">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+            <Position x="1878" y="1806" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Images />
+              <HeaderMode value="True" />
+              <HeaderField>Graph</HeaderField>
+              <Position>Above</Position>
+              <RawMode value="False" />
+              <ValidatePCXML value="True" />
+              <Message />
+              <RichTextMode value="True" />
+              <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Verdana;}}
+\viewkind4\uc1\pard\i\f0\fs24 Absolute value of individual coefficients vs log of lambda\par
+}
+]]></RichTextString>
+              <Styles>
+                <Style Name="TextStyle" />
+              </Styles>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Absolute value of individual c...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+        </Node>
+        <Node ToolID="163">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+            <Position x="1818" y="2010" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Images />
+              <HeaderMode value="True" />
+              <HeaderField>Graph</HeaderField>
+              <Position>Above</Position>
+              <RawMode value="False" />
+              <ValidatePCXML value="True" />
+              <Message />
+              <RichTextMode value="True" />
+              <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Verdana;}}
+\viewkind4\uc1\pard\i\f0\fs24 Mean-Squared Error vs log of lambda\par
+}
+]]></RichTextString>
+              <Styles>
+                <Style Name="TextStyle" />
+              </Styles>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Mean-Squared Error vs log of l...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+        </Node>
+        <Node ToolID="164">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="2058" y="1734" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="True" />
+              <OutputOrder>
+                <Connection>#3</Connection>
+                <Connection>#1</Connection>
+                <Connection>#2</Connection>
+              </OutputOrder>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="165">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="2202" y="1722" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8884_dbee7d83f21b4a7192c4fce0953ce040_\Engine_7632_385905812aa546d4a6314de71949a15f_.yxdb</TempFile>
+              <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8900_3a1d425cd94440f68aebe93f9bf4c87f_\Engine_7288_ece1b767df7344ab85fa34e6f1aaafe7_.yxdb</TempFileDataProfiling>
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="166">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1746" y="1710" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <SelectFields>
+                <SelectField field="Record ID" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="167">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="1746" y="1818" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <SelectFields>
+                <SelectField field="Record ID" selected="False" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="168">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+            <Position x="1458" y="1734" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <DetourRight value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+        </Node>
+        <Node ToolID="173">
+          <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+            <Position x="2010" y="1859" width="479" height="384" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Caption>Container 236</Caption>
+              <Style TextColor="#314c4a" FillColor="#8080ff" BorderColor="#314c4a" Transparency="25" Margin="60" />
+              <Disabled value="False" />
+              <Folded value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <ChildNodes>
+            <Node ToolID="169">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+                <Position x="2070" y="1938" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <DetourRight value="True" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+            </Node>
+            <Node ToolID="170">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+                <Position x="2274" y="2034" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <ByName_ErrorMode>Warning</ByName_ErrorMode>
+                  <ByName_OutputMode>All</ByName_OutputMode>
+                  <Mode>ByName</Mode>
+                  <SetOutputOrder value="False" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+            </Node>
+            <Node ToolID="171">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.DetourEnd.DetourEnd">
+                <Position x="2370" y="1962" />
+              </GuiSettings>
+              <Properties>
+                <Configuration />
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetourEnd" />
+            </Node>
+            <Node ToolID="172">
+              <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+                <Position x="2106" y="2118" width="288" height="65" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <Text>We're in the regularization and display_graphs case here. If internal_cv is selected, we detour to the right to union the CV graph with the other graphs. If not, we detour to the left and skip this union.</Text>
+                  <Font name="Segoe UI" size="8.25" style="0" />
+                  <TextColor name="Black" />
+                  <FillColor name="White" />
+                  <Shape shape="0" />
+                  <Justification Justification="4" />
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+              </Properties>
+            </Node>
+          </ChildNodes>
+        </Node>
+        <Node ToolID="174">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="1386" y="1806" width="232" height="96" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>We're in the regularization case here. If display_graphs is selected, we detour to the right to complete the necessary steps for preparing the plots for the report. If not, we detour to the left and skip through these steps.</Text>
+              <Font name="Segoe UI" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="175">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+            <Position x="1962" y="1662" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Images />
+              <HeaderMode value="True" />
+              <HeaderField>Graph</HeaderField>
+              <Position>Above</Position>
+              <RawMode value="False" />
+              <ValidatePCXML value="True" />
+              <Message />
+              <RichTextMode value="True" />
+              <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Verdana;}}
+\viewkind4\uc1\pard\i\f0\fs24 Absolute value of individual coefficients vs fraction of deviance explained\par
+}
+]]></RichTextString>
+              <Styles>
+                <Style Name="TextStyle" />
+              </Styles>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Absolute value of individual c...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+        </Node>
+        <Node ToolID="176">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+            <Position x="1446" y="1974" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <DetourRight value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+        </Node>
+        <Node ToolID="177">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+            <Position x="1818" y="1650" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <DetourRight value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+        </Node>
+        <Node ToolID="178">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="2586" y="1926" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <AutoResetMode>Custom</AutoResetMode>
+              <MultiMetaInfo>
+                <MetaInfo name="#1">
+                  <RecordInfo>
+                    <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" column="1" />
+                  </RecordInfo>
+                </MetaInfo>
+                <MetaInfo name="#2">
+                  <RecordInfo>
+                    <Field name="Table" size="2147483647" source="Report:Table:Basic:" type="V_String" column="1" />
+                  </RecordInfo>
+                </MetaInfo>
+              </MultiMetaInfo>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ManualDelayed</Mode>
+              <SetOutputOrder value="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="179">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
+            <Position x="2490" y="1770" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <DetourRight value="True" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
+        </Node>
+        <Node ToolID="180">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.DetourEnd.DetourEnd">
+            <Position x="2682" y="1854" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetourEnd" />
+        </Node>
+        <Node ToolID="181">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+            <Position x="2298" y="1758" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TableMode>Basic</TableMode>
+              <GroupingFields orderChanged="False" />
+              <Width>100%</Width>
+              <ShowHeader value="True" />
+              <ShowBarGraph value="False" />
+              <TableFields orderChanged="False">
+                <Field name="Coefficients" selected="True" Alignment="Right" />
+                <Field name="Values" selected="True" Alignment="Right" Places="6" Width="" />
+                <Field name="*Unknown" selected="True" Alignment="Right" />
+              </TableFields>
+              <TableStyles>
+                <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+                <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+                <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+                <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+              </TableStyles>
+              <StyleRules />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+        </Node>
+        <Node ToolID="182">
+          <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+            <Position x="2394" y="1770" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Images />
+              <HeaderMode value="True" />
+              <HeaderField>Table</HeaderField>
+              <Position>Above</Position>
+              <RawMode value="False" />
+              <ValidatePCXML value="True" />
+              <Message />
+              <RichTextMode value="True" />
+              <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Microsoft Sans Serif;}}
+\viewkind4\uc1\pard\i\f0\fs29 Table of non-zero coefficients\i0\par
+}
+]]></RichTextString>
+              <Styles>
+                <Style Name="TextStyle" />
+              </Styles>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Table of non-zero coefficients</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+        </Node>
+      </ChildNodes>
+    </Node>
     <Node ToolID="114">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
         <Position x="1974" y="222" width="565" height="308" />
@@ -5708,6 +8028,270 @@ Union</Text>
       <Origin ToolID="80" Connection="Output" />
       <Destination ToolID="2" Connection="Input" />
     </Connection>
+    <Connection name="#1">
+      <Origin ToolID="115" Connection="Output" />
+      <Destination ToolID="123" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="116" Connection="Output" />
+      <Destination ToolID="123" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="120" Connection="Output" />
+      <Destination ToolID="123" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="122" Connection="Output" />
+      <Destination ToolID="123" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="117" Connection="Output" />
+      <Destination ToolID="118" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="118" Connection="Output" />
+      <Destination ToolID="120" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="121" Connection="Output" />
+      <Destination ToolID="122" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="123" Connection="Output" />
+      <Destination ToolID="128" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="141" Connection="Left" />
+      <Destination ToolID="128" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="123" Connection="Output" />
+      <Destination ToolID="142" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="127" Connection="Output1" />
+      <Destination ToolID="141" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="127" Connection="Output2" />
+      <Destination ToolID="154" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="127" Connection="Output3" />
+      <Destination ToolID="155" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="127" Connection="Output4" />
+      <Destination ToolID="156" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="128" Connection="Output" />
+      <Destination ToolID="129" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="129" Connection="True" />
+      <Destination ToolID="132" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="129" Connection="False" />
+      <Destination ToolID="131" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="132" Connection="False" />
+      <Destination ToolID="131" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="130" Connection="Output" />
+      <Destination ToolID="124" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="130" Connection="Output" />
+      <Destination ToolID="139" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="180" Connection="Output" />
+      <Destination ToolID="139" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="131" Connection="Output" />
+      <Destination ToolID="130" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="136" Connection="Left" />
+      <Destination ToolID="115" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="136" Connection="Left" />
+      <Destination ToolID="116" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="136" Connection="Right" />
+      <Destination ToolID="181" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="137" Connection="Left" />
+      <Destination ToolID="117" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="138" Connection="Left" />
+      <Destination ToolID="121" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="138" Connection="Right" />
+      <Destination ToolID="168" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="139" Connection="Output" />
+      <Destination ToolID="126" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="140" Connection="Right" />
+      <Destination ToolID="177" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="158" Connection="Right" />
+      <Destination ToolID="176" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="145" Connection="Output" />
+      <Destination ToolID="144" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="146" Connection="Output" />
+      <Destination ToolID="147" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="151" Connection="Output" />
+      <Destination ToolID="147" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="147" Connection="Output" />
+      <Destination ToolID="148" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="147" Connection="Output" />
+      <Destination ToolID="152" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="149" Connection="Output" />
+      <Destination ToolID="150" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="150" Connection="Output" />
+      <Destination ToolID="151" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="150" Connection="Output" />
+      <Destination ToolID="153" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="154" Connection="Right" />
+      <Destination ToolID="143" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="155" Connection="Right" />
+      <Destination ToolID="145" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="155" Connection="Right" />
+      <Destination ToolID="149" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="156" Connection="Right" />
+      <Destination ToolID="146" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="159" Connection="True" />
+      <Destination ToolID="166" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="159" Connection="False" />
+      <Destination ToolID="167" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="160" Connection="Output" />
+      <Destination ToolID="159" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="161" Connection="Output" />
+      <Destination ToolID="164" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="162" Connection="Output" />
+      <Destination ToolID="164" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="175" Connection="Output" />
+      <Destination ToolID="164" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="163" Connection="Output" />
+      <Destination ToolID="170" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="169" Connection="Right" />
+      <Destination ToolID="170" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="164" Connection="Output" />
+      <Destination ToolID="165" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="164" Connection="Output" />
+      <Destination ToolID="169" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="166" Connection="Output" />
+      <Destination ToolID="161" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="167" Connection="Output" />
+      <Destination ToolID="162" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="168" Connection="Right" />
+      <Destination ToolID="160" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="169" Connection="Left" />
+      <Destination ToolID="171" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="170" Connection="Output" />
+      <Destination ToolID="171" Connection="Right" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="171" Connection="Output" />
+      <Destination ToolID="178" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="179" Connection="Right" />
+      <Destination ToolID="178" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="176" Connection="Right" />
+      <Destination ToolID="163" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="177" Connection="Right" />
+      <Destination ToolID="175" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="178" Connection="Output" />
+      <Destination ToolID="180" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="179" Connection="Left" />
+      <Destination ToolID="180" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="181" Connection="Output" />
+      <Destination ToolID="182" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="182" Connection="Output" />
+      <Destination ToolID="179" Connection="Input" />
+    </Connection>
     <Connection Wireless="True">
       <Origin ToolID="68" Connection="Question" />
       <Destination ToolID="54" Connection="Question" />
@@ -5922,6 +8506,36 @@ Union</Text>
         <Value />
         <IsNumeric value="False" />
       </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (125)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (126)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (143)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (144)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (148)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
     </Constants>
     <MetaInfo>
       <NameIsFileName value="False" />
@@ -6072,6 +8686,36 @@ Union</Text>
               <Questions />
               <Default value="False" />
               <Collapsable value="False" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Output</Description>
+              <Name>Macro Output (125)</Name>
+              <ToolId value="125" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Reports</Description>
+              <Name>Macro Output (126)</Name>
+              <ToolId value="126" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (5)</Description>
+              <Name>Macro Output (143)</Name>
+              <ToolId value="143" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (48)</Description>
+              <Name>Macro Output (144)</Name>
+              <ToolId value="144" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (89)</Description>
+              <Name>Macro Output (148)</Name>
+              <ToolId value="148" />
             </Question>
           </Questions>
         </Question>
@@ -6404,8 +9048,24 @@ complementary log-log
       <Wiz_CustomGraphic value="False" />
       <Wiz_ShowOutput value="True" />
       <Wiz_OpenOutputTools>
+        <Tool ToolId="125" Selected="True" />
         <Tool ToolId="2" Selected="True" />
+        <Tool ToolId="124" Selected="False" />
+        <Tool ToolId="119" Selected="False" />
         <Tool ToolId="77" Selected="True" />
+        <Tool ToolId="116" Selected="True" />
+        <Tool ToolId="115" Selected="True" />
+        <Tool ToolId="126" Selected="True" />
+        <Tool ToolId="133" Selected="False" />
+        <Tool ToolId="134" Selected="False" />
+        <Tool ToolId="135" Selected="False" />
+        <Tool ToolId="142" Selected="False" />
+        <Tool ToolId="143" Selected="True" />
+        <Tool ToolId="144" Selected="True" />
+        <Tool ToolId="148" Selected="True" />
+        <Tool ToolId="152" Selected="False" />
+        <Tool ToolId="153" Selected="False" />
+        <Tool ToolId="165" Selected="False" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />
