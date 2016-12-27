@@ -22,31 +22,6 @@ Logistic Regression</Text>
         </Annotation>
       </Properties>
     </Node>
-    <Node ToolID="17">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="2208" y="1365" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\Users\dputler\AppData\Local\Temp\Engine_1920_471052d4d2a7495f9b7f3f2d3c97f0f2\Engine_6336_ada390fbd0cf48269cb1d056a60ac867.yxdb</TempFile>
-          <Layout>
-            <ViewMode>Single</ViewMode>
-            <ViewSize value="100" />
-            <View1>
-              <DefaultTab>Report</DefaultTab>
-              <Hints />
-            </View1>
-            <View2 />
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
         <Position x="264" y="522" />
@@ -730,259 +705,6 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
         </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxR" />
-    </Node>
-    <Node ToolID="10">
-      <GuiSettings>
-        <Position x="918" y="558" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output40">
-          <RecordInfo>
-            <Field name="Model_Name" size="9999999" source="R-Data:" type="V_String" />
-            <Field name="Call" size="9999999" source="R-Data:" type="V_String" />
-            <Field name="out" size="9999999" source="R-Data:" type="V_String" />
-            <Field name="gap1" size="9999999" source="R-Data:" type="V_String" />
-            <Field name="Fit_Stats" size="2048" source="CrossTab:Header:grp:Fit_Stats:Concat:" type="V_String" />
-            <Field description="TextToColumns: Parsed from Fit_Stats" name="Fit_Stats1" size="2048" source="TextToColumns: Parsed from Fit_Stats" type="V_String" />
-            <Field description="TextToColumns: Parsed from Fit_Stats" name="Fit_Stats2" size="2048" source="TextToColumns: Parsed from Fit_Stats" type="V_String" />
-            <Field description="TextToColumns: Parsed from Fit_Stats" name="Fit_Stats3" size="2048" source="TextToColumns: Parsed from Fit_Stats" type="V_String" />
-            <Field name="gap2" size="9999999" source="R-Data:" type="V_String" />
-            <Field name="Layout" size="536870911" source="Report:Layout:" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
-            <Field name="Report" size="2147483647" source="Report: (Multiple Sources)" type="V_String" />
-            <Field name="Type" size="64" source="Formula: IF [out] == &quot;binomial&quot; THEN &quot;Logistic&quot;&#xA;ELSEIF [out] == &quot;Gamma&quot; THEN &quot;Gamma&quot;&#xA;ELSEIF [out] == &quot;poisson&quot; THEN &quot;Poisson&quot; &#xA;ELSEIF [out] == &quot;quasipoisson&quot; THEN &quot;Quasi-Poisson&quot;&#xA;ELSE &quot;Negative Binomial&quot;&#xA;ENDIF" type="String" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings Macro="Supporting_Macros\Logistic_Regression_Summary.yxmc" />
-    </Node>
-    <Node ToolID="5">
-      <GuiSettings>
-        <Position x="918" y="786" />
-      </GuiSettings>
-      <Properties>
-        <Configuration />
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output15">
-          <RecordInfo>
-            <Field name="Layout" size="536870911" source="Report:Layout:" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
-            <Field name="Report" size="2147483647" source="Report: (Multiple Sources)" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings Macro="Supporting_Macros\Generalized_Linear_Model_ANOD.yxmc" />
-    </Node>
-    <Node ToolID="47">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1014" y="558" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <SelectFields>
-            <SelectField field="Type" selected="False" />
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
-            <Field name="Report" size="2147483647" source="Report: (Multiple Sources)" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
-    <Node ToolID="6">
-      <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
-        <Position x="876" y="1209" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Images />
-          <Output>Graph_Title</Output>
-          <HeaderMode value="False" />
-          <RawMode value="False" />
-          <ValidatePCXML value="True" />
-          <Message />
-          <RichTextMode value="True" />
-          <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fnil\fcharset0 Verdana;}}
-\viewkind4\uc1\pard\i\f0\fs24 Basic Diagnostic Plots\par
-}
-]]></RichTextString>
-          <Styles>
-            <Style Name="TextStyle" />
-          </Styles>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>Basic Diagnostic Plots</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Graph_Title" size="2147483647" source="Report:Text:" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
-    </Node>
-    <Node ToolID="11">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="960" y="1209" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField field="Desc" type="V_String" size="64" expression="&quot;BasicDiagnosticPlotsTitle&quot;" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>Desc="BasicDiagnosticPlotsTitle"</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Graph_Title" size="2147483647" source="Report:Text:" type="V_String" />
-            <Field name="Desc" size="64" source="Formula: &quot;BasicDiagnosticPlotsTitle&quot;" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
-    <Node ToolID="12">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1068" y="1209" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="True" />
-          <SelectFields>
-            <SelectField field="Desc" selected="True" />
-            <SelectField field="Graph_Title" selected="True" rename="Report" />
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: &quot;BasicDiagnosticPlotsTitle&quot;" type="V_String" />
-            <Field name="Report" size="2147483647" source="Report:Text:" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
-    <Node ToolID="13">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="1008" y="1414" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <FormulaFields>
-            <FormulaField field="Desc" type="V_String" size="64" expression="&quot;BasicDiagnosticPlots&quot;" />
-          </FormulaFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText>Desc="BasicDiagnosticPlots"</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
-            <Field name="Desc" size="64" source="Formula: &quot;BasicDiagnosticPlots&quot;" type="V_String" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-    </Node>
-    <Node ToolID="14">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1104" y="1414" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="True" />
-          <SelectFields>
-            <SelectField field="Desc" selected="True" />
-            <SelectField field="Graph" selected="True" rename="Report" />
-            <SelectField field="*Unknown" selected="True" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: &quot;BasicDiagnosticPlots&quot;" type="V_String" />
-            <Field name="Report" size="1073741823" source="Report:R-Graph:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
-    <Node ToolID="16">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="1236" y="1209" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <ByName_ErrorMode>Ignore</ByName_ErrorMode>
-          <ByName_OutputMode>All</ByName_OutputMode>
-          <Mode>ByName</Mode>
-          <SetOutputOrder value="True" />
-          <OutputOrder>
-            <Connection>#1</Connection>
-            <Connection>#2</Connection>
-            <Connection>#3</Connection>
-            <Connection>#4</Connection>
-          </OutputOrder>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
-            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
     </Node>
     <Node ToolID="33">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
@@ -5131,40 +4853,6 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
     </Node>
-    <Node ToolID="78">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="918" y="990" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Name>Output</Name>
-          <Abbrev>O</Abbrev>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name>Output</Name>
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
-    </Node>
-    <Node ToolID="79">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="2208" y="1437" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Name>Reports</Name>
-          <Abbrev>R</Abbrev>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name>Reports</Name>
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
-    </Node>
     <Node ToolID="80">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DynamicSelect.DynamicSelect">
         <Position x="726" y="918" />
@@ -5239,189 +4927,12 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
     </Node>
-    <Node ToolID="83">
-      <GuiSettings Plugin="AlteryxRPluginGui.R">
-        <Position x="1326" y="1350" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <RScript><![CDATA[mod.df <- read.Alteryx("#1")
-mod.obj <- unserializeObject(as.character(mod.df$Object[1]))
-the.class <- class(mod.obj)[1]
-write.Alteryx(data.frame(Class = the.class))
-]]></RScript>
-          <UseFullUpdate value="False" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>Get the model class, to determine if it is a glm or rxLogit model.</AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output1">
-          <RecordInfo>
-            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR" />
-    </Node>
-    <Node ToolID="84">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-        <Position x="1506" y="1338" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <CartesianMode>Error</CartesianMode>
-          <SelectConfiguration>
-            <Configuration outputConnection="Output">
-              <OrderChanged value="False" />
-              <SelectFields>
-                <SelectField field="*Unknown" selected="True" />
-              </SelectFields>
-            </Configuration>
-          </SelectConfiguration>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>Add the model class field to the report snippets</AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
-            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
-            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
-    </Node>
-    <Node ToolID="85">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="1638" y="1338" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Expression>[Class] == "rxLogit" OR [Class] == "logregr.madlib"</Expression>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>Fork depending on whether the models is a rxLogit or glm model:
-[Class] == "rxLogit"</AnnotationText>
-          <DefaultAnnotationText>[Class] == "rxLogit" OR [Class] == "logregr.madlib"</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="True">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
-            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
-            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="False">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
-            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
-            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
-    </Node>
-    <Node ToolID="86">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="2058" y="1362" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <OrderChanged value="False" />
-          <SelectFields>
-            <SelectField field="Desc" selected="True" />
-            <SelectField field="Report" selected="True" />
-            <SelectField field="*Unknown" selected="False" />
-          </SelectFields>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>Remove the "Class" field.</AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
-            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-    </Node>
-    <Node ToolID="87">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="1926" y="1362" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <ByName_ErrorMode>Warning</ByName_ErrorMode>
-          <ByName_OutputMode>All</ByName_OutputMode>
-          <Mode>ByName</Mode>
-          <SetOutputOrder value="False" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>Unioning the elements back together, but only one of the two inputs will have data.</AnnotationText>
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="Output">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
-            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
-            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
-    </Node>
-    <Node ToolID="88">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="1770" y="1302" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Expression>[Desc] == "ResidualsTitle" OR [Desc] == "ANODAnalysisTitle" OR [Desc] == "ANODAnalysis" OR [Desc] == "BasicDiagnosticPlotsTitle" OR [Desc] == "BasicDiagnosticPlots"</Expression>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <AnnotationText>Filter out the report elements that aren't available for rxLogit models:
-[Desc] == "ResidualsTitle" OR [Desc] == "ANODAnalysisTitle" O...</AnnotationText>
-          <DefaultAnnotationText>[Desc] == "ResidualsTitle" OR [Desc] == "ANODAnalysisTitle" O...</DefaultAnnotationText>
-          <Left value="False" />
-        </Annotation>
-        <MetaInfo connection="True">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
-            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
-            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="False">
-          <RecordInfo>
-            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
-            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
-            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
-    </Node>
     <Node ToolID="91">
       <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
         <Position x="0" y="0" width="59" height="59" />
       </GuiSettings>
       <Properties>
+        <Configuration />
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
@@ -5434,6 +4945,7 @@ write.Alteryx(data.frame(Class = the.class))
         <Position x="0" y="0" width="59" height="59" />
       </GuiSettings>
       <Properties>
+        <Configuration />
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
@@ -5446,6 +4958,7 @@ write.Alteryx(data.frame(Class = the.class))
         <Position x="0" y="0" width="59" height="59" />
       </GuiSettings>
       <Properties>
+        <Configuration />
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
@@ -5773,7 +5286,7 @@ write.Alteryx(data.frame(Class = the.class))
         </Node>
         <Node ToolID="55">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="197.9999" y="373.0001" width="59" height="59" />
+            <Position x="197.9998" y="373.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -6132,66 +5645,6 @@ Union</Text>
       <Destination ToolID="80" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="2" Connection="Output1" />
-      <Destination ToolID="5" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="2" Connection="Output1" />
-      <Destination ToolID="10" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="2" Connection="Output2" />
-      <Destination ToolID="13" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="2" Connection="Output3" />
-      <Destination ToolID="78" Connection="Input" />
-    </Connection>
-    <Connection name="#1">
-      <Origin ToolID="2" Connection="Output3" />
-      <Destination ToolID="83" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="10" Connection="Output" />
-      <Destination ToolID="47" Connection="Input" />
-    </Connection>
-    <Connection name="#2">
-      <Origin ToolID="5" Connection="Output" />
-      <Destination ToolID="16" Connection="Input" />
-    </Connection>
-    <Connection name="#1">
-      <Origin ToolID="47" Connection="Output" />
-      <Destination ToolID="16" Connection="Input" />
-    </Connection>
-    <Connection name="#3">
-      <Origin ToolID="12" Connection="Output" />
-      <Destination ToolID="16" Connection="Input" />
-    </Connection>
-    <Connection name="#4">
-      <Origin ToolID="14" Connection="Output" />
-      <Destination ToolID="16" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="6" Connection="Output" />
-      <Destination ToolID="11" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="11" Connection="Output" />
-      <Destination ToolID="12" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="13" Connection="Output" />
-      <Destination ToolID="14" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="16" Connection="Output" />
-      <Destination ToolID="84" Connection="Targets" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="83" Connection="Output1" />
-      <Destination ToolID="84" Connection="Source" />
-    </Connection>
-    <Connection>
       <Origin ToolID="33" Connection="Left" />
       <Destination ToolID="21" Connection="Input" />
     </Connection>
@@ -6254,34 +5707,6 @@ Union</Text>
     <Connection name="#1">
       <Origin ToolID="80" Connection="Output" />
       <Destination ToolID="2" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="84" Connection="Output" />
-      <Destination ToolID="85" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="85" Connection="True" />
-      <Destination ToolID="88" Connection="Input" />
-    </Connection>
-    <Connection name="#1">
-      <Origin ToolID="85" Connection="False" />
-      <Destination ToolID="87" Connection="Input" />
-    </Connection>
-    <Connection name="#2">
-      <Origin ToolID="88" Connection="False" />
-      <Destination ToolID="87" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="86" Connection="Output" />
-      <Destination ToolID="17" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="86" Connection="Output" />
-      <Destination ToolID="79" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="87" Connection="Output" />
-      <Destination ToolID="86" Connection="Input" />
     </Connection>
     <Connection Wireless="True">
       <Origin ToolID="68" Connection="Question" />
@@ -6640,18 +6065,6 @@ Union</Text>
               <ToolId value="77" />
             </Question>
             <Question>
-              <Type>MacroOutput</Type>
-              <Description>Output</Description>
-              <Name>Output</Name>
-              <ToolId value="78" />
-            </Question>
-            <Question>
-              <Type>MacroOutput</Type>
-              <Description>Reports</Description>
-              <Name>Reports</Name>
-              <ToolId value="79" />
-            </Question>
-            <Question>
               <Type>BooleanGroup</Type>
               <Description>Omit a model constant.</Description>
               <Name>Omit Constant</Name>
@@ -6991,13 +6404,8 @@ complementary log-log
       <Wiz_CustomGraphic value="False" />
       <Wiz_ShowOutput value="True" />
       <Wiz_OpenOutputTools>
-        <Tool ToolId="17" Selected="False" />
         <Tool ToolId="2" Selected="True" />
-        <Tool ToolId="10" Selected="True" />
-        <Tool ToolId="5" Selected="True" />
         <Tool ToolId="77" Selected="True" />
-        <Tool ToolId="78" Selected="True" />
-        <Tool ToolId="79" Selected="True" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />
