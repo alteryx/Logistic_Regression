@@ -7463,7 +7463,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="96">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1099" y="241.9999" width="59" height="59" />
+            <Position x="1122" y="234" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7476,7 +7476,7 @@ if (outer_config$external_cv) {
         </Node>
         <Node ToolID="112">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1494" y="258" width="59" height="59" />
+            <Position x="1518" y="258" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7607,6 +7607,19 @@ if (outer_config$external_cv) {
         <Node ToolID="193">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
             <Position x="1278" y="438" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="194">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="1518" y="354" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -8330,6 +8343,10 @@ Union</Text>
       <Origin ToolID="164" Connection="Output" />
       <Destination ToolID="169" Connection="Input" />
     </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="194" Connection="Action" />
+      <Destination ToolID="169" Connection="Action" />
+    </Connection>
     <Connection>
       <Origin ToolID="166" Connection="Output" />
       <Destination ToolID="161" Connection="Input" />
@@ -8425,6 +8442,10 @@ Union</Text>
     <Connection name="#1" Wireless="True">
       <Origin ToolID="96" Connection="Question" />
       <Destination ToolID="187" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="112" Connection="Question" />
+      <Destination ToolID="194" Connection="Question" />
     </Connection>
     <Connection Wireless="True">
       <Origin ToolID="68" Connection="Question" />
@@ -8893,6 +8914,17 @@ Union</Text>
               <ToolId value="193" />
               <Expression>{{INPUT}}</Expression>
               <Destination>138/DetourRight/@value</Destination>
+              <Mapping>Update Detour Direction from Question</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="194" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>169/DetourRight/@value</Destination>
               <Mapping>Update Detour Direction from Question</Mapping>
               <Mode>Expression</Mode>
               <DynamicConfiguration />
