@@ -7315,7 +7315,7 @@ if (outer_config$external_cv) {
     </Node>
     <Node ToolID="113">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="1074" y="198" width="805" height="380" />
+        <Position x="1073" y="198" width="806" height="380" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -7482,6 +7482,58 @@ if (outer_config$external_cv) {
             <Configuration />
             <Annotation DisplayMode="0">
               <Name>Omit Constant</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="184">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="1098" y="342" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="185">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="1170" y="342" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="186">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="1098" y="438" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="187">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+            <Position x="1170" y="438" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name />
               <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
@@ -8076,6 +8128,10 @@ Union</Text>
       <Origin ToolID="138" Connection="Right" />
       <Destination ToolID="168" Connection="Input" />
     </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="186" Connection="Action" />
+      <Destination ToolID="168" Connection="Action" />
+    </Connection>
     <Connection>
       <Origin ToolID="139" Connection="Output" />
       <Destination ToolID="126" Connection="Input" />
@@ -8084,9 +8140,17 @@ Union</Text>
       <Origin ToolID="140" Connection="Right" />
       <Destination ToolID="177" Connection="Input" />
     </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="185" Connection="Action" />
+      <Destination ToolID="177" Connection="Action" />
+    </Connection>
     <Connection>
       <Origin ToolID="158" Connection="Right" />
       <Destination ToolID="176" Connection="Input" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="187" Connection="Action" />
+      <Destination ToolID="176" Connection="Action" />
     </Connection>
     <Connection>
       <Origin ToolID="145" Connection="Output" />
@@ -8215,6 +8279,26 @@ Union</Text>
     <Connection>
       <Origin ToolID="182" Connection="Output" />
       <Destination ToolID="179" Connection="Input" />
+    </Connection>
+    <Connection name="#2" Wireless="True">
+      <Origin ToolID="184" Connection="Action" />
+      <Destination ToolID="179" Connection="Action" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="96" Connection="Question" />
+      <Destination ToolID="184" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="96" Connection="Question" />
+      <Destination ToolID="185" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="96" Connection="Question" />
+      <Destination ToolID="186" Connection="Question" />
+    </Connection>
+    <Connection name="#1" Wireless="True">
+      <Origin ToolID="96" Connection="Question" />
+      <Destination ToolID="187" Connection="Question" />
     </Connection>
     <Connection Wireless="True">
       <Origin ToolID="68" Connection="Question" />
@@ -8577,6 +8661,50 @@ Union</Text>
               <Description>At least one predictor variable must be selected</Description>
               <ToolId value="89" />
               <Expression>[X Vars] == ""</Expression>
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="184" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>179/DetourRight/@value</Destination>
+              <Mapping>Update Detour Direction from Question</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="185" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>177/DetourRight/@value</Destination>
+              <Mapping>Update Detour Direction from Question</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="186" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>168/DetourRight/@value</Destination>
+              <Mapping>Update Detour Direction from Question</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
+            </Action>
+            <Action>
+              <Type>Dynamic</Type>
+              <Description />
+              <ToolId value="187" />
+              <Expression>{{INPUT}}</Expression>
+              <Destination>176/DetourRight/@value</Destination>
+              <Mapping>Update Detour Direction from Question</Mapping>
+              <Mode>Expression</Mode>
+              <DynamicConfiguration />
+              <DefaultConfiguration value="True" />
             </Action>
           </True>
         </NoCondition>
