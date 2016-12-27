@@ -5041,30 +5041,6 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
     </Node>
-    <Node ToolID="119">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="1002" y="1410" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_433733cdfe9a4e05aa818426bddab94a_.yxdb</TempFile>
-          <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8032_187d00c98f724c8d848b10df41636b51_\Engine_8640_1ff960c66688408989a874a112e8fb3e_.yxdb</TempFileDataProfiling>
-          <Layout>
-            <View1>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
     <Node ToolID="120">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
         <Position x="1338" y="1098" />
@@ -5151,34 +5127,6 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
         </Annotation>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
-    </Node>
-    <Node ToolID="124">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="2370" y="1026" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8032_187d00c98f724c8d848b10df41636b51_\Engine_8640_ae9f4dcd23fc49148ebf677d3eda9e09_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_942355ee4f1a44a68dafa9f13c76181a_.yxdb</TempFile>
-          <Layout>
-            <ViewMode>Single</ViewMode>
-            <ViewSize value="100" />
-            <View1>
-              <DefaultTab>Report</DefaultTab>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-            <View2 />
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
     <Node ToolID="125">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
@@ -6103,86 +6051,6 @@ if (outer_config$external_cv) {
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
     </Node>
-    <Node ToolID="133">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="1158" y="1050" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_eaa9fc28971d4bd39143edf9e436eceb_.yxdb</TempFile>
-          <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8032_187d00c98f724c8d848b10df41636b51_\Engine_8640_2badc95510d9491dbef76c826d79f54b_.yxdb</TempFileDataProfiling>
-          <Layout>
-            <View1>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
-    <Node ToolID="134">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="1230" y="1002" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_2235568d0bb94190b1a775f98e4afb87_.yxdb</TempFile>
-          <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8032_187d00c98f724c8d848b10df41636b51_\Engine_8640_61d8189c5dc64638b042c3a18d6c1aba_.yxdb</TempFileDataProfiling>
-          <Layout>
-            <ViewMode>Single</ViewMode>
-            <ViewSize value="100" />
-            <View1>
-              <DefaultTab>Report</DefaultTab>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-            <View2 />
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
-    <Node ToolID="135">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="1086" y="1278" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_608531c05a7b4417b1642a3754e09ee9_.yxdb</TempFile>
-          <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8032_187d00c98f724c8d848b10df41636b51_\Engine_8640_e4f38547f1074634acbbbbab56a3c8cb_.yxdb</TempFileDataProfiling>
-          <Layout>
-            <ViewMode>Single</ViewMode>
-            <ViewSize value="100" />
-            <View1>
-              <DefaultTab>Report</DefaultTab>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-            <View2 />
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
     <Node ToolID="136">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
         <Position x="1062" y="738" />
@@ -6287,29 +6155,6 @@ if (outer_config$external_cv) {
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
     </Node>
-    <Node ToolID="142">
-      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="1638" y="1026" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_9412_4b1c996c7ce64d4cbb6f439e2f02dd8c_\Engine_10472_87118381c38c48d7866e57cd526c11c1_.yxdb</TempFile>
-          <Layout>
-            <View1>
-              <Hints>
-                <Table />
-              </Hints>
-            </View1>
-          </Layout>
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-    </Node>
     <Node ToolID="158">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
         <Position x="966" y="1722" />
@@ -6328,7 +6173,7 @@ if (outer_config$external_cv) {
     </Node>
     <Node ToolID="157">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="2622" y="959" width="947" height="474" />
+        <Position x="2622" y="959" width="767" height="474" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -6570,62 +6415,6 @@ if (outer_config$external_cv) {
             </Annotation>
           </Properties>
           <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
-        </Node>
-        <Node ToolID="152">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="3210" y="1278" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_9648_e48c2b480cd94364962f6e2b91da7e76_\Engine_9172_e4007d3be7a64e728ad105da3c4c86d1_.yxdb</TempFile>
-              <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_10984_646fb7662b5b437d90b48a230752d9f5_\Engine_1404_4a118f442d094cf9a3ce8f3dfcbb69b3_.yxdb</TempFileDataProfiling>
-              <Layout>
-                <ViewMode>Single</ViewMode>
-                <ViewSize value="100" />
-                <View1>
-                  <DefaultTab>Report</DefaultTab>
-                  <Hints>
-                    <Table />
-                  </Hints>
-                </View1>
-                <View2 />
-              </Layout>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-        </Node>
-        <Node ToolID="153">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="3450" y="1086" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_10984_646fb7662b5b437d90b48a230752d9f5_\Engine_1404_17298ee47b56493eb5e4a71a17b98a01_.yxdb</TempFileDataProfiling>
-              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_9648_e48c2b480cd94364962f6e2b91da7e76_\Engine_9172_18b418fe875a4ebd9b2fc993b8e5cda1_.yxdb</TempFile>
-              <Layout>
-                <ViewMode>Single</ViewMode>
-                <ViewSize value="100" />
-                <View1>
-                  <DefaultTab>Report</DefaultTab>
-                  <Hints>
-                    <Table />
-                  </Hints>
-                </View1>
-                <View2 />
-              </Layout>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
         </Node>
         <Node ToolID="154">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
@@ -6904,34 +6693,6 @@ if (outer_config$external_cv) {
             </Annotation>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
-        </Node>
-        <Node ToolID="165">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="2202" y="1722" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8884_dbee7d83f21b4a7192c4fce0953ce040_\Engine_7632_385905812aa546d4a6314de71949a15f_.yxdb</TempFile>
-              <TempFileDataProfiling>C:\Users\btoomey\AppData\Local\Temp\Engine_8900_3a1d425cd94440f68aebe93f9bf4c87f_\Engine_7288_ece1b767df7344ab85fa34e6f1aaafe7_.yxdb</TempFileDataProfiling>
-              <Layout>
-                <ViewMode>Single</ViewMode>
-                <ViewSize value="100" />
-                <View1>
-                  <DefaultTab>Report</DefaultTab>
-                  <Hints>
-                    <Table />
-                  </Hints>
-                </View1>
-                <View2 />
-              </Layout>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
         </Node>
         <Node ToolID="166">
           <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
@@ -8065,10 +7826,6 @@ Union</Text>
       <Destination ToolID="128" Connection="Source" />
     </Connection>
     <Connection>
-      <Origin ToolID="123" Connection="Output" />
-      <Destination ToolID="142" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="127" Connection="Output1" />
       <Destination ToolID="141" Connection="Input" />
     </Connection>
@@ -8099,10 +7856,6 @@ Union</Text>
     <Connection name="#2">
       <Origin ToolID="132" Connection="False" />
       <Destination ToolID="131" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="130" Connection="Output" />
-      <Destination ToolID="124" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="130" Connection="Output" />
@@ -8169,20 +7922,12 @@ Union</Text>
       <Destination ToolID="148" Connection="Input" />
     </Connection>
     <Connection>
-      <Origin ToolID="147" Connection="Output" />
-      <Destination ToolID="152" Connection="Input" />
-    </Connection>
-    <Connection>
       <Origin ToolID="149" Connection="Output" />
       <Destination ToolID="150" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="150" Connection="Output" />
       <Destination ToolID="151" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="150" Connection="Output" />
-      <Destination ToolID="153" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="154" Connection="Right" />
@@ -8231,10 +7976,6 @@ Union</Text>
     <Connection name="#1">
       <Origin ToolID="169" Connection="Right" />
       <Destination ToolID="170" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="164" Connection="Output" />
-      <Destination ToolID="165" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="164" Connection="Output" />
@@ -9050,22 +8791,13 @@ complementary log-log
       <Wiz_OpenOutputTools>
         <Tool ToolId="125" Selected="True" />
         <Tool ToolId="2" Selected="True" />
-        <Tool ToolId="124" Selected="False" />
-        <Tool ToolId="119" Selected="False" />
         <Tool ToolId="77" Selected="True" />
         <Tool ToolId="116" Selected="True" />
         <Tool ToolId="115" Selected="True" />
         <Tool ToolId="126" Selected="True" />
-        <Tool ToolId="133" Selected="False" />
-        <Tool ToolId="134" Selected="False" />
-        <Tool ToolId="135" Selected="False" />
-        <Tool ToolId="142" Selected="False" />
         <Tool ToolId="143" Selected="True" />
         <Tool ToolId="144" Selected="True" />
         <Tool ToolId="148" Selected="True" />
-        <Tool ToolId="152" Selected="False" />
-        <Tool ToolId="153" Selected="False" />
-        <Tool ToolId="165" Selected="False" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />
