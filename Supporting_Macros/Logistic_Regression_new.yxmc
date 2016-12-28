@@ -8040,6 +8040,10 @@ Union</Text>
       <Origin ToolID="2" Connection="Output3" />
       <Destination ToolID="127" Connection="Input" />
     </Connection>
+    <Connection name="#2">
+      <Origin ToolID="80" Connection="Output" />
+      <Destination ToolID="127" Connection="Input" />
+    </Connection>
     <Connection>
       <Origin ToolID="33" Connection="Left" />
       <Destination ToolID="21" Connection="Input" />
