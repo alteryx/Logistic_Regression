@@ -5959,9 +5959,7 @@ if (outer_config$external_cv) {
     runCrossValidation(inputs, config)
   }
   
-}
- 
-</RScript>
+}</RScript>
           <UseFullUpdate value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
@@ -5970,35 +5968,6 @@ if (outer_config$external_cv) {
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <MetaInfo connection="Output1">
-          <RecordInfo>
-            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output4">
-          <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output2">
-          <RecordInfo>
-            <Field name="RecordID" source="R-DATA:" type="Int32" />
-            <Field name="Trial" source="R-DATA:" type="Int32" />
-            <Field name="Fold" source="R-DATA:" type="Int32" />
-            <Field name="Model" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="Response" source="R-DATA:" type="Double" />
-            <Field name="Actual" source="R-DATA:" type="Double" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output3">
-          <RecordInfo>
-            <Field name="trial" source="R-DATA:" type="Int32" />
-            <Field name="fold" source="R-DATA:" type="Int32" />
-            <Field name="Model" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="variable" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="value" source="R-DATA:" type="Double" />
-          </RecordInfo>
-        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR" />
     </Node>
@@ -7333,7 +7302,7 @@ if (outer_config$external_cv) {
       <ChildNodes>
         <Node ToolID="94">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1338" y="234" width="59" height="59" />
+            <Position x="1338" y="234.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -9324,11 +9293,11 @@ complementary log-log
       <Wiz_CustomGraphic value="False" />
       <Wiz_ShowOutput value="True" />
       <Wiz_OpenOutputTools>
-        <Tool ToolId="125" Selected="True" />
         <Tool ToolId="2" Selected="True" />
         <Tool ToolId="77" Selected="True" />
-        <Tool ToolId="116" Selected="True" />
         <Tool ToolId="115" Selected="True" />
+        <Tool ToolId="116" Selected="True" />
+        <Tool ToolId="125" Selected="True" />
         <Tool ToolId="126" Selected="True" />
         <Tool ToolId="143" Selected="True" />
         <Tool ToolId="144" Selected="True" />
