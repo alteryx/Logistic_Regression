@@ -4860,14 +4860,15 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
       <Properties>
         <Configuration>
           <RScript>suppressWarnings(library(AlteryxPredictive))
+
 outer_config &lt;- list(
   `graph.resolution` = dropdownInput('%Question.graph.resolution%' , '1x'),
-  `Model Name` = textInput('%Question.Model Name%', "mtcars"),
-  `Omit Constant` = checkboxInput('%Question.Omit Constant%' , FALSE),
+  `Link` = dropdownInput('%Question.Link%' , 'logit'),
+  `Model Name` = textInput('%Question.Model Name%'),
   `Use Weights` = checkboxInput('%Question.Use Weights%' , FALSE),
   `Weight Vec` = dropdownInput('%Question.Weight Vec%'),
-  `X Vars` = listInput('%Question.X Vars%', names(mtcars)[-1]),
-  `Y Var` = dropdownInput('%Question.Y Var%', 'mpg'),
+  `X Vars` = listInput('%Question.X Vars%', c('Sepal.Length', 'Petal.Length')),
+  `Y Var` = dropdownInput('%Question.Y Var%', 'Species'),
   regularization = checkboxInput('%Question.regularization%', FALSE),
   alpha = numericInput('%Question.alpha%', .5),
   lambda_1se = radioInput('%Question.lambda.1se%', TRUE),
@@ -4882,8 +4883,10 @@ outer_config &lt;- list(
   external_cv = checkboxInput('%Question.external_cv%', FALSE),
   nfolds_external = numericInput('%Question.nfolds_external%', NULL),
   set_seed_external_cv = checkboxInput('%Question.set_seed_external_cv%', FALSE),
-  external_seed_value = numericInput('%Question.external_seed_value%', NULL)
-) 
+  external_seed_value = numericInput('%Question.external_seed_value%', NULL),
+  `Omit Constant` = checkboxInput('%Question.Omit Constant%' , FALSE)
+)
+
 options(alteryx.wd = '%Engine.WorkflowDirectory%')
 options(alteryx.debug = outer_config)
 
