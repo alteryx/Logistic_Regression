@@ -339,6 +339,23 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <MetaInfo connection="Output1">
+          <RecordInfo>
+            <Field name="grp" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="out" size="1073741823" source="R-DATA:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output2">
+          <RecordInfo>
+            <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output3">
+          <RecordInfo>
+            <Field name="Name" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Object" size="2147483647" source="R-DATA:SERIAL" type="Blob" />
+          </RecordInfo>
+        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxR" />
     </Node>
@@ -4958,7 +4975,7 @@ if (outer_config$external_cv) {
   #' ## DO NOT MODIFY: Auto Inserted by AlteryxRhelper ----
   suppressWarnings(library(AlteryxPredictive))
   config &lt;- list(
-    `classification` = FALSE,
+    `classification` = TRUE,
     `modelType` = NULL,
     `numberFolds` = numericInput('%Question.nfolds_external%' , 5),
     `numberTrials` = numericInput('%Question.numberTrials%' , 3),
@@ -4966,7 +4983,7 @@ if (outer_config$external_cv) {
     #here, since we're solving a regression problem
     `posClass` = NULL,
     `predFields` = listInput('%Question.predFields%'),
-    `regression` = TRUE,
+    `regression` = FALSE,
     `stratified` = FALSE,
     `seed` = numericInput('%Question.seed%', 1)
   )
@@ -5207,19 +5224,19 @@ if (outer_config$external_cv) {
     return(model)
   }
   
-#   naiveBayesUpdate &lt;- function(model, trainingData, currentYvar) {
-#     
-#     if (is.null(model$laplace)) {
-#       model$laplace &lt;- 0
-#       AlteryxMessage2("The Laplace smoothing parameter was not saved in the model object.", iType = 2, iPriority = 3)
-#       AlteryxMessage2("Hence, we are using a smoothing parameter of 0 for Cross-Validation.", iType = 2, iPriority = 3)
-#     }
-#     predictors &lt;- trainingData[,-(which(colnames(trainingData) == currentYvar))]
-#     response &lt;- trainingData[,(which(colnames(trainingData) == currentYvar))]
-#     naiveBayes.default &lt;- getS3method("naiveBayes", "default")
-#     currentModel &lt;- update(model, x = predictors, y = response, laplace = model$laplace)
-#     return(currentModel)
-#   }
+  #   naiveBayesUpdate &lt;- function(model, trainingData, currentYvar) {
+  #     
+  #     if (is.null(model$laplace)) {
+  #       model$laplace &lt;- 0
+  #       AlteryxMessage2("The Laplace smoothing parameter was not saved in the model object.", iType = 2, iPriority = 3)
+  #       AlteryxMessage2("Hence, we are using a smoothing parameter of 0 for Cross-Validation.", iType = 2, iPriority = 3)
+  #     }
+  #     predictors &lt;- trainingData[,-(which(colnames(trainingData) == currentYvar))]
+  #     response &lt;- trainingData[,(which(colnames(trainingData) == currentYvar))]
+  #     naiveBayes.default &lt;- getS3method("naiveBayes", "default")
+  #     currentModel &lt;- update(model, x = predictors, y = response, laplace = model$laplace)
+  #     return(currentModel)
+  #   }
   glmnetUpdate &lt;- function(model, trainingData, currentYvar, config, weight_vec = NULL) {
     predictors &lt;- trainingData[,AlteryxPredictive:::getXVars(model)]
     response &lt;- trainingData[,(which(colnames(trainingData) == currentYvar))]
@@ -5256,9 +5273,9 @@ if (outer_config$external_cv) {
     currentYvar &lt;- extras$y_name
     #Check if the model is Naive Bayes and lacking a Laplace parameter.
     #If so, set the Laplace parameter to 0 and warn the user.
-#     if (inherits(model, "naiveBayes")) {
-#       currentModel &lt;- naiveBayesUpdate(model, trainingData, currentYvar)
-#     } else 
+    #     if (inherits(model, "naiveBayes")) {
+    #       currentModel &lt;- naiveBayesUpdate(model, trainingData, currentYvar)
+    #     } else 
     if ((inherits(model, "cv.glmnet")) || (inherits(model, "glmnet"))) {
       #Ideally, it would be more efficient to convert the x df to a matrix earlier so that
       #this conversion wouldn't be necessary with every trial/fold. However, the code assumes
@@ -5286,7 +5303,7 @@ if (outer_config$external_cv) {
           }
         )
         currentModel &lt;- update(model, formula. = makeFormula(AlteryxPredictive:::getXVars(model), currentYvar), data = environment(), weights = trainingData$`Weight Vec`)
-        } else {
+      } else {
         currentModel &lt;- update(model, formula. = makeFormula(AlteryxPredictive:::getXVars(model), currentYvar), data = trainingData)
       }
     }
@@ -5571,10 +5588,10 @@ if (outer_config$external_cv) {
                                 response = dataOutput1$Score, actual = dataOutput1$actual)
     }
     preppedOutput1 &lt;- data.frame(RecordID = dataOutput1$recordID, 
-                 Trial = dataOutput1$trial, Fold = dataOutput1$fold, 
-                 Model = modelNames[dataOutput1$mid], Response = dataOutput1$response, 
-                 Actual = dataOutput1$actual)
-
+                                 Trial = dataOutput1$trial, Fold = dataOutput1$fold, 
+                                 Model = modelNames[dataOutput1$mid], Response = dataOutput1$response, 
+                                 Actual = dataOutput1$actual)
+    
     dataOutput2 &lt;- generateOutput2(dataOutput1, extras, modelNames)
     preppedOutput2 &lt;- reshape2::melt(dataOutput2, id = c('trial', 'fold', 'Model'))
     plotData &lt;- ddply(dataOutput1, .(trial, fold, mid), generateDataForPlots, 
@@ -5607,6 +5624,11 @@ if (outer_config$external_cv) {
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <MetaInfo connection="Output1">
+          <RecordInfo>
+            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR" />
     </Node>
@@ -6919,6 +6941,19 @@ if (outer_config$external_cv) {
             </Annotation>
           </Properties>
         </Node>
+        <Node ToolID="196">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+            <Position x="2478" y="414" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>posClass</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="113">
@@ -6941,7 +6976,7 @@ if (outer_config$external_cv) {
       <ChildNodes>
         <Node ToolID="94">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1338" y="234.0001" width="59" height="59" />
+            <Position x="1338" y="234" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -8119,6 +8154,12 @@ Union</Text>
     <Constants>
       <Constant>
         <Namespace>Question</Namespace>
+        <Name>Omit Constant</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
         <Name>Model Name</Name>
         <Value>Test_Model</Value>
         <IsNumeric value="False" />
@@ -8162,7 +8203,7 @@ Union</Text>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>external_cv</Name>
-        <Value />
+        <Value>True</Value>
         <IsNumeric value="False" />
       </Constant>
       <Constant>
@@ -8269,37 +8310,7 @@ Union</Text>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>Omit Constant</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>Macro Output (125)</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>Macro Output (126)</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>Macro Output (143)</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>Macro Output (144)</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
-        <Name>Macro Output (148)</Name>
+        <Name>posClass</Name>
         <Value />
         <IsNumeric value="False" />
       </Constant>
@@ -8604,6 +8615,16 @@ Union</Text>
               <Description>Macro Output (89)</Description>
               <Name>Macro Output (148)</Name>
               <ToolId value="148" />
+            </Question>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Enter positive class for target variable</Description>
+              <Name>posClass</Name>
+              <ToolId value="196" />
+              <Default />
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
             </Question>
           </Questions>
         </Question>
