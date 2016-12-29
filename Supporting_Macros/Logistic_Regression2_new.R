@@ -104,7 +104,6 @@ if (outer_config$external_cv) {
     #This should be added as a config option in Logistic Regression, but it's irrelevant
     #here, since we're solving a regression problem
     `posClass` = NULL,
-    `predFields` = listInput('%Question.predFields%'),
     `regression` = FALSE,
     `stratified` = FALSE,
     `seed` = numericInput('%Question.seed%', 1)
