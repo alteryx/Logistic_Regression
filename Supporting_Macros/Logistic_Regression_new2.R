@@ -64,14 +64,6 @@ if (outer_config$external_cv) {
 	runCrossValidationLogReg(config = config, inputs = inputs)
 }
 
-saveRDS(
-	list(
-		config = config,
-		data = inputs$data,
-		model = inputs$model[[1]]
-	),
-	"C:\\Users\\dblanchard\\Documents\\playground\\logregdash\\params314.rds"
-)
 
 dashboard <- AlteryxPredictive:::interactive_lr(
   config = config,

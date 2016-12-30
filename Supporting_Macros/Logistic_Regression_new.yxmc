@@ -341,8 +341,8 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
         </Annotation>
         <MetaInfo connection="Output1">
           <RecordInfo>
-            <Field name="grp" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="out" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Coefficients" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Values" source="R-DATA:" type="Double" />
           </RecordInfo>
         </MetaInfo>
         <MetaInfo connection="Output2">
@@ -4951,14 +4951,6 @@ if (outer_config$external_cv) {
 	runCrossValidationLogReg(config = config, inputs = inputs)
 }
 
-saveRDS(
-	list(
-		config = config,
-		data = inputs$data,
-		model = inputs$model[[1]]
-	),
-	"C:\\Users\\dblanchard\\Documents\\playground\\logregdash\\params314.rds"
-)
 
 dashboard &lt;- AlteryxPredictive:::interactive_lr(
   config = config,
@@ -4978,25 +4970,6 @@ flightdeck:::fdRender(
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <MetaInfo connection="Output1">
-          <RecordInfo>
-            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output4">
-          <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output3">
-          <RecordInfo>
-            <Field name="trial" source="R-DATA:" type="Double" />
-            <Field name="fold" source="R-DATA:" type="Double" />
-            <Field name="Model" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="variable" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="value" source="R-DATA:" type="Double" />
-          </RecordInfo>
-        </MetaInfo>
         <MetaInfo connection="Output5">
           <RecordInfo>
             <Field name="html" size="1073741823" source="R-DATA:" type="V_WString" />
@@ -5184,14 +5157,14 @@ flightdeck:::fdRender(
         </Annotation>
         <MetaInfo connection="Left">
           <RecordInfo>
-            <Field name="grp" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="out" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Coefficients" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Values" source="R-DATA:" type="Double" />
           </RecordInfo>
         </MetaInfo>
         <MetaInfo connection="Right">
           <RecordInfo>
-            <Field name="grp" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="out" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Coefficients" size="1073741823" source="R-DATA:" type="V_WString" />
+            <Field name="Values" source="R-DATA:" type="Double" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -5390,7 +5363,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_12756_7294b1934eaf493b8ce8297805198e92_\Engine_12392_ea6d986b02e4494e98fa6aea90605d35_.yxdb</TempFile>
+          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_8968_0e01637a16674719bc14c488be9e96eb_\Engine_12392_01d503ef3fcd4eabb54c85d325fb319a_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -7723,7 +7696,7 @@ Union</Text>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>external_cv</Name>
-        <Value>True</Value>
+        <Value>False</Value>
         <IsNumeric value="False" />
       </Constant>
       <Constant>
@@ -7819,7 +7792,7 @@ Union</Text>
       <Constant>
         <Namespace>Question</Namespace>
         <Name>regularization</Name>
-        <Value>False</Value>
+        <Value>True</Value>
         <IsNumeric value="False" />
       </Constant>
       <Constant>
