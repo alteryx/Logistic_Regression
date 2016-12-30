@@ -35,10 +35,14 @@
   </div>
   
   <div class="tabs" id='header'>
-      <div class="tab active tab-one-half" data-page='advanced' id='advanced'>
+      <div class="tab active tab-one-third" data-page='advanced' id='advanced'>
         Model
       </div>
-      <div class="tab tab-one-half" data-page='graphics' id='graphics'>
+      <div class="tab tab-one-third" data-page='crossvalidation' 
+          id='crossvalidation'>
+        Cross Validation
+      </div>
+      <div class="tab tab-one-third" data-page='graphics' id='graphics'>
         Plots
       </div>
   </div>
@@ -47,11 +51,55 @@
     <div class='content-padded'>
       
       <div class='tabpage has-hint' id='tabpage-advanced'>
+        
+
+        {{ `Use Weights` }}
+        <div id='weight-vec' class='indent-one'>{{ `Weight Vec` }}</div>
+        <div id='hide-on-xdf'>{{ regularization }}</div>
+        <div id = 'show-on-regularization' class='indent-one'> 
+           {{ alpha }}
+           <p>0 is ridge regression, and 1 is lasso</p>
+           {{ standardize_pred }}
+           {{ internal_cv }}
+           <div id = 'show-on-cv' class = 'indent-one'> 
+             {{ nfolds }}
+             {{ lambda }}
+             <div>
+                <div style='float:left;'>{{ set_seed_internal_cv }}</div>
+               <div style='float:right;' id='show-on-set_seed_internal_cv'>
+                 {{ seed_internal_cv }}
+                </div>
+             </div>
+           </div>
+            <div id = 'show-on-no-cv'> 
+             {{ lambda_no_cv }}
+           </div>
+         </div>
         <div id='div-link'>
           {{ `Link` }}
         </div>
-        {{ `Use Weights` }}
-        <div id='weight-vec' class='indent-one'>{{ `Weight Vec` }}</div>
+      </div>
+      
+        <div class="tabpage" id="tabpage-crossvalidation">
+        <div id='div-external-cv'>
+            {{ external_cv }}
+            <div id = 'show-on-external-cv' class='indent-one'> 
+             <div class='clearfix' id='folds-and-trials'>
+               <div id='div-nfolds-external' class='pull-left'>
+                 {{ nfolds_external }}
+               </div>
+               <div id='div-number-trials' class='pull-right'>
+                 {{ numberTrials }}
+               </div>
+             </div>
+             <div id='div-set-seed-external-cv' class='clearfix'>
+                 <div class='pull-left'>{{ set_seed_external_cv }}</div>
+                 <div class='pull-right' id = 'show-on-set-seed-external-cv'>
+                   {{ external_seed_value }}
+                 </div>
+              </div>
+            </div>
+        </div>
       </div>
       
       <div class='tabpage has-hint' id='tabpage-graphics'>
