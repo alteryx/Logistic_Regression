@@ -8,9 +8,6 @@
     <OutputConnections>
       <Connection Name="Output" AllowMultiple="False" Optional="False" Type="Connection" Label="O"/>
       <Connection Name="Reports" AllowMultiple="False" Optional="False" Type="Connection" Label="R"/>
-      <Connection Name="Data" AllowMultiple="False" Optional="False" Type="Connection" Label="D"/>
-      <Connection Name="Fit Measures" AllowMultiple="False" Optional="False" Type="Connection" Label="F"/>
-      <Connection Name="Full Cross-Validation Report" AllowMultiple="False" Optional="False" Type="Connection" Label="C"/>
       <Connection Name="Interactive Report" AllowMultiple="False" Optional="False" Type="Connection" Label="I"/>
     </OutputConnections>
   </GuiSettings>
@@ -22,7 +19,7 @@
 
 [Can be used with Oracle R In-DB workflows.]</Description>
       <RootToolName>Logistic_Regression</RootToolName>
-      <ToolVersion>1.0</ToolVersion>
+      <ToolVersion>1.1</ToolVersion>
       <ToolInDb></ToolInDb>
       <CategoryName>Predictive</CategoryName>
       <SearchTags>predictive, macro, R, logistic, model, variable, binary, regression, predictive category</SearchTags>
