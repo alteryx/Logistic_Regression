@@ -101,7 +101,13 @@ input[type="checkbox"]{
   height: 35px;
   border-bottom: 1px solid lightgray;
   align-items: center;
-  padding-left: 12px;
+  justify-content: center;
+  /* padding-left: 12px; */
+}
+.fd-header i{
+  position: absolute;
+  left: 12px;
+  top: 10px;
 }
 
 /* Utility Classes */
