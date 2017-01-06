@@ -66,10 +66,14 @@ Logistic_Regression
   </div>
   
   <div class="tabs" id='header'>
-      <div class="tab active tab-one-half" data-page='advanced' id='advanced'>
+      <div class="tab active tab-one-third" data-page='advanced' id='advanced'>
         Model
       </div>
-      <div class="tab tab-one-half" data-page='graphics' id='graphics'>
+      <div class="tab tab-one-third" data-page='crossvalidation' 
+          id='crossvalidation'>
+        Cross Validation
+      </div>
+      <div class="tab tab-one-third" data-page='graphics' id='graphics'>
         Plots
       </div>
   </div>
@@ -78,6 +82,70 @@ Logistic_Regression
     <div class='content-padded'>
       
       <div class='tabpage has-hint' id='tabpage-advanced'>
+        
+
+        
+<!--  Use Weights  -->
+<alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" id="Use Weights" dataName="Use Weights" defaultValue="false"></alteryx-pluginwidget>
+
+        <div id='weight-vec' class='indent-one'>
+<!--  Weight Vec  -->
+<label for="Weight Vec">Select the sampling weight field</label>
+<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="Numeric" clearable="true" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
+</div>
+        <div id='hide-on-xdf'>
+<!--  regularization  -->
+<alteryx-pluginwidget type="CheckBox" text="Use regularized regression?" id="regularization" dataName="regularization" defaultValue="false"></alteryx-pluginwidget>
+</div>
+        <div id = 'show-on-regularization' class='indent-one'> 
+           
+<!--  alpha  -->
+<alteryx-pluginwidget label="Enter value of alpha" type="NumericSlider" min="0" max="1" step="0.001" id="alpha" dataName="alpha" initialValue="0.5"></alteryx-pluginwidget>
+
+           <p>0 is ridge regression, and 1 is lasso</p>
+           
+<!--  standardize_pred  -->
+<alteryx-pluginwidget type="CheckBox" text="Standardize predictor variables?" id="standardize_pred" dataName="standardize_pred" defaultValue="true"></alteryx-pluginwidget>
+
+           
+<!--  internal_cv  -->
+<alteryx-pluginwidget type="CheckBox" text="Use Cross-Validation to determine model parameters?" id="internal_cv" dataName="internal_cv" defaultValue="true"></alteryx-pluginwidget>
+
+           <div id = 'show-on-cv' class = 'indent-one'> 
+             
+<!--  nfolds  -->
+<label for="nfolds">Number of folds</label>
+<alteryx-pluginwidget type="NumericSpinner" default="5" min="1" max="100" step="1" id="nfolds" dataName="nfolds"></alteryx-pluginwidget>
+
+             
+<!--  lambda  -->
+<label for="lambda">What type of model?</label>
+<alteryx-pluginwidget type="RadioGroup" group="lambda" id="lambda" dataName="lambda">
+  <alteryx-option uiobject="Simpler model" default="true">lambda_1se</alteryx-option>
+  <alteryx-option uiobject="Model with lower in sample standard error">lambda_min</alteryx-option>
+</alteryx-pluginwidget>
+
+             <div>
+                <div style='float:left;'>
+<!--  set_seed_internal_cv  -->
+<alteryx-pluginwidget type="CheckBox" text="Set seed?" id="set_seed_internal_cv" dataName="set_seed_internal_cv" defaultValue="true"></alteryx-pluginwidget>
+</div>
+               <div style='float:right;' id='show-on-set_seed_internal_cv'>
+                 
+<!--  seed_internal_cv  -->
+<alteryx-pluginwidget type="NumericSpinner" default="1" min="1" max="12345" step="1" id="seed_internal_cv" dataName="seed_internal_cv"></alteryx-pluginwidget>
+
+                </div>
+             </div>
+           </div>
+            <div id = 'show-on-no-cv'> 
+             
+<!--  lambda_no_cv  -->
+<label for="lambda_no_cv">Value of lambda used for predictions</label>
+<alteryx-pluginwidget type="NumericSpinner" default="0.5" min="0" max="10" step="0.01" id="lambda_no_cv" dataName="lambda_no_cv"></alteryx-pluginwidget>
+
+           </div>
+         </div>
         <div id='div-link'>
           
 <!--  Link  -->
@@ -89,15 +157,45 @@ Logistic_Regression
 </alteryx-pluginwidget>
 
         </div>
-        
-<!--  Use Weights  -->
-<alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" id="Use Weights" dataName="Use Weights" defaultValue="false"></alteryx-pluginwidget>
+      </div>
+      
+        <div class="tabpage" id="tabpage-crossvalidation">
+        <div id='div-external-cv'>
+            
+<!--  external_cv  -->
+<alteryx-pluginwidget type="CheckBox" text="Use Cross-Validation to determine estimates of model quality?" id="external_cv" dataName="external_cv" defaultValue="false"></alteryx-pluginwidget>
 
-        <div id='weight-vec' class='indent-one'>
-<!--  Weight Vec  -->
-<label for="Weight Vec">Select the sampling weight field</label>
-<alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="Numeric" clearable="true" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
+            <div id = 'show-on-external-cv' class='indent-one'> 
+             <div class='clearfix' id='folds-and-trials'>
+               <div id='div-nfolds-external' class='pull-left'>
+                 
+<!--  nfolds_external  -->
+<label for="nfolds_external">Number of folds</label>
+<alteryx-pluginwidget type="NumericSpinner" default="5" min="1" max="100" step="1" id="nfolds_external" dataName="nfolds_external"></alteryx-pluginwidget>
+
+               </div>
+               <div id='div-number-trials' class='pull-right'>
+                 
+<!--  numberTrials  -->
+<label for="numberTrials">Number of trials</label>
+<alteryx-pluginwidget type="NumericSpinner" default="3" min="1" max="100" step="1" id="numberTrials" dataName="numberTrials"></alteryx-pluginwidget>
+
+               </div>
+             </div>
+             <div id='div-set-seed-external-cv' class='clearfix'>
+                 <div class='pull-left'>
+<!--  set_seed_external_cv  -->
+<alteryx-pluginwidget type="CheckBox" text="Set seed?" id="set_seed_external_cv" dataName="set_seed_external_cv" defaultValue="true"></alteryx-pluginwidget>
 </div>
+                 <div class='pull-right' id = 'show-on-set-seed-external-cv'>
+                   
+<!--  external_seed_value  -->
+<alteryx-pluginwidget type="NumericSpinner" default="1" min="1" max="12345" step="1" id="external_seed_value" dataName="external_seed_value"></alteryx-pluginwidget>
+
+                 </div>
+              </div>
+            </div>
+        </div>
       </div>
       
       <div class='tabpage has-hint' id='tabpage-graphics'>
@@ -133,7 +231,9 @@ var items = {
     "curTab": "advanced"
   },
   "toggleBarItems": {},
-  "radioItems": {}
+  "radioItems": {
+    "lambda": ["lambda_1se", "lambda_min"]
+  }
 }
 /* Enter any Display Rules 
 Each key refers to the id of a div whose display is to be controlled. The values
