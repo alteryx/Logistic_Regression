@@ -8,6 +8,7 @@
     <OutputConnections>
       <Connection Name="Output" AllowMultiple="False" Optional="False" Type="Connection" Label="O"/>
       <Connection Name="Reports" AllowMultiple="False" Optional="False" Type="Connection" Label="R"/>
+      <Connection Name="Interactive Report" AllowMultiple="False" Optional="False" Type="Connection" Label="I"/>
     </OutputConnections>
   </GuiSettings>
   <Properties>
