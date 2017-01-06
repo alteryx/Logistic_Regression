@@ -7,3 +7,5 @@
 "Weight Vec":
   clearable: "true"
   fieldType: Numeric
+alpha:
+  type: NumericSlider
