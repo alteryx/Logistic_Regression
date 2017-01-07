@@ -10,8 +10,8 @@ outer_config <- list(
   `Y Var` = dropdownInput('%Question.Y Var%', 'MonthGive'),
   regularization = checkboxInput('%Question.regularization%', FALSE),
   alpha = numericInput('%Question.alpha%', .5),
-  lambda_1se = radioInput('%Question.lambda.1se%', TRUE),
-  lambda_min = radioInput('%Question.lambda.min%', FALSE),
+  lambda_1se = radioInput('%Question.lambda_1se%', TRUE),
+  lambda_min = radioInput('%Question.lambda_min%', FALSE),
   standardize_pred = checkboxInput('%Question.standardize_pred%', TRUE),
   internal_cv = checkboxInput('%Question.internal_cv%', TRUE),
   set_seed_internal_cv = checkboxInput('%Question.set_seed_internal_cvv%', TRUE),
@@ -41,6 +41,8 @@ config <- list(
 )
 
 config <- append(config, outer_config)
+config$lambda.1se <- config$lambda_1se
+config$lambda.min <- config$lambda_min
 
 inputs <- list(
   data = read.Alteryx("#2"),
@@ -60,6 +62,7 @@ if (!(outer_config$regularization)) {
   the.class <- class(mod.obj)[1]
   write.Alteryx(data.frame(Class = the.class))
 }
+
 if (outer_config$external_cv) {
 	runCrossValidationLogReg(config = config, inputs = inputs)
 }

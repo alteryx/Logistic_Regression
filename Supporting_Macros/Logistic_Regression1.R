@@ -8,8 +8,8 @@ config <- list(
   `Y Var` = dropdownInput('%Question.Y Var%', 'Species'),
   regularization = checkboxInput('%Question.regularization%', FALSE),
   alpha = numericInput('%Question.alpha%', .5),
-  lambda_1se = radioInput('%Question.lambda.1se%', TRUE),
-  lambda_min = radioInput('%Question.lambda.min%', FALSE),
+  lambda_1se = radioInput('%Question.lambda_1se%', TRUE),
+  lambda_min = radioInput('%Question.lambda_min%', FALSE),
   standardize_pred = checkboxInput('%Question.standardize_pred%', TRUE),
   internal_cv = checkboxInput('%Question.internal_cv%', TRUE),
   set_seed_internal_cv = checkboxInput('%Question.set_seed_internal_cvv%', TRUE),
@@ -36,4 +36,6 @@ inputs <- list(
   XDFInfo = getXdfProperties("#1", default = list(is_XDF = FALSE, xdf_path = NULL))
 )
 
+config$lambda.1se <- config$lambda_1se
+config$lambda.min <- config$lambda_min
 AlteryxPredictive:::runLogisticRegression(inputs, config)
