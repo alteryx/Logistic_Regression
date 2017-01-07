@@ -9,3 +9,5 @@
   fieldType: Numeric
 alpha:
   type: NumericSlider
+external_cv:
+  showAsToggle: "true"
