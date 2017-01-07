@@ -21,7 +21,7 @@ These tests were run at `r file.mtime("results.Rds")`
 
 
 ```{r chunk1, echo = F}
-makeResultsTable('results.rds')
+makeResultsTable('_testResults.rds')
 ```
 
 

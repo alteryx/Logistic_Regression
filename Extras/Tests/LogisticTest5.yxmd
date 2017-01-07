@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="10.5">
+<AlteryxDocument yxmdVer="11.0">
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
@@ -49,7 +49,7 @@
       <Properties>
         <Configuration>
           <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_492ffc3b0d264beea94ab58f5d43d0ef_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_2afdda191d7945c6885cf49395bbee42_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7404_ce409f38fe474ef4b88e3cba7b8ed69e_\Engine_5572_4a489cf7d4c846d2a3acdceab57baadb_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -72,7 +72,7 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_310e3f4af550449eada7c5130642ae76_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7404_ce409f38fe474ef4b88e3cba7b8ed69e_\Engine_5572_2f61628323dc45deb959a5dbdccc40ff_.yxdb</TempFile>
           <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_027c0bbb98b84b21aa6bf42c13a801f9_.yxdb</TempFileDataProfiling>
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -101,7 +101,7 @@
       <Properties>
         <Configuration>
           <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_d4ea5de5008e47638209a660aedd5924_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_64d933310cba4c6a96c7c9517cc7be25_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7404_ce409f38fe474ef4b88e3cba7b8ed69e_\Engine_5572_22ac6b282b50471d884a8a48f8539f3d_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -124,7 +124,7 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_922e2d5e785c43a09cf7be9fa30c5cd1_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7404_ce409f38fe474ef4b88e3cba7b8ed69e_\Engine_5572_15a67524da574f1fa04722f488801773_.yxdb</TempFile>
           <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_2932_b9b30b87648f493c96eb2ae1a6061fb3_\Engine_4680_b7b12845d4d642ed86713bae4bbf189b_.yxdb</TempFileDataProfiling>
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -254,19 +254,35 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Value name="graph.resolution">1x</Value>
-          <Value name="Weight Vec" />
-          <Value name="Use Weights">False</Value>
-          <Value name="Link">logit</Value>
-          <Value name="X Vars">First_Years,Last_Years,First_School</Value>
-          <Value name="Y Var">Donate</Value>
-          <Value name="Model Name">New Donor</Value>
-          <Value name="curTab">advanced</Value>
           <Value name="curPage">Home</Value>
+          <Value name="curTab">advanced</Value>
+          <Value name="lambda_1se">True</Value>
+          <Value name="lambda_min">False</Value>
+          <Value name="Model Name">New_Donor</Value>
+          <Value name="Y Var">Donate</Value>
+          <Value name="X Vars">First_Years,Last_Years,First_School</Value>
+          <Value name="Use Weights">False</Value>
+          <Value name="Weight Vec" />
+          <Value name="regularization">False</Value>
+          <Value name="alpha">0.5</Value>
+          <Value name="standardize_pred">False</Value>
+          <Value name="internal_cv">False</Value>
+          <Value name="nfolds">5</Value>
+          <Value name="lambda">lambda_1se</Value>
+          <Value name="set_seed_internal_cv">False</Value>
+          <Value name="seed_internal_cv">1</Value>
+          <Value name="lambda_no_cv">0.5</Value>
+          <Value name="Link">logit</Value>
+          <Value name="external_cv">False</Value>
+          <Value name="nfolds_external">5</Value>
+          <Value name="numberTrials">3</Value>
+          <Value name="set_seed_external_cv">False</Value>
+          <Value name="external_seed_value">1</Value>
+          <Value name="graph.resolution">1x</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText />
+          <DefaultAnnotationText>New_Donor</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>

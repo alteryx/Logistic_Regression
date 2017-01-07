@@ -290,7 +290,7 @@ Logistic Regression</Text>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <RScript>config &lt;- list(
+          <RScript><![CDATA[config <- list(
   `graph.resolution` = dropdownInput('%Question.graph.resolution%' , '1x'),
   `Link` = dropdownInput('%Question.Link%' , 'logit'),
   `Model Name` = textInput('%Question.Model Name%'),
@@ -300,8 +300,8 @@ Logistic Regression</Text>
   `Y Var` = dropdownInput('%Question.Y Var%', 'Species'),
   regularization = checkboxInput('%Question.regularization%', FALSE),
   alpha = numericInput('%Question.alpha%', .5),
-  lambda_1se = radioInput('%Question.lambda.1se%', TRUE),
-  lambda_min = radioInput('%Question.lambda.min%', FALSE),
+  lambda_1se = radioInput('%Question.lambda_1se%', TRUE),
+  lambda_min = radioInput('%Question.lambda_min%', FALSE),
   standardize_pred = checkboxInput('%Question.standardize_pred%', TRUE),
   internal_cv = checkboxInput('%Question.internal_cv%', TRUE),
   set_seed_internal_cv = checkboxInput('%Question.set_seed_internal_cvv%', TRUE),
@@ -323,12 +323,17 @@ options(alteryx.debug = config$debug)
 #'
 #' This is a named list of all inputs that stream into the R tool.
 #' We also specify defaults for use when R code is run outside Alteryx.
-inputs &lt;- list(
+inputs <- list(
   the.data = read.Alteryx2("#1", default = mtcars),
   XDFInfo = getXdfProperties("#1", default = list(is_XDF = FALSE, xdf_path = NULL))
 )
 
-AlteryxPredictive:::runLogisticRegression(inputs, config)</RScript>
+config$lambda.1se <- config$lambda_1se
+config$lambda.min <- config$lambda_min
+print('config in first r tool')
+print(config)
+AlteryxPredictive:::runLogisticRegression(inputs, config)
+]]></RScript>
           <UseFullUpdate value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
@@ -338,33 +343,6 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <MetaInfo connection="Output1">
-          <RecordInfo>
-            <Field name="Coefficients" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="Values" source="R-DATA:" type="Double" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output5">
-          <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output2">
-          <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output4">
-          <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output3">
-          <RecordInfo>
-            <Field name="Name" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="Object" size="2147483647" source="R-DATA:SERIAL" type="Blob" />
-          </RecordInfo>
-        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxR" />
     </Node>
@@ -4856,8 +4834,8 @@ outer_config &lt;- list(
   `Y Var` = dropdownInput('%Question.Y Var%', 'MonthGive'),
   regularization = checkboxInput('%Question.regularization%', FALSE),
   alpha = numericInput('%Question.alpha%', .5),
-  lambda_1se = radioInput('%Question.lambda.1se%', TRUE),
-  lambda_min = radioInput('%Question.lambda.min%', FALSE),
+  lambda_1se = radioInput('%Question.lambda_1se%', TRUE),
+  lambda_min = radioInput('%Question.lambda_min%', FALSE),
   standardize_pred = checkboxInput('%Question.standardize_pred%', TRUE),
   internal_cv = checkboxInput('%Question.internal_cv%', TRUE),
   set_seed_internal_cv = checkboxInput('%Question.set_seed_internal_cvv%', TRUE),
@@ -4887,6 +4865,8 @@ config &lt;- list(
 )
 
 config &lt;- append(config, outer_config)
+config$lambda.1se &lt;- config$lambda_1se
+config$lambda.min &lt;- config$lambda_min
 
 inputs &lt;- list(
   data = read.Alteryx("#2"),
@@ -4906,6 +4886,8 @@ if (!(outer_config$regularization)) {
   the.class &lt;- class(mod.obj)[1]
   write.Alteryx(data.frame(Class = the.class))
 }
+print('config in second r tool')
+print(config)
 if (outer_config$external_cv) {
 	runCrossValidationLogReg(config = config, inputs = inputs)
 }
@@ -4929,30 +4911,6 @@ flightdeck:::fdRender(
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
-        <MetaInfo connection="Output1">
-          <RecordInfo>
-            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output4">
-          <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output3">
-          <RecordInfo>
-            <Field name="trial" source="R-DATA:" type="Double" />
-            <Field name="fold" source="R-DATA:" type="Double" />
-            <Field name="Model" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="variable" size="1073741823" source="R-DATA:" type="V_WString" />
-            <Field name="value" source="R-DATA:" type="Double" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output5">
-          <RecordInfo>
-            <Field name="html" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
       </Properties>
       <EngineSettings EngineDll="AlteryxRPluginEngine.dll" EngineDllEntryPoint="AlteryxR" />
     </Node>
@@ -5340,7 +5298,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_1c787f755e314dcf9416f5b996faff53_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_5e2b8688604e4cc3b062e1e9b650ffab_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5531,7 +5489,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_d7fd32ca582b4c1ab700da3e58b48fbc_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_15fc44e15fea4dbdba36f96ce27c122c_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5604,7 +5562,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_27ce4a858f134288a001e6b1eda6e74f_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_6ad25179f8ca4f13beed258e2e9debc0_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5632,7 +5590,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_6650aadaf2b7479ebea509656f0caad0_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_4727832dddb243f19d51499c0de36b45_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout />
         </Configuration>
@@ -5650,7 +5608,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_295e52bc39914273b8a3e11b4e434223_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_5d84973db208492098341d359f4fdda9_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5676,7 +5634,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_c9b4cde7df4142c4a7c0e2f871c58e79_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_f10b5966b8474e10badb85ccd267ed5c_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout />
         </Configuration>
@@ -5694,7 +5652,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_57da9f7ae2cc40f68c7a478164822403_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_b4c55433ac5e4e6584d4c400bda8531c_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5720,7 +5678,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_b431bbecd65c4e81a9de6c0d7808451a_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_336dc502a3af4148b882a03f875fd1ab_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5748,7 +5706,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_eac35eae5fa94320a7f843f67b52f459_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_bbc756c9a33041ca964df68f37618712_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5776,7 +5734,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_e82fc9417bef4065ae683028a00ec00b_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_302be80f0551409aa8cfbe6b51c7bf35_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -5799,7 +5757,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_9007aca7b2144fb3afcc756a0d7afa4d_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_5ed3c4965f064404b99e2d9745d89bc7_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -6498,7 +6456,7 @@ No Text Styling</DefaultAnnotationText>
               </GuiSettings>
               <Properties>
                 <Configuration>
-                  <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_0d5bb3c1743546b29176807a095436d2_.yxdb</TempFile>
+                  <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_ede235109790417696aca4c62e842af6_.yxdb</TempFile>
                   <TempFileDataProfiling />
                   <Layout>
                     <ViewMode>Single</ViewMode>
@@ -6526,7 +6484,7 @@ No Text Styling</DefaultAnnotationText>
               </GuiSettings>
               <Properties>
                 <Configuration>
-                  <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_c403003080f046cfb3d88ea5448a6983_.yxdb</TempFile>
+                  <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_7a6f6c4bc7f84603aa74938cb8857c65_.yxdb</TempFile>
                 </Configuration>
                 <Annotation DisplayMode="0">
                   <Name />
@@ -6809,7 +6767,7 @@ No Text Styling</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_54812f6e55f14e7e8c0e1fb617f2bafa_.yxdb</TempFile>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_a8619496250a457c90da5ad90ba04845_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -6837,7 +6795,7 @@ No Text Styling</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_da7c57607feb421283bb4202c197765d_.yxdb</TempFile>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_9007f8a4dac943d8af5471bd9ff6866b_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -6860,7 +6818,7 @@ No Text Styling</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_b7b2efa85ddb4a78933b2f90826bbbc8_.yxdb</TempFile>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_6becbb7761564415b9d16151735f9530_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -6888,7 +6846,7 @@ No Text Styling</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8904_c19adf02803e48689aa4f70b2e2528ff_\Engine_5572_1439ddc212d74af6a2b1b338afe92c16_.yxdb</TempFile>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_7004_322b49cfd1ae4649b13f976af47c9662_\Engine_5572_44582b1df67c41688c8f36df2779e453_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -8585,7 +8543,7 @@ Union</Text>
               <Description />
               <ToolId value="55" />
               <Expression>'  &lt;SelectFields&gt;
-    &lt;SelectField field="' + replace(EscapeXMLMetacharacters([X Vars]), " + ", '" selected="True" /&gt;
+    &lt;SelectField field="' + replace(EscapeXMLMetacharacters([X Vars]), ",", '" selected="True" /&gt;
     &lt;SelectField field="') + '" selected="True" /&gt;
     &lt;SelectField field="*Unknown" selected="False" /&gt;
   &lt;/SelectFields&gt;'</Expression>
@@ -8615,7 +8573,7 @@ Union</Text>
               <Description>Get Xs B</Description>
               <ToolId value="58" />
               <Expression>'  &lt;SelectFields&gt;
-    &lt;SelectField field="' + replace(EscapeXMLMetacharacters([X Vars]), " + ", '" selected="True" /&gt;
+    &lt;SelectField field="' + replace(EscapeXMLMetacharacters([X Vars]), ",", '" selected="True" /&gt;
     &lt;SelectField field="') + '" selected="True" /&gt;
     &lt;SelectField field="*Unknown" selected="False" /&gt;
   &lt;/SelectFields&gt;'</Expression>

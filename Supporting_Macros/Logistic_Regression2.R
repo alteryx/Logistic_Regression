@@ -62,6 +62,7 @@ if (!(outer_config$regularization)) {
   the.class <- class(mod.obj)[1]
   write.Alteryx(data.frame(Class = the.class))
 }
+
 if (outer_config$external_cv) {
 	runCrossValidationLogReg(config = config, inputs = inputs)
 }

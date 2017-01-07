@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<AlteryxDocument yxmdVer="10.5">
+<AlteryxDocument yxmdVer="11.0">
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
@@ -2030,19 +2030,35 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Value name="graph.resolution">1x</Value>
-          <Value name="Weight Vec" />
-          <Value name="Use Weights">False</Value>
-          <Value name="Link">logit</Value>
-          <Value name="X Vars">gre,gpa</Value>
-          <Value name="Y Var">admit</Value>
-          <Value name="Model Name">Basic_Logistic_Regression</Value>
-          <Value name="curTab">advanced</Value>
           <Value name="curPage">Home</Value>
+          <Value name="curTab">advanced</Value>
+          <Value name="lambda_1se">True</Value>
+          <Value name="lambda_min">False</Value>
+          <Value name="Model Name">Basic_Logistic_Regression</Value>
+          <Value name="Y Var">admit</Value>
+          <Value name="X Vars">gre,gpa</Value>
+          <Value name="Use Weights">False</Value>
+          <Value name="Weight Vec" />
+          <Value name="regularization">False</Value>
+          <Value name="alpha">0.5</Value>
+          <Value name="standardize_pred">False</Value>
+          <Value name="internal_cv">False</Value>
+          <Value name="nfolds">5</Value>
+          <Value name="lambda">lambda_1se</Value>
+          <Value name="set_seed_internal_cv">False</Value>
+          <Value name="seed_internal_cv">1</Value>
+          <Value name="lambda_no_cv">0.5</Value>
+          <Value name="Link">logit</Value>
+          <Value name="external_cv">False</Value>
+          <Value name="nfolds_external">5</Value>
+          <Value name="numberTrials">3</Value>
+          <Value name="set_seed_external_cv">False</Value>
+          <Value name="external_seed_value">1</Value>
+          <Value name="graph.resolution">1x</Value>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name>Logistic Regression (8)</Name>
-          <DefaultAnnotationText />
+          <DefaultAnnotationText>Basic_Logistic_Regression</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -2145,7 +2161,14 @@
       <Properties>
         <Configuration>
           <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_1188_2f0cfe22ce024f5da963a6e438bdb82b_\Engine_4680_13324644a2474c5baca7cf275b761124_.yxdb</TempFileDataProfiling>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_1188_2f0cfe22ce024f5da963a6e438bdb82b_\Engine_4680_9cd87243867d4f9d8698692cf868a6c4_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_8252_4e96ef69324c44659a91bec71097a81d_\Engine_5572_6289a400077947888bb5827d90fdb033_.yxdb</TempFile>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
