@@ -5422,7 +5422,7 @@ No Text Styling</DefaultAnnotationText>
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings Macro="C:\Users\btoomey\Desktop\dylan_logreg_testing\Logistic_Regression-feature-Reg_CV\Supporting_Macros\Supporting_Macros\Logistic_Regression_Summary.yxmc" />
+      <EngineSettings Macro=".\Supporting_Macros\Logistic_Regression_Summary.yxmc" />
     </Node>
     <Node ToolID="215">
       <GuiSettings>
@@ -5442,7 +5442,7 @@ No Text Styling</DefaultAnnotationText>
           </RecordInfo>
         </MetaInfo>
       </Properties>
-      <EngineSettings Macro="C:\Users\btoomey\Desktop\dylan_logreg_testing\Logistic_Regression-feature-Reg_CV\Supporting_Macros\Supporting_Macros\Generalized_Linear_Model_ANOD.yxmc" />
+      <EngineSettings Macro=".\Supporting_Macros\Generalized_Linear_Model_ANOD.yxmc" />
     </Node>
     <Node ToolID="216">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
