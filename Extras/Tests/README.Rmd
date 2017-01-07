@@ -17,7 +17,7 @@ makeResultsTable <- function(test){
 }
 ```
 
-These tests were run at `r file.mtime("results.Rds")`
+These tests were run at `r file.mtime("_testResults.Rds")`
 
 
 ```{r chunk1, echo = F}
