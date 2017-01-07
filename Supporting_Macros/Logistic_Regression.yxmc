@@ -7031,6 +7031,19 @@ No Text Styling</DefaultAnnotationText>
             </Annotation>
           </Properties>
         </Node>
+        <Node ToolID="240">
+          <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
+            <Position x="2466" y="426" width="59" height="59" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>stratified</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="113">
@@ -7053,7 +7066,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="94">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1338" y="234" width="59" height="59" />
+            <Position x="1338" y="234.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -7222,7 +7235,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="185">
           <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
-            <Position x="1170" y="341.9999" width="59" height="59" />
+            <Position x="1170" y="341.9998" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -8345,12 +8358,6 @@ Union</Text>
       </Constant>
       <Constant>
         <Namespace>Question</Namespace>
-        <Name>posClass</Name>
-        <Value />
-        <IsNumeric value="False" />
-      </Constant>
-      <Constant>
-        <Namespace>Question</Namespace>
         <Name>Model Name</Name>
         <Value>Test_Model</Value>
         <IsNumeric value="False" />
@@ -8497,6 +8504,18 @@ Union</Text>
         <Namespace>Question</Namespace>
         <Name>display_graphs</Name>
         <Value>True</Value>
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>posClass</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>stratified</Name>
+        <Value />
         <IsNumeric value="False" />
       </Constant>
     </Constants>
@@ -8797,7 +8816,7 @@ Union</Text>
             </Question>
             <Question>
               <Type>BooleanGroup</Type>
-              <Description>Omit a model constant.</Description>
+              <Description>Omit a model constant</Description>
               <Name>Omit Constant</Name>
               <ToolId value="112" />
               <Questions />
@@ -8818,7 +8837,7 @@ Union</Text>
             </Question>
             <Question>
               <Type>TextBox</Type>
-              <Description>Enter positive class for target variable</Description>
+              <Description>Enter positive class for target variable (optional)</Description>
               <Name>posClass</Name>
               <ToolId value="196" />
               <Default />
@@ -8842,7 +8861,7 @@ Union</Text>
           <Questions>
             <Question>
               <Type>TextBox</Type>
-              <Description>Model Name</Description>
+              <Description>Type model name</Description>
               <Name>Model Name</Name>
               <ToolId value="65" />
               <Default />
@@ -8864,7 +8883,7 @@ Union</Text>
             </Question>
             <Question>
               <Type>ListBox</Type>
-              <Description>Select the target variable</Description>
+              <Description>Select target variable</Description>
               <Name>Y Var</Name>
               <ToolId value="68" />
               <Multiple value="False" />
@@ -8876,7 +8895,7 @@ Union</Text>
             </Question>
             <Question>
               <Type>ListBox</Type>
-              <Description>Select the predictor variables</Description>
+              <Description>Select predictor variables</Description>
               <Name>X Vars</Name>
               <ToolId value="69" />
               <Multiple value="True" />
@@ -8892,7 +8911,7 @@ Union</Text>
             </Question>
             <Question>
               <Type>ListBox</Type>
-              <Description>Model type</Description>
+              <Description>Select model type</Description>
               <Name>Link</Name>
               <ToolId value="70" />
               <Multiple value="False" />
@@ -8905,7 +8924,7 @@ complementary log-log
             </Question>
             <Question>
               <Type>BooleanGroup</Type>
-              <Description>Use sampling weights in model estimation? (Optional)</Description>
+              <Description>Use sampling weights in model estimation (optional)</Description>
               <Name>Use Weights</Name>
               <ToolId value="72" />
               <Questions>
@@ -8935,7 +8954,7 @@ complementary log-log
           <Questions>
             <Question>
               <Type>ListBox</Type>
-              <Description>Graph Resolution</Description>
+              <Description>Graph resolution</Description>
               <Name>graph.resolution</Name>
               <ToolId value="74" />
               <Multiple value="False" />
@@ -8956,7 +8975,7 @@ complementary log-log
           <Questions>
             <Question>
               <Type>BooleanGroup</Type>
-              <Description>Use Cross-Validation to determine estimates of model quality?</Description>
+              <Description>Use cross-validation to determine estimates of model quality</Description>
               <Name>external_cv</Name>
               <ToolId value="97" />
               <Questions />
@@ -8976,7 +8995,7 @@ complementary log-log
             </Question>
             <Question>
               <Type>BooleanGroup</Type>
-              <Description>Set seed?</Description>
+              <Description>Set seed</Description>
               <Name>set_seed_external_cv</Name>
               <ToolId value="99" />
               <Questions />
@@ -9007,7 +9026,7 @@ complementary log-log
             </Question>
             <Question>
               <Type>BooleanGroup</Type>
-              <Description>Set seed?</Description>
+              <Description>Set seed</Description>
               <Name>set_seed_internal_cv</Name>
               <ToolId value="102" />
               <Questions />
@@ -9045,6 +9064,15 @@ complementary log-log
               <Multiline value="False" />
               <Hidden value="False" />
             </Question>
+            <Question>
+              <Type>BooleanGroup</Type>
+              <Description>Use stratified cross-validation</Description>
+              <Name>stratified</Name>
+              <ToolId value="240" />
+              <Questions />
+              <Default value="False" />
+              <Collapsable value="False" />
+            </Question>
           </Questions>
         </Question>
         <Question>
@@ -9055,7 +9083,7 @@ complementary log-log
           <Questions>
             <Question>
               <Type>BooleanGroup</Type>
-              <Description>Use regularized regression?</Description>
+              <Description>Use regularized regression</Description>
               <Name>regularization</Name>
               <ToolId value="94" />
               <Questions>
@@ -9072,7 +9100,7 @@ complementary log-log
                 </Question>
                 <Question>
                   <Type>BooleanGroup</Type>
-                  <Description>Standardize predictor variables?</Description>
+                  <Description>Standardize predictor variables</Description>
                   <Name>standardize_pred</Name>
                   <ToolId value="110" />
                   <Questions />
@@ -9081,7 +9109,7 @@ complementary log-log
                 </Question>
                 <Question>
                   <Type>BooleanGroup</Type>
-                  <Description>Use Cross-Validation to determine model parameters?</Description>
+                  <Description>Use cross-validation to determine model parameters</Description>
                   <Name>internal_cv</Name>
                   <ToolId value="95" />
                   <Questions />
@@ -9150,7 +9178,7 @@ complementary log-log
           <Questions>
             <Question>
               <Type>BooleanGroup</Type>
-              <Description>Display graphs?</Description>
+              <Description>Display graphs</Description>
               <Name>display_graphs</Name>
               <ToolId value="96" />
               <Questions />
@@ -9173,28 +9201,28 @@ complementary log-log
       <Wiz_OpenOutputTools>
         <Tool ToolId="2" Selected="True" />
         <Tool ToolId="77" Selected="True" />
-        <Tool ToolId="215" Selected="True" />
-        <Tool ToolId="214" Selected="True" />
         <Tool ToolId="125" Selected="True" />
         <Tool ToolId="126" Selected="True" />
         <Tool ToolId="199" Selected="False" />
         <Tool ToolId="200" Selected="True" />
+        <Tool ToolId="214" Selected="True" />
+        <Tool ToolId="215" Selected="True" />
         <Tool ToolId="218" Selected="False" />
         <Tool ToolId="224" Selected="False" />
-        <Tool ToolId="225" Selected="False" />
-        <Tool ToolId="232" Selected="False" />
         <Tool ToolId="227" Selected="False" />
         <Tool ToolId="228" Selected="False" />
         <Tool ToolId="229" Selected="False" />
         <Tool ToolId="230" Selected="False" />
         <Tool ToolId="231" Selected="False" />
+        <Tool ToolId="232" Selected="False" />
         <Tool ToolId="233" Selected="False" />
-        <Tool ToolId="234" Selected="False" />
         <Tool ToolId="235" Selected="False" />
-        <Tool ToolId="236" Selected="False" />
-        <Tool ToolId="237" Selected="False" />
         <Tool ToolId="238" Selected="False" />
         <Tool ToolId="239" Selected="False" />
+        <Tool ToolId="225" Selected="False" />
+        <Tool ToolId="234" Selected="False" />
+        <Tool ToolId="236" Selected="False" />
+        <Tool ToolId="237" Selected="False" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />
