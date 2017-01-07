@@ -28,17 +28,17 @@ Logistic_Regression
       
       <div id='mname' class="qconst">
 <!--  Model Name  -->
-<label for="Model Name">Model Name</label>
+<label for="Model Name">Type model name</label>
 <alteryx-pluginwidget type="TextBox" password="false" id="Model Name" dataName="Model Name"></alteryx-pluginwidget>
 </div>
       <div id='yvar' class="qconst">
 <!--  Y Var  -->
-<label for="Y Var">Select the target variable</label>
+<label for="Y Var">Select target variable</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="String" id="Y Var" dataName="Y Var"></alteryx-pluginwidget>
 </div>
       <div id='xvars' class="qconst">
 <!--  X Vars  -->
-<label for="X Vars">Select the predictor variables</label>
+<label for="X Vars">Select predictor variables</label>
 <alteryx-pluginwidget type="MultiSelectListBox" dataType="MultiStringSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="X Vars" dataName="X Vars"></alteryx-pluginwidget>
 </div>
       <button class='default-button primary switch' id='switch-to-customize'
@@ -71,7 +71,7 @@ Logistic_Regression
       </div>
       <div class="tab tab-one-third" data-page='crossvalidation' 
           id='crossvalidation'>
-        Cross Validation
+        Cross-validation
       </div>
       <div class="tab tab-one-third" data-page='graphics' id='graphics'>
         Plots
@@ -86,7 +86,7 @@ Logistic_Regression
 
         
 <!--  Use Weights  -->
-<alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation? (Optional)" id="Use Weights" dataName="Use Weights" defaultValue="false"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Use sampling weights in model estimation (optional)" id="Use Weights" dataName="Use Weights" defaultValue="false"></alteryx-pluginwidget>
 
         <div id='weight-vec' class='indent-one'>
 <!--  Weight Vec  -->
@@ -95,7 +95,7 @@ Logistic_Regression
 </div>
         <div id='hide-on-xdf'>
 <!--  regularization  -->
-<alteryx-pluginwidget type="CheckBox" text="Use regularized regression?" id="regularization" dataName="regularization" defaultValue="false"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Use regularized regression" id="regularization" dataName="regularization" defaultValue="false"></alteryx-pluginwidget>
 </div>
         <div id = 'show-on-regularization' class='indent-one'> 
            
@@ -105,11 +105,11 @@ Logistic_Regression
            <p>0 is ridge regression, and 1 is lasso</p>
            
 <!--  standardize_pred  -->
-<alteryx-pluginwidget type="CheckBox" text="Standardize predictor variables?" id="standardize_pred" dataName="standardize_pred" defaultValue="true"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Standardize predictor variables" id="standardize_pred" dataName="standardize_pred" defaultValue="true"></alteryx-pluginwidget>
 
            
 <!--  internal_cv  -->
-<alteryx-pluginwidget type="CheckBox" text="Use Cross-Validation to determine model parameters?" id="internal_cv" dataName="internal_cv" defaultValue="true"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Use cross-validation to determine model parameters" id="internal_cv" dataName="internal_cv" defaultValue="true"></alteryx-pluginwidget>
 
            <div id = 'show-on-cv' class = 'indent-one'> 
              
@@ -128,7 +128,7 @@ Logistic_Regression
              <div>
                 <div style='float:left;'>
 <!--  set_seed_internal_cv  -->
-<alteryx-pluginwidget type="CheckBox" text="Set seed?" id="set_seed_internal_cv" dataName="set_seed_internal_cv" defaultValue="true"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Set seed" id="set_seed_internal_cv" dataName="set_seed_internal_cv" defaultValue="true"></alteryx-pluginwidget>
 </div>
                <div style='float:right;' id='show-on-set_seed_internal_cv'>
                  
@@ -149,7 +149,7 @@ Logistic_Regression
         <div id='div-link'>
           
 <!--  Link  -->
-<label for="Link">Model type</label>
+<label for="Link">Select model type</label>
 <alteryx-pluginwidget type="DropDown" id="Link" dataName="Link">
   <alteryx-option uiobject="logit" default="true">logit</alteryx-option>
   <alteryx-option uiobject="probit">probit</alteryx-option>
@@ -163,7 +163,7 @@ Logistic_Regression
         <div id='div-external-cv'>
             
 <!--  external_cv  -->
-<alteryx-pluginwidget type="CheckBox" text="Use Cross-Validation to determine estimates of model quality?" id="external_cv" dataName="external_cv" defaultValue="false"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Use cross-validation to determine estimates of model quality" id="external_cv" dataName="external_cv" defaultValue="false"></alteryx-pluginwidget>
 
             <div id = 'show-on-external-cv' class='indent-one'> 
              <div class='clearfix' id='folds-and-trials'>
@@ -182,10 +182,19 @@ Logistic_Regression
 
                </div>
              </div>
+             	
+<!--  posClass  -->
+<label for="posClass">Enter positive class for target variable (optional)</label>
+<alteryx-pluginwidget type="TextBox" password="false" id="posClass" dataName="posClass"></alteryx-pluginwidget>
+
+	            
+<!--  stratified  -->
+<alteryx-pluginwidget type="CheckBox" text="Use stratified cross-validation" id="stratified" dataName="stratified" defaultValue="false"></alteryx-pluginwidget>
+
              <div id='div-set-seed-external-cv' class='clearfix'>
                  <div class='pull-left'>
 <!--  set_seed_external_cv  -->
-<alteryx-pluginwidget type="CheckBox" text="Set seed?" id="set_seed_external_cv" dataName="set_seed_external_cv" defaultValue="true"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Set seed" id="set_seed_external_cv" dataName="set_seed_external_cv" defaultValue="true"></alteryx-pluginwidget>
 </div>
                  <div class='pull-right' id = 'show-on-set-seed-external-cv'>
                    
@@ -201,7 +210,7 @@ Logistic_Regression
       <div class='tabpage has-hint' id='tabpage-graphics'>
         
 <!--  graph.resolution  -->
-<label for="graph.resolution">Graph Resolution</label>
+<label for="graph.resolution">Graph resolution</label>
 <alteryx-pluginwidget type="DropDown" id="graph.resolution" dataName="graph.resolution">
   <alteryx-option uiobject="1x (96 dpi)" default="true">1x</alteryx-option>
   <alteryx-option uiobject="2x (192 dpi)">2x</alteryx-option>

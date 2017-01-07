@@ -33,10 +33,10 @@ config <- list(
   `numberTrials` = numericInput('%Question.numberTrials%' , 3),
   #This should be added as a config option in Logistic Regression, but it's irrelevant
   #here, since we're solving a regression problem
-  `posClass` = NULL,
+  posClass = textInput('%Question.posClass%' , NULL),
   `predFields` = listInput('%Question.predFields%'),
   `regression` = FALSE,
-  `stratified` = FALSE,
+  stratified = checkboxInput('%Question.stratified%', FALSE),
   `seed` = numericInput('%Question.seed%', 1)
 )
 
