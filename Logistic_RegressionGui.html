@@ -163,18 +163,18 @@ Logistic_Regression
         <div id='div-external-cv'>
             
 <!--  external_cv  -->
-<alteryx-pluginwidget type="CheckBox" text="Use cross-validation to determine estimates of model quality" id="external_cv" dataName="external_cv" defaultValue="false"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="Use cross-validation to determine estimates of model quality" showAsToggle="TRUE" id="external_cv" dataName="external_cv" defaultValue="false"></alteryx-pluginwidget>
 
-            <div id = 'show-on-external-cv' class='indent-one'> 
+            <div id = 'show-on-external-cv'> 
              <div class='clearfix' id='folds-and-trials'>
-               <div id='div-nfolds-external' class='pull-left'>
+               <div id='div-nfolds-external'>
                  
 <!--  nfolds_external  -->
 <label for="nfolds_external">Number of folds</label>
 <alteryx-pluginwidget type="NumericSpinner" default="5" min="1" max="100" step="1" id="nfolds_external" dataName="nfolds_external"></alteryx-pluginwidget>
 
                </div>
-               <div id='div-number-trials' class='pull-right'>
+               <div id='div-number-trials'>
                  
 <!--  numberTrials  -->
 <label for="numberTrials">Number of trials</label>
