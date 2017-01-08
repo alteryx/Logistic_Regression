@@ -2431,11 +2431,11 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Value name="curPage">Customize</Value>
+          <Value name="curPage">Home</Value>
           <Value name="curTab">advanced</Value>
           <Value name="lambda_1se">True</Value>
           <Value name="lambda_min">False</Value>
-          <Value name="Model Name">Basic_Logistic_Regression</Value>
+          <Value name="Model Name">Regularized_Logistic_Regression</Value>
           <Value name="Y Var">admit</Value>
           <Value name="X Vars">gre,gpa,rank</Value>
           <Value name="Use Weights">False</Value>
@@ -2462,7 +2462,7 @@
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>Basic_Logistic_Regression</DefaultAnnotationText>
+          <DefaultAnnotationText>Regularized_Logistic_Regression</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
       </Properties>
@@ -2490,11 +2490,11 @@
     </Node>
     <Node ToolID="4">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="294" y="198" />
+        <Position x="318" y="186" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_9144_5628fe68c7874abbb378933a3bb3d994_\Engine_5572_2dbf375b4fd34e88aea8ad7aa6d9cf5f_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_5496_ab8b073b55aa43438a83ccff940d0196_\Engine_6836_9ecbf093c693485f900b69c88d843dcb_.yxdb</TempFile>
           <TempFileDataProfiling>C:\ProgramData\Alteryx\Engine\Engine_6096_32801948b13e4e6abf8bdec1fba6eb27_\Engine_4680_c199fb135fd74f03a114bebc7b0b3823_.yxdb</TempFileDataProfiling>
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -2576,6 +2576,98 @@
         </Annotation>
       </Properties>
     </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="Logistic_Regression">
+        <Position x="222" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="curPage">Customize</Value>
+          <Value name="curTab">crossvalidation</Value>
+          <Value name="lambda_1se">True</Value>
+          <Value name="lambda_min">False</Value>
+          <Value name="Model Name">Non_regularized_logreg</Value>
+          <Value name="Y Var">admit</Value>
+          <Value name="X Vars">gre,gpa,rank</Value>
+          <Value name="Use Weights">False</Value>
+          <Value name="Weight Vec" />
+          <Value name="regularization">False</Value>
+          <Value name="alpha">0.5</Value>
+          <Value name="standardize_pred">False</Value>
+          <Value name="internal_cv">False</Value>
+          <Value name="nfolds">5</Value>
+          <Value name="lambda">lambda_1se</Value>
+          <Value name="set_seed_internal_cv">False</Value>
+          <Value name="seed_internal_cv">1</Value>
+          <Value name="lambda_no_cv">0.5</Value>
+          <Value name="Link">logit</Value>
+          <Value name="external_cv">True</Value>
+          <Value name="nfolds_external">5</Value>
+          <Value name="numberTrials">3</Value>
+          <Value name="posClass">Yes</Value>
+          <Value name="stratified">True</Value>
+          <Value name="set_seed_external_cv">True</Value>
+          <Value name="external_seed_value">1</Value>
+          <Value name="graph.resolution">1x</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Non_regularized_logreg</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings Macro="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc" EngineDll="Macro" EngineDllEntryPoint="Logistic_Regression/Supporting_Macros/Logistic_Regression.yxmc" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="414" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="402" y="354" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="366" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
   </Nodes>
   <Connections>
     <Connection>
@@ -2583,8 +2675,24 @@
       <Destination ToolID="2" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="2" Connection="Reports" />
       <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Reports" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Interactive Report" />
+      <Destination ToolID="11" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
