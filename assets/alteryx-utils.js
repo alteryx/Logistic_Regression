@@ -314,3 +314,32 @@ function syncDataItemsAfterLoad(items){
   Object.keys(items.radioItems).forEach(syncRadio);
   Object.keys(items.toggleBarItems).forEach(setupToggleBar);
 }
+
+function controlDisplayOnXDF(){
+  var manager = Alteryx.Gui.manager;
+  if (isXDF(manager)){
+    $('.hide-on-xdf').hide();
+    $('.show-on-xdf').show();
+  }
+}
+
+function isXDF(manager){
+  if (manager.metaInfo.Get(0)){
+    let field = manager.metaInfo.Get(0)._GetFields()[0];
+    var src;
+    if (typeof field === 'undefined'){
+      src = false;
+    } else {
+      //src = field.strSource;
+      src = field.strName;
+    }
+    try {
+      return JSON.parse(src).Context === 'XDF';
+    } 
+    catch(e) {
+      return false;
+    }
+  } else {
+    return false;
+  }
+}
