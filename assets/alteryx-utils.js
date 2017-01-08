@@ -330,8 +330,7 @@ function isXDF(manager){
     if (typeof field === 'undefined'){
       src = false;
     } else {
-      //src = field.strSource;
-      src = field.strName;
+      src = field.strSource;
     }
     try {
       return JSON.parse(src).Context === 'XDF';
