@@ -55,33 +55,38 @@
 
         {{ `Use Weights` }}
         <div id='weight-vec' class='indent-one'>{{ `Weight Vec` }}</div>
-        <div id='hide-on-xdf'>{{ regularization }}</div>
-        <div id = 'show-on-regularization' class='indent-one'> 
-           {{ alpha }}
-           <p>0 is ridge regression, and 1 is lasso</p>
-           {{ standardize_pred }}
-           {{ internal_cv }}
-           <div id = 'show-on-cv' class = 'indent-one'> 
-             {{ nfolds }}
-             {{ lambda }}
-             <div>
-                <div style='float:left;'>{{ set_seed_internal_cv }}</div>
-               <div style='float:right;' id='show-on-set_seed_internal_cv'>
-                 {{ seed_internal_cv }}
-                </div>
+        <div class='hide-on-xdf'>
+          {{ regularization }}
+          <div id = 'show-on-regularization' class='indent-one'> 
+             {{ alpha }}
+             <p>0 is ridge regression, and 1 is lasso</p>
+             {{ standardize_pred }}
+             {{ internal_cv }}
+             <div id = 'show-on-cv' class = 'indent-one'> 
+               {{ nfolds }}
+               {{ lambda }}
+               <div>
+                  <div style='float:left;'>{{ set_seed_internal_cv }}</div>
+                 <div style='float:right;' id='show-on-set_seed_internal_cv'>
+                   {{ seed_internal_cv }}
+                  </div>
+               </div>
              </div>
-           </div>
-            <div id = 'show-on-no-cv'> 
-             {{ lambda_no_cv }}
-           </div>
-         </div>
+              <div id = 'show-on-no-cv'> 
+               {{ lambda_no_cv }}
+             </div>
+          </div>
+        </div>
         <div id='div-link'>
           {{ `Link` }}
         </div>
       </div>
       
         <div class="tabpage" id="tabpage-crossvalidation">
-        <div id='div-external-cv'>
+        <div class='show-on-xdf' style='display:none;'>
+          Cross-validation is not currently supported for XDF input.
+        </div>
+        <div id='div-external-cv' class='hide-on-xdf'>
             {{ external_cv }}
             <div id = 'show-on-external-cv'> 
              <div class='clearfix' id='folds-and-trials'>
