@@ -2,18 +2,19 @@
 
 
 
-These tests were run at 2017-01-06 17:37:14
+These tests were run at 2017-01-08 10:47:50
 
 
 
-| id|name          |status  |time           |message    |
-|--:|:-------------|:-------|:--------------|:----------|
-|  1|LogisticTest1 |&#9989; |9.161 seconds  |           |
-|  2|LogisticTest2 |&#9989; |9.020 seconds  |           |
-|  3|LogisticTest3 |&#9989; |8.443 seconds  |           |
-|  4|LogisticTest4 |&#9989; |10.910 seconds |           |
-|  5|LogisticTest5 |&#9989; |14.535 seconds |4 warnings |
-|  6|SampleTest    |&#9989; |9.224 seconds  |           |
+| id|name          |status   |time           |message    |
+|--:|:-------------|:--------|:--------------|:----------|
+|  1|LogisticTest1 |&#9989;  |7.842 seconds  |           |
+|  2|LogisticTest2 |&#9989;  |7.974 seconds  |           |
+|  3|LogisticTest3 |&#9989;  |7.029 seconds  |           |
+|  4|LogisticTest4 |&#9989;  |8.529 seconds  |           |
+|  5|LogisticTest5 |&#9989;  |13.196 seconds |3 warnings |
+|  6|LogisticTest6 |&#x274C; |7.627 seconds  |3 errors   |
+|  7|SampleTest    |&#9989;  |8.149 seconds  |           |
 
 
 ## UI Test Checklist.
