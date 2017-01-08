@@ -144,6 +144,13 @@ indicate the name of the dataItem controlling the display and an optional condit
 1. display div with id 'weight-vec' when 'Use Weights' is true
 */
 var displayRules = {
-  'weight-vec': 'Use Weights'
+  'weight-vec': 'Use Weights',
+  'show-on-regularization': 'regularization',
+  'show-on-cv': 'internal_cv',
+  'show-on-set_seed_internal_cv': 'set_seed_internal_cv',
+  'show-on-no-cv': ['internal_cv', function(v){return !v}],
+  'div-link':  ['regularization', function(v){return !v}],
+  'show-on-external-cv': 'external_cv',
+  'show-on-set-seed-external-cv': 'set_seed_external_cv'
 };
 </script>
