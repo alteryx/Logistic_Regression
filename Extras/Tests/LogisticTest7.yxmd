@@ -2431,7 +2431,7 @@
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Value name="curPage">Home</Value>
+          <Value name="curPage">Customize</Value>
           <Value name="curTab">advanced</Value>
           <Value name="lambda_1se">True</Value>
           <Value name="lambda_min">False</Value>
@@ -2443,7 +2443,7 @@
           <Value name="regularization">True</Value>
           <Value name="alpha">0.5</Value>
           <Value name="standardize_pred">False</Value>
-          <Value name="internal_cv">True</Value>
+          <Value name="internal_cv">False</Value>
           <Value name="nfolds">5</Value>
           <Value name="lambda">lambda_1se</Value>
           <Value name="set_seed_internal_cv">True</Value>
@@ -2451,12 +2451,12 @@
           <Value name="lambda_no_cv">0.5</Value>
           <Value name="Link">logit</Value>
           <Value name="external_cv">True</Value>
-          <Value name="nfolds_external">5</Value>
-          <Value name="numberTrials">3</Value>
+          <Value name="nfolds_external">7</Value>
+          <Value name="numberTrials">7</Value>
           <Value name="posClass">
           </Value>
           <Value name="stratified">False</Value>
-          <Value name="set_seed_external_cv">False</Value>
+          <Value name="set_seed_external_cv">True</Value>
           <Value name="external_seed_value">1</Value>
           <Value name="graph.resolution">1x</Value>
         </Configuration>
@@ -2713,7 +2713,7 @@
     <LayoutType>Horizontal</LayoutType>
     <MetaInfo>
       <NameIsFileName value="True" />
-      <Name>LogisticTest6</Name>
+      <Name>LogisticTest7</Name>
       <Description />
       <RootToolName />
       <ToolVersion />
