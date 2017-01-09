@@ -330,8 +330,7 @@ inputs &lt;- list(
 
 config$lambda.1se &lt;- config$lambda_1se
 config$lambda.min &lt;- config$lambda_min
-AlteryxPredictive:::runLogisticRegression(inputs, config) 
-</RScript>
+AlteryxPredictive:::runLogisticRegression(inputs, config)</RScript>
           <UseFullUpdate value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
@@ -347,17 +346,17 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
             <Field name="out" size="1073741823" source="R-DATA:" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
-        <MetaInfo connection="Output5">
-          <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
         <MetaInfo connection="Output2">
           <RecordInfo>
             <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
         <MetaInfo connection="Output4">
+          <RecordInfo>
+            <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output5">
           <RecordInfo>
             <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
           </RecordInfo>
@@ -5133,7 +5132,7 @@ flightdeck:::fdRender(
       </GuiSettings>
       <Properties>
         <Configuration>
-          <DetourRight value="True" />
+          <DetourRight value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -5161,7 +5160,7 @@ flightdeck:::fdRender(
       </GuiSettings>
       <Properties>
         <Configuration>
-          <DetourRight value="True" />
+          <DetourRight value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -5189,7 +5188,7 @@ flightdeck:::fdRender(
       </GuiSettings>
       <Properties>
         <Configuration>
-          <DetourRight value="True" />
+          <DetourRight value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -5222,7 +5221,8 @@ flightdeck:::fdRender(
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
+            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -5234,7 +5234,7 @@ flightdeck:::fdRender(
       </GuiSettings>
       <Properties>
         <Configuration>
-          <DetourRight value="True" />
+          <DetourRight value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -5260,7 +5260,7 @@ flightdeck:::fdRender(
       </GuiSettings>
       <Properties>
         <Configuration>
-          <DetourRight value="True" />
+          <DetourRight value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -5286,7 +5286,7 @@ flightdeck:::fdRender(
       </GuiSettings>
       <Properties>
         <Configuration>
-          <DetourRight value="True" />
+          <DetourRight value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -5347,7 +5347,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_b3a472aaf8dd4be4afb68829c2b23414_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_1884_1cd2f59d391f43a9b854439f78c1d7b5_\Engine_2744_cef2c18ea6c342cab563d2db592b9b3e_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5413,13 +5413,13 @@ No Text Styling</DefaultAnnotationText>
     </Node>
     <Node ToolID="213">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="3798" y="1338" />
+        <Position x="3786" y="1338" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <ByName_ErrorMode>Warning</ByName_ErrorMode>
           <ByName_OutputMode>All</ByName_OutputMode>
-          <Mode>ByPos</Mode>
+          <Mode>ByName</Mode>
           <SetOutputOrder value="True" />
           <OutputOrder>
             <Connection>#1</Connection>
@@ -5433,7 +5433,8 @@ No Text Styling</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+            <Field name="Desc" size="2147483647" source="Formula: (Multiple Sources)" type="V_String" />
+            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -5525,7 +5526,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_897a358bbf37423b85b5796dcdee30ba_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_1884_1cd2f59d391f43a9b854439f78c1d7b5_\Engine_2744_38b7cc72f24f46579b41e9c5ea289bbb_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5562,12 +5563,14 @@ No Text Styling</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Left">
           <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
+            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
         <MetaInfo connection="Right">
           <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+            <Field name="Desc" size="64" source="Formula: (Multiple Sources)" type="V_String" />
+            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -5586,7 +5589,8 @@ No Text Styling</DefaultAnnotationText>
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
-            <Field name="Graph" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+            <Field name="Desc" size="2147483647" source="Formula: (Multiple Sources)" type="V_String" />
+            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -5598,7 +5602,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_69a08fce87774b0d81a656251b4b152e_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_1884_1cd2f59d391f43a9b854439f78c1d7b5_\Engine_2744_e813874f76e541a18b02295e6efd74b6_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5626,9 +5630,15 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_71bf5e414a0541c092c1aacbc8cc6b8f_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_1884_1cd2f59d391f43a9b854439f78c1d7b5_\Engine_2744_8868c34c305d409492bb17102ed10358_.yxdb</TempFile>
           <TempFileDataProfiling />
-          <Layout />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -5644,14 +5654,16 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_4e9212c9e19f469ba99d388f8902923c_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_1884_1cd2f59d391f43a9b854439f78c1d7b5_\Engine_2744_98e252ca1ffb4e8fb361188a944ab69d_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
             <ViewSize value="100" />
             <View1>
               <DefaultTab>Report</DefaultTab>
-              <Hints />
+              <Hints>
+                <Table />
+              </Hints>
             </View1>
             <View2 />
           </Layout>
@@ -5670,7 +5682,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_53bee92be2894722b3bc5e52ee87473b_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_1884_1cd2f59d391f43a9b854439f78c1d7b5_\Engine_2744_bdf97d6d1aaf460ba474ae2e81be41d4_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout />
         </Configuration>
@@ -5688,7 +5700,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_af32308b596a4e95b0aca64a18815c90_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_1884_1cd2f59d391f43a9b854439f78c1d7b5_\Engine_2744_52254feadb704c098b35f98deaa767f7_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5714,7 +5726,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_6f61f763283446eabb02be7acae51181_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_1884_1cd2f59d391f43a9b854439f78c1d7b5_\Engine_2744_218d5934a9bc4cbc8e71a902f64536f3_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5742,7 +5754,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_e5c07d7979b9475083686887d8d18035_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_3736_209a16bc7bfc4a908929ecc80d2b42f6_\Engine_2744_fc9c3839930a4a8588fa13be70063548_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5770,7 +5782,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_a0aa136ae1e845268ebab1c200dc692d_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_3736_209a16bc7bfc4a908929ecc80d2b42f6_\Engine_2744_e4fa6e7b515243eab5e822744a083758_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -5793,7 +5805,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_698a614a81be46ca9c0a551862457912_.yxdb</TempFile>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_3736_209a16bc7bfc4a908929ecc80d2b42f6_\Engine_2744_2ffe10ed4d63485a989639b54dc23707_.yxdb</TempFile>
           <Layout>
             <View1>
               <Hints>
@@ -5810,9 +5822,111 @@ No Text Styling</DefaultAnnotationText>
       </Properties>
       <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
     </Node>
+    <Node ToolID="241">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="3474" y="894" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_1884_1cd2f59d391f43a9b854439f78c1d7b5_\Engine_2744_a5baffc7d40c447d9b90997b286a1781_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Report</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="242">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="2946" y="582" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_1884_1cd2f59d391f43a9b854439f78c1d7b5_\Engine_2744_273bcdcafcbb46a4b4747a3d1649cb56_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <View1>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="248">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3402" y="990" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <SelectFields>
+            <SelectField field="Graph" selected="True" rename="Report" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="249">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="3522" y="1290" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;&quot;" field="Desc" size="2147483647" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Desc = ""
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+            <Field name="Desc" size="2147483647" source="Formula: &quot;&quot;" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
     <Node ToolID="157">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="2406" y="762" width="839" height="390" />
+        <Position x="2406" y="762" width="839" height="455" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -5999,7 +6113,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="155">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Detour.Detour">
-            <Position x="2466" y="864.9995" />
+            <Position x="2466" y="864.9996" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6057,11 +6171,39 @@ No Text Styling</DefaultAnnotationText>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDetour" />
         </Node>
+        <Node ToolID="243">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+            <Position x="2658" y="1098" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_1884_1cd2f59d391f43a9b854439f78c1d7b5_\Engine_2744_df05273f917c4b078e7747250698accb_.yxdb</TempFile>
+              <TempFileDataProfiling />
+              <Layout>
+                <ViewMode>Single</ViewMode>
+                <ViewSize value="100" />
+                <View1>
+                  <DefaultTab>Report</DefaultTab>
+                  <Hints>
+                    <Table />
+                  </Hints>
+                </View1>
+                <View2 />
+              </Layout>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
       </ChildNodes>
     </Node>
     <Node ToolID="183">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="1326" y="1571" width="1535" height="732" />
+        <Position x="1326" y="1571" width="1679" height="732" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -6364,7 +6506,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="173">
           <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-            <Position x="2010" y="1859" width="563" height="384" />
+            <Position x="2010" y="1859" width="611" height="384" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6492,7 +6634,7 @@ No Text Styling</DefaultAnnotationText>
               </GuiSettings>
               <Properties>
                 <Configuration>
-                  <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_cf12c1491e634f23bd8de433ee4cad9d_.yxdb</TempFile>
+                  <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_3736_209a16bc7bfc4a908929ecc80d2b42f6_\Engine_2744_28e81ac567ac42608f11b8d02315a8e7_.yxdb</TempFile>
                   <TempFileDataProfiling />
                   <Layout>
                     <ViewMode>Single</ViewMode>
@@ -6520,7 +6662,7 @@ No Text Styling</DefaultAnnotationText>
               </GuiSettings>
               <Properties>
                 <Configuration>
-                  <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_bbed12c373ab433789296931043bc87d_.yxdb</TempFile>
+                  <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_3736_209a16bc7bfc4a908929ecc80d2b42f6_\Engine_2744_625df6701c9e480fae59d9a71dba7153_.yxdb</TempFile>
                 </Configuration>
                 <Annotation DisplayMode="0">
                   <Name />
@@ -6529,6 +6671,31 @@ No Text Styling</DefaultAnnotationText>
                 </Annotation>
               </Properties>
               <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+            </Node>
+            <Node ToolID="247">
+              <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+                <Position x="2502" y="1950" />
+              </GuiSettings>
+              <Properties>
+                <Configuration>
+                  <OrderChanged value="False" />
+                  <SelectFields>
+                    <SelectField field="Graph" selected="True" rename="Report" />
+                    <SelectField field="*Unknown" selected="True" />
+                  </SelectFields>
+                </Configuration>
+                <Annotation DisplayMode="0">
+                  <Name />
+                  <DefaultAnnotationText />
+                  <Left value="False" />
+                </Annotation>
+                <MetaInfo connection="Output">
+                  <RecordInfo>
+                    <Field name="Report" size="1073741823" source="Report:R-Graph:" type="V_WString" />
+                  </RecordInfo>
+                </MetaInfo>
+              </Properties>
+              <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
             </Node>
           </ChildNodes>
         </Node>
@@ -6641,26 +6808,13 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="178">
           <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-            <Position x="2586" y="1926" />
+            <Position x="2622" y="1914" />
           </GuiSettings>
           <Properties>
             <Configuration>
-              <AutoResetMode>Custom</AutoResetMode>
-              <MultiMetaInfo>
-                <MetaInfo name="#1">
-                  <RecordInfo>
-                    <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" column="1" />
-                  </RecordInfo>
-                </MetaInfo>
-                <MetaInfo name="#2">
-                  <RecordInfo>
-                    <Field name="Table" size="2147483647" source="Report:Table:Basic:" type="V_String" column="1" />
-                  </RecordInfo>
-                </MetaInfo>
-              </MultiMetaInfo>
               <ByName_ErrorMode>Warning</ByName_ErrorMode>
               <ByName_OutputMode>All</ByName_OutputMode>
-              <Mode>ManualDelayed</Mode>
+              <Mode>ByPos</Mode>
               <SetOutputOrder value="True" />
               <OutputOrder>
                 <Connection>#2</Connection>
@@ -6674,7 +6828,7 @@ No Text Styling</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="Graph" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+                <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -6695,12 +6849,12 @@ No Text Styling</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Left">
               <RecordInfo>
-                <Field name="Table" size="2147483647" source="Report:Table:Basic:" type="V_String" />
+                <Field name="Report" size="2147483647" source="Report:Table:Basic:" type="V_String" />
               </RecordInfo>
             </MetaInfo>
             <MetaInfo connection="Right">
               <RecordInfo>
-                <Field name="Table" size="2147483647" source="Report:Table:Basic:" type="V_String" />
+                <Field name="Report" size="2147483647" source="Report:Table:Basic:" type="V_String" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -6719,7 +6873,7 @@ No Text Styling</DefaultAnnotationText>
             </Annotation>
             <MetaInfo connection="Output">
               <RecordInfo>
-                <Field name="Graph" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+                <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
               </RecordInfo>
             </MetaInfo>
           </Properties>
@@ -6727,7 +6881,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="181">
           <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
-            <Position x="2298" y="1758" />
+            <Position x="2238" y="1758" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6764,7 +6918,7 @@ No Text Styling</DefaultAnnotationText>
         </Node>
         <Node ToolID="182">
           <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
-            <Position x="2394" y="1770" />
+            <Position x="2322" y="1770" />
           </GuiSettings>
           <Properties>
             <Configuration>
@@ -6803,7 +6957,7 @@ No Text Styling</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_1dc01d6f90474b23859806a61dfd9ebc_.yxdb</TempFile>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_3736_209a16bc7bfc4a908929ecc80d2b42f6_\Engine_2744_502992b4a46a404ba0c8ff5ce09a1e7c_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -6831,7 +6985,7 @@ No Text Styling</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_f820e7a426684dda9dce49dd714d9126_.yxdb</TempFile>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_3736_209a16bc7bfc4a908929ecc80d2b42f6_\Engine_2744_bc6e4f629b2440d0a2fde2c9f54117ff_.yxdb</TempFile>
               <Layout>
                 <View1>
                   <Hints>
@@ -6854,7 +7008,7 @@ No Text Styling</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_850793b5251147a18e4770e9a679d8fd_.yxdb</TempFile>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_3736_209a16bc7bfc4a908929ecc80d2b42f6_\Engine_2744_59c323731d8f4797a805c11e40cddea8_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -6882,7 +7036,7 @@ No Text Styling</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\DBLANC~1\AppData\Local\Temp\Engine_10780_58bff34d55184e729550805d5163c028_\Engine_14648_cd4c8d89dda04e5abdd80c33db73e1c6_.yxdb</TempFile>
+              <TempFile>C:\Users\btoomey\AppData\Local\Temp\Engine_3736_209a16bc7bfc4a908929ecc80d2b42f6_\Engine_2744_ae46c04827574e2496d3b5f0c48b8797_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -6903,6 +7057,56 @@ No Text Styling</DefaultAnnotationText>
             </Annotation>
           </Properties>
           <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+        </Node>
+        <Node ToolID="245">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="2886" y="1770" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&quot;&quot;" field="Desc" size="2147483647" type="V_String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Desc = ""
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Report" size="1073741823" source="Report: (Multiple Sources)" type="V_WString" />
+                <Field name="Desc" size="2147483647" source="Formula: &quot;&quot;" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="246">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="2406" y="1770" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <SelectFields>
+                <SelectField field="Table" selected="True" rename="Report" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Report" size="2147483647" source="Report:Table:Basic:" type="V_String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
         </Node>
       </ChildNodes>
     </Node>
@@ -7102,7 +7306,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="94">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1338" y="234" width="59" height="59" />
+            <Position x="1338" y="234.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />
@@ -8013,7 +8217,7 @@ Union</Text>
       <Destination ToolID="139" Connection="Left" />
     </Connection>
     <Connection>
-      <Origin ToolID="180" Connection="Output" />
+      <Origin ToolID="245" Connection="Output" />
       <Destination ToolID="139" Connection="Right" />
     </Connection>
     <Connection>
@@ -8117,7 +8321,7 @@ Union</Text>
       <Destination ToolID="213" Connection="Input" />
     </Connection>
     <Connection name="#2">
-      <Origin ToolID="147" Connection="Output" />
+      <Origin ToolID="249" Connection="Output" />
       <Destination ToolID="213" Connection="Input" />
     </Connection>
     <Connection>
@@ -8128,6 +8332,10 @@ Union</Text>
       <Origin ToolID="223" Connection="Output" />
       <Destination ToolID="126" Connection="Input" />
     </Connection>
+    <Connection>
+      <Origin ToolID="248" Connection="Output" />
+      <Destination ToolID="249" Connection="Input" />
+    </Connection>
     <Connection name="#1">
       <Origin ToolID="146" Connection="Output" />
       <Destination ToolID="147" Connection="Input" />
@@ -8135,6 +8343,14 @@ Union</Text>
     <Connection name="#2">
       <Origin ToolID="151" Connection="Output" />
       <Destination ToolID="147" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="147" Connection="Output" />
+      <Destination ToolID="241" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="147" Connection="Output" />
+      <Destination ToolID="248" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="149" Connection="Output" />
@@ -8149,8 +8365,16 @@ Union</Text>
       <Destination ToolID="149" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="155" Connection="Right" />
+      <Destination ToolID="242" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="156" Connection="Right" />
       <Destination ToolID="146" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="156" Connection="Right" />
+      <Destination ToolID="243" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="159" Connection="True" />
@@ -8224,17 +8448,21 @@ Union</Text>
       <Origin ToolID="170" Connection="Output" />
       <Destination ToolID="239" Connection="Input" />
     </Connection>
-    <Connection name="#1">
+    <Connection>
       <Origin ToolID="171" Connection="Output" />
+      <Destination ToolID="238" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="171" Connection="Output" />
+      <Destination ToolID="247" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="247" Connection="Output" />
       <Destination ToolID="178" Connection="Input" />
     </Connection>
     <Connection name="#2">
       <Origin ToolID="179" Connection="Right" />
       <Destination ToolID="178" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="171" Connection="Output" />
-      <Destination ToolID="238" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="176" Connection="Right" />
@@ -8261,11 +8489,19 @@ Union</Text>
       <Destination ToolID="225" Connection="Input" />
     </Connection>
     <Connection>
+      <Origin ToolID="180" Connection="Output" />
+      <Destination ToolID="245" Connection="Input" />
+    </Connection>
+    <Connection>
       <Origin ToolID="181" Connection="Output" />
       <Destination ToolID="182" Connection="Input" />
     </Connection>
     <Connection>
       <Origin ToolID="182" Connection="Output" />
+      <Destination ToolID="246" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="246" Connection="Output" />
       <Destination ToolID="179" Connection="Input" />
     </Connection>
     <Connection name="#2" Wireless="True">
@@ -9259,6 +9495,9 @@ complementary log-log
         <Tool ToolId="234" Selected="False" />
         <Tool ToolId="236" Selected="False" />
         <Tool ToolId="237" Selected="False" />
+        <Tool ToolId="241" Selected="False" />
+        <Tool ToolId="242" Selected="False" />
+        <Tool ToolId="243" Selected="False" />
       </Wiz_OpenOutputTools>
       <Wiz_OutputMessage />
       <Wiz_NoOutputFilesMessage />
