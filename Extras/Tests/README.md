@@ -2,20 +2,22 @@
 
 
 
-These tests were run at 2017-01-09 12:37:38
+These tests were run at 2017-01-09 17:38:42
 
 
 
-| id|name          |status  |time           |message    |
-|--:|:-------------|:-------|:--------------|:----------|
-|  1|LogisticTest1 |&#9989; |12.826 seconds |           |
-|  2|LogisticTest2 |&#9989; |12.049 seconds |           |
-|  3|LogisticTest3 |&#9989; |11.937 seconds |           |
-|  4|LogisticTest4 |&#9989; |14.593 seconds |           |
-|  5|LogisticTest5 |&#9989; |19.617 seconds |3 warnings |
-|  6|LogisticTest6 |&#9989; |23.264 seconds |1 warning  |
-|  7|LogisticTest7 |&#9989; |27.859 seconds |1 warning  |
-|  8|SampleTest    |&#9989; |12.861 seconds |           |
+| id|name                         |status  |time           |message     |
+|--:|:----------------------------|:-------|:--------------|:-----------|
+|  1|LogisticTest1                |&#9989; |9.143 seconds  |            |
+|  2|LogisticTest2                |&#9989; |11.544 seconds |            |
+|  3|LogisticTest3                |&#9989; |11.388 seconds |            |
+|  4|LogisticTest4                |&#9989; |14.466 seconds |            |
+|  5|LogisticTest5                |&#9989; |15.824 seconds |3 warnings  |
+|  6|LogisticTest6                |&#9989; |16.726 seconds |1 warning   |
+|  7|LogisticTest7                |&#9989; |20.959 seconds |1 warning   |
+|  8|logreg_and_linreg_cv_reports |&#9989; |54.125 seconds |            |
+|  9|logreg_stepwise              |&#9989; |31.600 seconds |12 warnings |
+| 10|SampleTest                   |&#9989; |9.405 seconds  |            |
 
 
 ## UI Test Checklist.
