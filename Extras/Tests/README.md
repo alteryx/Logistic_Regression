@@ -25,7 +25,7 @@ These tests were run at 2017-01-09 17:38:42
 
 1. Check that configuration persists. This includes widgets, tabs, pages, accordions, and pretty much any other ui element that the user interacts with. The configuration window should always.
 2. Check navigation. This includes checking if pages show up correctly when the Customize/Back buttons are clicked. It is also important to check that persistence holds under these operations.
-3. The `Customize` button should appear only after the user has filled out the model name, target variable and predictors.
+3. The `Customize` button should always appear.
 4. Clicking on the `Customize` button should take the user to the second page.
 5. Checking `Use a weighted variable ...` should bring up a dropdown to let the user select a weighting variable. This dropdown should be clearable. If the user checks this option, but does not select a weighting variable, then the workflow should display a configuration time error.
 6. Checking the box in the upper left corner of the "Select the Predictor Variables" should check all the variables when checked for the first time on a fresh tool. Checking it again should uncheck all the variables.
