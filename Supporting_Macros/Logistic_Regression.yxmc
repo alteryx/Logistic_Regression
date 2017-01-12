@@ -290,7 +290,7 @@ Logistic Regression</Text>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <RScript>config &lt;- list(
+          <RScript><![CDATA[config <- list(
   `graph.resolution` = dropdownInput('%Question.graph.resolution%' , '1x'),
   `Link` = dropdownInput('%Question.Link%' , 'logit'),
   `Model Name` = textInput('%Question.Model Name%'),
@@ -323,14 +323,20 @@ options(alteryx.debug = config$debug)
 #'
 #' This is a named list of all inputs that stream into the R tool.
 #' We also specify defaults for use when R code is run outside Alteryx.
-inputs &lt;- list(
+inputs <- list(
   the.data = read.Alteryx2("#1", default = mtcars),
   XDFInfo = getXdfProperties("#1", default = list(is_XDF = FALSE, xdf_path = NULL))
 )
-
-config$lambda.1se &lt;- config$lambda_1se
-config$lambda.min &lt;- config$lambda_min
-AlteryxPredictive:::runLogisticRegression(inputs, config)</RScript>
+checkLowN(
+  data = inputs$the.data,
+  threshold = 25,
+  mult = 1,
+  msg = "The incoming data may not have enough rows to generate a model successfully.  "
+)
+config$lambda.1se <- config$lambda_1se
+config$lambda.min <- config$lambda_min
+AlteryxPredictive:::runLogisticRegression(inputs, config)
+]]></RScript>
           <UseFullUpdate value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
@@ -5347,7 +5353,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5408_8f888664106242eab0ee31d3c5cc559c_\Engine_5344_11f5a7d4b42042078c40e753595ed837_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_830bb4f6b119473db021330a914c3b1c_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5526,7 +5532,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5408_8f888664106242eab0ee31d3c5cc559c_\Engine_5344_739a9ded3c144f6fbb6537323bb4ff43_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_ed4ae67b8e7f4e0b9f952f74b9048ff9_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5602,7 +5608,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5408_8f888664106242eab0ee31d3c5cc559c_\Engine_5344_f2dff93ba8ba4c179a4abbb067887636_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_66f2f6c62be84a3da01ff343cf80a234_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5630,7 +5636,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5408_8f888664106242eab0ee31d3c5cc559c_\Engine_5344_1cabbc49fa464aba84ddc5cb5cb53ff3_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_635ad650593246589cd3ae1f3aa06ce5_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <View1>
@@ -5654,7 +5660,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5408_8f888664106242eab0ee31d3c5cc559c_\Engine_5344_513a0f9c449642438ce6f252d97f2b67_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_1bd4c75572af43f3bcc3f7b09cd44137_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5682,7 +5688,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5408_8f888664106242eab0ee31d3c5cc559c_\Engine_5344_323e956b820d4b42b522004af96154dc_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_47ac0b208fe243ad8a979a4323311e40_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout />
         </Configuration>
@@ -5700,7 +5706,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5408_8f888664106242eab0ee31d3c5cc559c_\Engine_5344_1427a9184b314a2aa8d1f8d61fa68805_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_c3c925048e98431793d52bdd7b4d3534_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5726,7 +5732,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5408_8f888664106242eab0ee31d3c5cc559c_\Engine_5344_b64b494819354a3bab877fc94b5eddf7_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_1305b63a092e4048869470492b8b3a71_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5828,7 +5834,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5408_8f888664106242eab0ee31d3c5cc559c_\Engine_5344_7f2028fcd5964b198ba6028067bda211_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_9e902a9a5e274c98acecf3385a84ff35_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5856,7 +5862,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5408_8f888664106242eab0ee31d3c5cc559c_\Engine_5344_4298c08a487f4135a1c488eedb47caa2_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_79ff864f366b4af28e76f7f94429a3b0_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <View1>
@@ -6177,7 +6183,7 @@ No Text Styling</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\ProgramData\Alteryx\Engine\Engine_5408_8f888664106242eab0ee31d3c5cc559c_\Engine_5344_e55e2eb9f78141309589386a1ab50835_.yxdb</TempFile>
+              <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_e7069cf235714002840675942aef3e35_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -7306,7 +7312,7 @@ No Text Styling</DefaultAnnotationText>
       <ChildNodes>
         <Node ToolID="94">
           <GuiSettings Plugin="AlteryxGuiToolkit.Questions.CheckBoxGroup.CheckBoxGroup">
-            <Position x="1338" y="234" width="59" height="59" />
+            <Position x="1338" y="234.0001" width="59" height="59" />
           </GuiSettings>
           <Properties>
             <Configuration />

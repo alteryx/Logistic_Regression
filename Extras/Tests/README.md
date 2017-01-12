@@ -2,22 +2,22 @@
 
 
 
-These tests were run at 2017-01-10 10:46:00
+These tests were run at 2017-01-11 16:06:08
 
 
 
-| id|name                         |status  |time            |message     |
-|--:|:----------------------------|:-------|:---------------|:-----------|
-|  1|LogisticTest1                |&#9989; |14.841 seconds  |            |
-|  2|LogisticTest2                |&#9989; |12.984 seconds  |            |
-|  3|LogisticTest3                |&#9989; |13.150 seconds  |            |
-|  4|LogisticTest4                |&#9989; |16.756 seconds  |            |
-|  5|LogisticTest5                |&#9989; |22.255 seconds  |3 warnings  |
-|  6|LogisticTest6                |&#9989; |23.760 seconds  |1 warning   |
-|  7|LogisticTest7                |&#9989; |28.820 seconds  |1 warning   |
-|  8|logreg_and_linreg_cv_reports |&#9989; |56.344 seconds  |            |
-|  9|logreg_stepwise              |&#9989; |1:34.48 minutes |12 warnings |
-| 10|SampleTest                   |&#9989; |13.565 seconds  |            |
+| id|name                         |status   |time           |message                  |
+|--:|:----------------------------|:--------|:--------------|:------------------------|
+|  1|LogisticTest1                |&#9989;  |8.443 seconds  |                         |
+|  2|LogisticTest2                |&#9989;  |8.404 seconds  |                         |
+|  3|LogisticTest3                |&#9989;  |7.723 seconds  |                         |
+|  4|LogisticTest4                |&#9989;  |9.364 seconds  |                         |
+|  5|LogisticTest5                |&#9989;  |12.940 seconds |3 warnings               |
+|  6|LogisticTest6                |&#9989;  |15.040 seconds |2 warnings               |
+|  7|LogisticTest7                |&#9989;  |18.009 seconds |2 warnings               |
+|  8|logreg_and_linreg_cv_reports |&#9989;  |33.161 seconds |                         |
+|  9|logreg_stepwise              |&#x274C; |31.840 seconds |2 errors and 11 warnings |
+| 10|SampleTest                   |&#9989;  |8.535 seconds  |                         |
 
 
 ## UI Test Checklist.
