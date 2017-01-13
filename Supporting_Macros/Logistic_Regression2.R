@@ -64,15 +64,20 @@ if (!(outer_config$regularization)) {
 }
 
 if (outer_config$external_cv) {
-	runCrossValidationLogReg(config = config, inputs = inputs)
+	cv_metrics <- runCrossValidationLogReg(config = config, inputs = inputs)
+  dashboard <- AlteryxPredictive:::interactive_lr(
+    config = config,
+    data = inputs$data,
+    model = inputs$models[[1]],
+    cv_metrics = cv_metrics
+  )
+} else{
+  dashboard <- AlteryxPredictive:::interactive_lr(
+    config = config,
+    data = inputs$data,
+    model = inputs$models[[1]]
+  )
 }
-
-
-dashboard <- AlteryxPredictive:::interactive_lr(
-  config = config,
-  data = inputs$data,
-  model = inputs$models[[1]]
-)
 
 flightdeck:::fdRender(
   x = dashboard, 
