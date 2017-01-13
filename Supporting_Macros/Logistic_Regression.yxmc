@@ -4852,9 +4852,9 @@ http://downloads.alteryx.com/Latest_RInstaller.htm</AnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <RScript>library(AlteryxPredictive)
+          <RScript><![CDATA[library(AlteryxPredictive)
 library(flightdeck)
-outer_config &lt;- list(
+outer_config <- list(
   `graph.resolution` = dropdownInput('%Question.graph.resolution%' , '1x'),
   `Link` = dropdownInput('%Question.Link%' , 'logit'),
   `Model Name` = textInput('%Question.Model Name%'),
@@ -4880,7 +4880,7 @@ outer_config &lt;- list(
   `Omit Constant` = checkboxInput('%Question.Omit Constant%' , FALSE)
 )
 
-config &lt;- list(
+config <- list(
   `classification` = TRUE,
   `modelType` = NULL,
   `numberFolds` = numericInput('%Question.nfolds_external%' , 5),
@@ -4894,11 +4894,11 @@ config &lt;- list(
   `seed` = numericInput('%Question.seed%', 1)
 )
 
-config &lt;- append(config, outer_config)
-config$lambda.1se &lt;- config$lambda_1se
-config$lambda.min &lt;- config$lambda_min
+config <- append(config, outer_config)
+config$lambda.1se <- config$lambda_1se
+config$lambda.min <- config$lambda_min
 
-inputs &lt;- list(
+inputs <- list(
   data = read.Alteryx("#2"),
   models = list(model = unserializeObject((read.Alteryx("#1")$Object)[[1]]))
 )
@@ -4911,28 +4911,33 @@ options(alteryx.debug = outer_config)
 
 
 if (!(outer_config$regularization)) {
-  mod.df &lt;- read.Alteryx("#1")
-  mod.obj &lt;- unserializeObject(as.character(mod.df$Object[1]))
-  the.class &lt;- class(mod.obj)[1]
+  mod.df <- read.Alteryx("#1")
+  mod.obj <- unserializeObject(as.character(mod.df$Object[1]))
+  the.class <- class(mod.obj)[1]
   write.Alteryx(data.frame(Class = the.class))
 }
 
 if (outer_config$external_cv) {
-	runCrossValidationLogReg(config = config, inputs = inputs)
+	cv_metrics <- runCrossValidationLogReg(config = config, inputs = inputs)
+  dashboard <- AlteryxPredictive:::interactive_lr(
+    config = config,
+    data = inputs$data,
+    model = inputs$models[[1]],
+    cv_metrics = cv_metrics
+  )
+} else{
+  dashboard <- AlteryxPredictive:::interactive_lr(
+    config = config,
+    data = inputs$data,
+    model = inputs$models[[1]]
+  )
 }
-
-
-dashboard &lt;- AlteryxPredictive:::interactive_lr(
-  config = config,
-  data = inputs$data,
-  model = inputs$models[[1]]
-)
 
 flightdeck:::fdRender(
   x = dashboard, 
   nOutput = 5
-) 
-</RScript>
+)
+]]></RScript>
           <UseFullUpdate value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
@@ -4941,6 +4946,11 @@ flightdeck:::fdRender(
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <MetaInfo connection="Output1">
+          <RecordInfo>
+            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
         <MetaInfo connection="Output4">
           <RecordInfo>
             <Field name="Graph" size="1073741823" source="Report:R-Graph:" type="V_WString" />
@@ -4958,11 +4968,6 @@ flightdeck:::fdRender(
         <MetaInfo connection="Output5">
           <RecordInfo>
             <Field name="html" size="1073741823" source="R-DATA:" type="V_WString" />
-          </RecordInfo>
-        </MetaInfo>
-        <MetaInfo connection="Output1">
-          <RecordInfo>
-            <Field name="Class" size="1073741823" source="R-DATA:" type="V_WString" />
           </RecordInfo>
         </MetaInfo>
       </Properties>
@@ -5353,7 +5358,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_830bb4f6b119473db021330a914c3b1c_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8508_f6f23e2d817d4938bf92c5de81e16276_\Engine_8512_66afcca74f214d11b4470104b49b8534_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5532,7 +5537,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_ed4ae67b8e7f4e0b9f952f74b9048ff9_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8508_f6f23e2d817d4938bf92c5de81e16276_\Engine_8512_df9a693f28ad405ebb0682e62e6d334a_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5608,7 +5613,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_66f2f6c62be84a3da01ff343cf80a234_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8508_f6f23e2d817d4938bf92c5de81e16276_\Engine_8512_a44f5d012f75444fb385c751fd063938_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5636,7 +5641,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_635ad650593246589cd3ae1f3aa06ce5_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8508_f6f23e2d817d4938bf92c5de81e16276_\Engine_8512_4cd29cc73e294c9a907474a687310178_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <View1>
@@ -5660,7 +5665,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_1bd4c75572af43f3bcc3f7b09cd44137_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8508_f6f23e2d817d4938bf92c5de81e16276_\Engine_8512_141eee10fda24b069baa016f8fcca547_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5688,7 +5693,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_47ac0b208fe243ad8a979a4323311e40_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8508_f6f23e2d817d4938bf92c5de81e16276_\Engine_8512_1b4ff34e2704410c8440ea33710369ac_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout />
         </Configuration>
@@ -5706,7 +5711,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_c3c925048e98431793d52bdd7b4d3534_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8508_f6f23e2d817d4938bf92c5de81e16276_\Engine_8512_37ed3bf85abb4a5494ed85d62fd27a55_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5732,7 +5737,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_1305b63a092e4048869470492b8b3a71_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8508_f6f23e2d817d4938bf92c5de81e16276_\Engine_8512_d66942c5d55449b9b755875639b1ec96_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5834,7 +5839,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_9e902a9a5e274c98acecf3385a84ff35_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8508_f6f23e2d817d4938bf92c5de81e16276_\Engine_8512_44a426c0ead146cd8b29c2e70687d3d2_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -5862,7 +5867,7 @@ No Text Styling</DefaultAnnotationText>
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_79ff864f366b4af28e76f7f94429a3b0_.yxdb</TempFile>
+          <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8508_f6f23e2d817d4938bf92c5de81e16276_\Engine_8512_c4c84bb610c34971a0c61e54ced20e8e_.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <View1>
@@ -6183,7 +6188,7 @@ No Text Styling</DefaultAnnotationText>
           </GuiSettings>
           <Properties>
             <Configuration>
-              <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8256_d2ae5690607046ce814dd49520ac5674_\Engine_6952_e7069cf235714002840675942aef3e35_.yxdb</TempFile>
+              <TempFile>C:\Users\tmorley.SRC\AppData\Local\Temp\Engine_8508_f6f23e2d817d4938bf92c5de81e16276_\Engine_8512_c0e7d2a3d8bf43b98f5ef886d381f3f0_.yxdb</TempFile>
               <TempFileDataProfiling />
               <Layout>
                 <ViewMode>Single</ViewMode>
@@ -9422,7 +9427,7 @@ complementary log-log
                     </Question>
                     <Question>
                       <Type>RadioGroup</Type>
-                      <Description>Model with lower in sample standard error</Description>
+                      <Description>Model with lower in-sample mean squared error</Description>
                       <Name>lambda_min</Name>
                       <ToolId value="109" />
                       <Questions />
