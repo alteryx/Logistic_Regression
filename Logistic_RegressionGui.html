@@ -20,7 +20,7 @@ Logistic_Regression
 <div class='page has-hint' id='page-basic'>
   
   <div class='fd-header'>
-    <div class='fd-header-title-text'>Setup</div>
+    <div class='fd-header-title-text'>XMSG("Setup")</div>
   </div>
   
   <div class='content'>
@@ -28,23 +28,23 @@ Logistic_Regression
       
       <div id='mname' class="qconst">
 <!--  Model Name  -->
-<label for="Model Name">Type model name</label>
+<label for="Model Name">XMSG("Type model name")</label>
 <alteryx-pluginwidget type="TextBox" password="false" id="Model Name" dataName="Model Name"></alteryx-pluginwidget>
 </div>
       <div id='yvar' class="qconst">
 <!--  Y Var  -->
-<label for="Y Var">Select target variable</label>
+<label for="Y Var">XMSG("Select target variable")</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="String" id="Y Var" dataName="Y Var"></alteryx-pluginwidget>
 </div>
       <div id='xvars' class="qconst">
 <!--  X Vars  -->
-<label for="X Vars">Select predictor variables</label>
+<label for="X Vars">XMSG("Select predictor variables")</label>
 <alteryx-pluginwidget type="MultiSelectListBox" dataType="MultiStringSelector" inputNumber="0" connectionNumber="0" fieldType="All" id="X Vars" dataName="X Vars"></alteryx-pluginwidget>
 </div>
       <button class='default-button primary switch' id='switch-to-customize'
         data-page='Customize'
       >
-        Customize 
+        XMSG("Customize")
         <i class = 'en-right-open-big pull-right'></i>
       </button>
       
@@ -67,14 +67,14 @@ Logistic_Regression
   
   <div class="tabs" id='header'>
       <div class="tab active tab-one-third" data-page='advanced' id='advanced'>
-        Model
+        XMSG("Model")
       </div>
       <div class="tab tab-one-third" data-page='crossvalidation' 
           id='crossvalidation'>
-        Cross-validation
+        XMSG("Cross-validation")
       </div>
       <div class="tab tab-one-third" data-page='graphics' id='graphics'>
-        Plots
+        XMSG("Plots")
       </div>
   </div>
   
@@ -90,7 +90,7 @@ Logistic_Regression
 
         <div id='weight-vec' class='indent-one'>
 <!--  Weight Vec  -->
-<label for="Weight Vec">Select the sampling weight field</label>
+<label for="Weight Vec">XMSG("Select the sampling weight field")</label>
 <alteryx-pluginwidget type="DropDown" dataType="FieldSelector" inputNumber="0" connectionNumber="0" fieldType="Numeric" clearable="true" id="Weight Vec" dataName="Weight Vec"></alteryx-pluginwidget>
 </div>
         <div class='hide-on-xdf'>
@@ -103,7 +103,7 @@ Logistic_Regression
 <!--  alpha  -->
 <alteryx-pluginwidget label="Enter value of alpha" type="NumericSlider" min="0" max="1" step="0.001" id="alpha" dataName="alpha" initialValue="0.5"></alteryx-pluginwidget>
 
-             <p>0 is ridge regression, and 1 is lasso</p>
+             <p>XMSG("0 is ridge regression, and 1 is lasso")</p>
              
 <!--  standardize_pred  -->
 <alteryx-pluginwidget type="CheckBox" text="Standardize predictor variables" id="standardize_pred" dataName="standardize_pred" defaultValue="true"></alteryx-pluginwidget>
@@ -115,12 +115,12 @@ Logistic_Regression
              <div id = 'show-on-cv' class = 'indent-one'> 
                
 <!--  nfolds  -->
-<label for="nfolds">Number of folds</label>
+<label for="nfolds">XMSG("Number of folds")</label>
 <alteryx-pluginwidget type="NumericSpinner" default="5" min="1" max="100" step="1" id="nfolds" dataName="nfolds"></alteryx-pluginwidget>
 
                
 <!--  lambda  -->
-<label for="lambda">What type of model?</label>
+<label for="lambda">XMSG("What type of model?")</label>
 <alteryx-pluginwidget type="RadioGroup" group="lambda" id="lambda" dataName="lambda">
   <alteryx-option uiobject="Simpler model" default="true">lambda_1se</alteryx-option>
   <alteryx-option uiobject="Model with lower in-sample mean squared error">lambda_min</alteryx-option>
@@ -142,7 +142,7 @@ Logistic_Regression
               <div id = 'show-on-no-cv'> 
                
 <!--  lambda_no_cv  -->
-<label for="lambda_no_cv">Value of lambda used for predictions</label>
+<label for="lambda_no_cv">XMSG("Value of lambda used for predictions")</label>
 <alteryx-pluginwidget type="NumericSpinner" default="0.5" min="0" max="10" step="0.01" id="lambda_no_cv" dataName="lambda_no_cv"></alteryx-pluginwidget>
 
              </div>
@@ -151,7 +151,7 @@ Logistic_Regression
         <div id='div-link'>
           
 <!--  Link  -->
-<label for="Link">Select model type</label>
+<label for="Link">XMSG("Select model type")</label>
 <alteryx-pluginwidget type="DropDown" id="Link" dataName="Link">
   <alteryx-option uiobject="logit" default="true">logit</alteryx-option>
   <alteryx-option uiobject="probit">probit</alteryx-option>
@@ -163,8 +163,7 @@ Logistic_Regression
       
         <div class="tabpage" id="tabpage-crossvalidation">
         <div class='show-on-xdf' style='display:none;'>
-          Cross-validation is not currently supported for XDF input.
-        </div>
+          XMSG("Cross-validation is not currently supported for XDF input.")        </div>
         <div id='div-external-cv' class='hide-on-xdf'>
             
 <!--  external_cv  -->
@@ -175,21 +174,21 @@ Logistic_Regression
                <div id='div-nfolds-external'>
                  
 <!--  nfolds_external  -->
-<label for="nfolds_external">Number of folds</label>
+<label for="nfolds_external">XMSG("Number of folds")</label>
 <alteryx-pluginwidget type="NumericSpinner" default="5" min="1" max="100" step="1" id="nfolds_external" dataName="nfolds_external"></alteryx-pluginwidget>
 
                </div>
                <div id='div-number-trials'>
                  
 <!--  numberTrials  -->
-<label for="numberTrials">Number of trials</label>
+<label for="numberTrials">XMSG("Number of trials")</label>
 <alteryx-pluginwidget type="NumericSpinner" default="3" min="1" max="100" step="1" id="numberTrials" dataName="numberTrials"></alteryx-pluginwidget>
 
                </div>
              </div>
              	
 <!--  posClass  -->
-<label for="posClass">Enter positive class for target variable (optional)</label>
+<label for="posClass">XMSG("Enter positive class for target variable (optional)")</label>
 <alteryx-pluginwidget type="TextBox" password="false" id="posClass" dataName="posClass"></alteryx-pluginwidget>
 
 	            
@@ -215,7 +214,7 @@ Logistic_Regression
       <div class='tabpage has-hint' id='tabpage-graphics'>
         
 <!--  graph.resolution  -->
-<label for="graph.resolution">Graph resolution</label>
+<label for="graph.resolution">XMSG("Graph resolution")</label>
 <alteryx-pluginwidget type="DropDown" id="graph.resolution" dataName="graph.resolution">
   <alteryx-option uiobject="1x (96 dpi)" default="true">1x</alteryx-option>
   <alteryx-option uiobject="2x (192 dpi)">2x</alteryx-option>
