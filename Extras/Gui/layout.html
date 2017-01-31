@@ -1,7 +1,7 @@
 <div class='page has-hint' id='page-basic'>
   
   <div class='fd-header'>
-    <div class='fd-header-title-text'>Setup</div>
+    <div class='fd-header-title-text'>XMSG("Setup")</div>
   </div>
   
   <div class='content'>
@@ -13,7 +13,7 @@
       <button class='default-button primary switch' id='switch-to-customize'
         data-page='Customize'
       >
-        Customize 
+        XMSG("Customize")
         <i class = 'en-right-open-big pull-right'></i>
       </button>
       
@@ -36,14 +36,14 @@
   
   <div class="tabs" id='header'>
       <div class="tab active tab-one-third" data-page='advanced' id='advanced'>
-        Model
+        XMSG("Model")
       </div>
       <div class="tab tab-one-third" data-page='crossvalidation' 
           id='crossvalidation'>
-        Cross-validation
+        XMSG("Cross-validation")
       </div>
       <div class="tab tab-one-third" data-page='graphics' id='graphics'>
-        Plots
+        XMSG("Plots")
       </div>
   </div>
   
@@ -59,7 +59,7 @@
           {{ regularization }}
           <div id = 'show-on-regularization' class='indent-one'> 
              {{ alpha }}
-             <p>0 is ridge regression, and 1 is lasso</p>
+             <p>XMSG("0 is ridge regression, and 1 is lasso")</p>
              {{ standardize_pred }}
              {{ internal_cv }}
              <div id = 'show-on-cv' class = 'indent-one'> 
@@ -84,8 +84,7 @@
       
         <div class="tabpage" id="tabpage-crossvalidation">
         <div class='show-on-xdf' style='display:none;'>
-          Cross-validation is not currently supported for XDF input.
-        </div>
+          XMSG("Cross-validation is not currently supported for XDF input.")        </div>
         <div id='div-external-cv' class='hide-on-xdf'>
             {{ external_cv }}
             <div id = 'show-on-external-cv'> 
