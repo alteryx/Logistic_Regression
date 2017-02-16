@@ -86,7 +86,7 @@ Logistic_Regression
 
         
 <!--  Use Weights  -->
-<alteryx-pluginwidget type="CheckBox" text="XMSG('Use sampling weights in model estimation (optional)')" id="Use Weights" dataName="Use Weights" defaultValue="false"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="XMSG("Use sampling weights in model estimation (optional)")" id="Use Weights" dataName="Use Weights" defaultValue="false"></alteryx-pluginwidget>
 
         <div id='weight-vec' class='indent-one'>
 <!--  Weight Vec  -->
@@ -96,21 +96,21 @@ Logistic_Regression
         <div class='hide-on-xdf'>
           
 <!--  regularization  -->
-<alteryx-pluginwidget type="CheckBox" text="XMSG('Use regularized regression')" id="regularization" dataName="regularization" defaultValue="false"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="XMSG("Use regularized regression")" id="regularization" dataName="regularization" defaultValue="false"></alteryx-pluginwidget>
 
           <div id = 'show-on-regularization' class='indent-one'> 
              
 <!--  alpha  -->
-<alteryx-pluginwidget label="XMSG('Enter value of alpha')" type="NumericSlider" min="0" max="1" step="0.001" id="alpha" dataName="alpha" initialValue="0.5"></alteryx-pluginwidget>
+<alteryx-pluginwidget label="XMSG("Enter value of alpha")" type="NumericSlider" min="0" max="1" step="0.001" id="alpha" dataName="alpha" initialValue="0.5"></alteryx-pluginwidget>
 
              <p>XMSG("0 is ridge regression, and 1 is lasso")</p>
              
 <!--  standardize_pred  -->
-<alteryx-pluginwidget type="CheckBox" text="XMSG('Standardize predictor variables')" id="standardize_pred" dataName="standardize_pred" defaultValue="true"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="XMSG("Standardize predictor variables")" id="standardize_pred" dataName="standardize_pred" defaultValue="true"></alteryx-pluginwidget>
 
              
 <!--  internal_cv  -->
-<alteryx-pluginwidget type="CheckBox" text="XMSG('Use cross-validation to determine model parameters')" id="internal_cv" dataName="internal_cv" defaultValue="true"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="XMSG("Use cross-validation to determine model parameters")" id="internal_cv" dataName="internal_cv" defaultValue="true"></alteryx-pluginwidget>
 
              <div id = 'show-on-cv' class = 'indent-one'> 
                
@@ -122,14 +122,14 @@ Logistic_Regression
 <!--  lambda  -->
 <label for="lambda">XMSG("What type of model?")</label>
 <alteryx-pluginwidget type="RadioGroup" group="lambda" id="lambda" dataName="lambda">
-  <alteryx-option uiobject="XMSG('Simpler model')" default="true">lambda_1se</alteryx-option>
-  <alteryx-option uiobject="XMSG('Model with lower in-sample mean squared error')">lambda_min</alteryx-option>
+  <alteryx-option uiobject="XMSG("Simpler model")" default="true">lambda_1se</alteryx-option>
+  <alteryx-option uiobject="XMSG("Model with lower in-sample mean squared error")">lambda_min</alteryx-option>
 </alteryx-pluginwidget>
 
                <div>
                   <div style='float:left;'>
 <!--  set_seed_internal_cv  -->
-<alteryx-pluginwidget type="CheckBox" text="XMSG('Set seed')" id="set_seed_internal_cv" dataName="set_seed_internal_cv" defaultValue="true"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="XMSG("Set seed")" id="set_seed_internal_cv" dataName="set_seed_internal_cv" defaultValue="true"></alteryx-pluginwidget>
 </div>
                  <div style='float:right;' id='show-on-set_seed_internal_cv'>
                    
@@ -153,9 +153,9 @@ Logistic_Regression
 <!--  Link  -->
 <label for="Link">XMSG("Select model type")</label>
 <alteryx-pluginwidget type="DropDown" id="Link" dataName="Link">
-  <alteryx-option uiobject="XMSG('logit')" default="true">logit</alteryx-option>
-  <alteryx-option uiobject="XMSG('probit')">probit</alteryx-option>
-  <alteryx-option uiobject="XMSG('complementary log-log')">complementary log-log</alteryx-option>
+  <alteryx-option uiobject="XMSG("logit")" default="true">logit</alteryx-option>
+  <alteryx-option uiobject="XMSG("probit")">probit</alteryx-option>
+  <alteryx-option uiobject="XMSG("complementary log-log")">complementary log-log</alteryx-option>
 </alteryx-pluginwidget>
 
         </div>
@@ -167,7 +167,7 @@ Logistic_Regression
         <div id='div-external-cv' class='hide-on-xdf'>
             
 <!--  external_cv  -->
-<alteryx-pluginwidget type="CheckBox" text="XMSG('Use cross-validation to determine estimates of model quality')" showAsToggle="true" id="external_cv" dataName="external_cv" defaultValue="false"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="XMSG("Use cross-validation to determine estimates of model quality")" showAsToggle="true" id="external_cv" dataName="external_cv" defaultValue="false"></alteryx-pluginwidget>
 
             <div id = 'show-on-external-cv'> 
              <div class='clearfix' id='folds-and-trials'>
@@ -193,12 +193,12 @@ Logistic_Regression
 
 	            
 <!--  stratified  -->
-<alteryx-pluginwidget type="CheckBox" text="XMSG('Use stratified cross-validation')" id="stratified" dataName="stratified" defaultValue="false"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="XMSG("Use stratified cross-validation")" id="stratified" dataName="stratified" defaultValue="false"></alteryx-pluginwidget>
 
              <div id='div-set-seed-external-cv' class='clearfix'>
                  <div class='pull-left'>
 <!--  set_seed_external_cv  -->
-<alteryx-pluginwidget type="CheckBox" text="XMSG('Set seed')" id="set_seed_external_cv" dataName="set_seed_external_cv" defaultValue="true"></alteryx-pluginwidget>
+<alteryx-pluginwidget type="CheckBox" text="XMSG("Set seed")" id="set_seed_external_cv" dataName="set_seed_external_cv" defaultValue="true"></alteryx-pluginwidget>
 </div>
                  <div class='pull-right' id = 'show-on-set-seed-external-cv'>
                    
@@ -216,9 +216,9 @@ Logistic_Regression
 <!--  graph.resolution  -->
 <label for="graph.resolution">XMSG("Graph resolution")</label>
 <alteryx-pluginwidget type="DropDown" id="graph.resolution" dataName="graph.resolution">
-  <alteryx-option uiobject="XMSG('1x (96 dpi)')" default="true">1x</alteryx-option>
-  <alteryx-option uiobject="XMSG('2x (192 dpi)')">2x</alteryx-option>
-  <alteryx-option uiobject="XMSG('3x (288 dpi)')">3x</alteryx-option>
+  <alteryx-option uiobject="XMSG("1x (96 dpi)")" default="true">1x</alteryx-option>
+  <alteryx-option uiobject="XMSG("2x (192 dpi)")">2x</alteryx-option>
+  <alteryx-option uiobject="XMSG("3x (288 dpi)")">3x</alteryx-option>
 </alteryx-pluginwidget>
 
       </div>
