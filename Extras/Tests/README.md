@@ -2,26 +2,26 @@
 
 
 
-These tests were run at 2017-02-24 14:28:55
+These tests were run at 2017-03-02 10:51:54
 
 
 
 | id|name                                |status   |time           |message                   |
 |--:|:-----------------------------------|:--------|:--------------|:-------------------------|
-|  1|LogisticTest_weighted_logreg_and_CV |&#9989;  |46.030 seconds |3 warnings                |
-|  2|LogisticTest1                       |&#9989;  |13.436 seconds |                          |
-|  3|LogisticTest2                       |&#9989;  |12.951 seconds |                          |
-|  4|LogisticTest3                       |&#9989;  |12.478 seconds |                          |
-|  5|LogisticTest4                       |&#9989;  |14.884 seconds |                          |
-|  6|LogisticTest5                       |&#9989;  |19.787 seconds |3 warnings                |
-|  7|LogisticTest6                       |&#9989;  |24.631 seconds |1 warning                 |
-|  8|LogisticTest7                       |&#9989;  |28.742 seconds |1 warning                 |
-|  9|LogisticTestCV                      |&#x274C; |25.567 seconds |15 errors and 16 warnings |
-| 10|LogisticTestModelComparison         |&#x274C; |22.461 seconds |1 error and 5 warnings    |
-| 11|LogisticTestNestedTest              |&#9989;  |23.117 seconds |2 warnings                |
-| 12|logreg_and_linreg_cv_reports        |&#9989;  |48.051 seconds |                          |
-| 13|logreg_stepwise                     |&#9989;  |45.287 seconds |12 warnings               |
-| 14|SampleTest                          |&#9989;  |13.057 seconds |                          |
+|  1|LogisticTest_weighted_logreg_and_CV |&#9989;  |36.795 seconds |3 warnings                |
+|  2|LogisticTest1                       |&#9989;  |13.230 seconds |                          |
+|  3|LogisticTest2                       |&#9989;  |15.770 seconds |                          |
+|  4|LogisticTest3                       |&#9989;  |14.216 seconds |                          |
+|  5|LogisticTest4                       |&#9989;  |15.760 seconds |                          |
+|  6|LogisticTest5                       |&#9989;  |21.230 seconds |3 warnings                |
+|  7|LogisticTest6                       |&#9989;  |27.006 seconds |1 warning                 |
+|  8|LogisticTest7                       |&#9989;  |32.223 seconds |1 warning                 |
+|  9|LogisticTestCV                      |&#x274C; |28.902 seconds |15 errors and 16 warnings |
+| 10|LogisticTestModelComparison         |&#x274C; |23.487 seconds |1 error and 5 warnings    |
+| 11|LogisticTestNestedTest              |&#9989;  |23.354 seconds |2 warnings                |
+| 12|logreg_and_linreg_cv_reports        |&#9989;  |36.725 seconds |                          |
+| 13|logreg_stepwise                     |&#9989;  |36.374 seconds |12 warnings               |
+| 14|SampleTest                          |&#9989;  |9.253 seconds  |                          |
 
 
 ## UI Test Checklist.
